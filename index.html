@@ -1,0 +1,1321 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Tanvir Y. Goraya, Ph.D. — AI advisor, inventor and company co-founder. Building production AI since 1987 for the U.S. Air Force, NASA and the Fortune 500.">
+<meta property="og:title" content="Tanvir Goraya Advisory">
+<meta property="og:description" content="Tanvir Y. Goraya, Ph.D. — AI advisor, inventor and company co-founder. Building production AI since 1987 for the U.S. Air Force, NASA and the Fortune 500.">
+<link rel="icon" href="img/favicon.png">
+<title>Tanvir Goraya Advisory</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Manrope:wght@500;600;700&display=swap">
+</head>
+<body>
+<style>
+/* Layout: the Starke v22 "white-shoe" system carried over — one navy band opens with the seal, a white
+   masthead docks below, white and pale-stone sections alternate, a navy call band and footer close the page.
+   Bronze stays for small accents. Single light look by design; every color is set explicitly. */
+:root {
+  --paper: #ffffff;
+  --stone: #f6f5f2;
+  --panel: #f4f3f0;
+  --deep: #152238;
+  --deeper: #0f1a2d;
+  --ink: #0e1117;
+  --ink-2: #3b404a;
+  --rule: #d2cec5;
+  --bronze: #8a6634;
+  --accent: #7a5a2c;
+  --display: "Libre Baskerville", Baskerville, Georgia, serif;
+  --serif: "Source Serif 4", "Source Serif Pro", Georgia, serif;
+  --caps: "Cinzel", "Trajan Pro", "Libre Baskerville", Georgia, serif;
+  --sans: "Manrope", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --measure: 66ch;
+  --wrap: 1120px;
+  color-scheme: light;
+}
+.dark {
+  --paper: #152238; --panel: rgba(255,255,255,.05); --ink: #f3efe7; --ink-2: #c4beb2;
+  --rule: #34363b; --bronze: #b98d55; --accent: #e2c08a;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--paper); color: var(--ink); font: 400 17px/1.65 var(--sans); }
+a { color: inherit; text-decoration-color: var(--accent); text-underline-offset: 3px; }
+a:hover { color: var(--accent); }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.wrap { max-width: var(--wrap); margin: 0 auto;
+  padding-left: max(24px, env(safe-area-inset-left, 0px)); padding-right: max(24px, env(safe-area-inset-right, 0px)); }
+@media (max-width: 520px) { .wrap { padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); } }
+h1, h2, h3 { font-family: var(--display); font-weight: 400; text-wrap: balance; margin: 0; }
+h2 { font-size: clamp(1.6rem, 3.2vw, 2.3rem); line-height: 1.18; }
+h3 { font: 700 1.12rem/1.3 var(--display); }
+p { margin: 0; }
+.label { font: 600 0.8rem/1.3 var(--sans); letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-2); }
+.btn { display: inline-flex; align-items: center; gap: 10px; padding: 14px 22px; text-decoration: none;
+  font: 700 0.8rem/1 var(--sans); letter-spacing: 0.14em; text-transform: uppercase;
+  border: 2px solid var(--ink); background: transparent; color: var(--ink); cursor: pointer; }
+.btn.solid { background: var(--ink); color: var(--paper); }
+.btn:hover { background: var(--bronze); border-color: var(--bronze); color: #fff; }
+
+/* Draft strip */
+.draft { background: var(--panel); border-bottom: 1px solid var(--rule); color: var(--ink-2); font-size: 0.8rem; }
+.draft .wrap { padding-block: 8px; display: flex; flex-wrap: wrap; gap: 6px 18px; justify-content: space-between; }
+.draft b { color: var(--accent); font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; font-size: 0.72rem; }
+
+/* Opening band */
+.intro { background: radial-gradient(ellipse 60% 70% at 50% 30%, rgba(226,192,138,.14), transparent 70%), var(--paper); color: var(--ink); }
+.intro .wrap { padding-block: 56px 60px; display: grid; justify-items: center; gap: 26px; text-align: center; }
+.seal-slot { width: min(240px, 58vw); } .seal-slot img { width: 100%; height: auto; display: block; filter: drop-shadow(0 22px 40px rgba(5,10,20,.55)); }
+@media (prefers-reduced-motion: no-preference) {
+  .seal-slot { animation: strike 1.4s cubic-bezier(.2,.8,.2,1) both; }
+}
+@keyframes strike { from { transform: scale(.86) rotate(-18deg); filter: blur(4px) brightness(.5); } to { transform: none; } }
+@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: .45; } }
+.intro h1 { font: 700 clamp(1.7rem, 4.4vw, 2.9rem)/1.15 var(--caps); letter-spacing: 0.08em; }
+.inscription { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 6px 18px; }
+.inscription span { font: 700 clamp(0.9rem, 1.6vw, 1.15rem)/1.3 var(--caps); letter-spacing: 0.2em; color: var(--accent); }
+.inscription i { width: 5px; height: 5px; border-radius: 50%; background: var(--bronze); display: block; }
+.intro .lede { font: italic 400 clamp(1.1rem, 2.2vw, 1.4rem)/1.55 var(--display); max-width: 40ch; color: var(--ink); }
+.intro .actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
+.intro .btn { border-color: var(--accent); color: var(--ink); }
+.intro .btn.solid { background: var(--accent); color: #14161a; }
+.intro .btn:hover { background: var(--ink); color: #14161a; border-color: var(--ink); }
+@media (max-width: 640px) { .inscription { flex-direction: column; gap: 6px; } .inscription i { display: none; } }
+
+/* Masthead */
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 41; background: #fff; }
+.masthead { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 40; background: #fff; border-bottom: 1px solid var(--rule); }
+.masthead .wrap { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding-block: 16px; }
+.wordmark { display: flex; align-items: center; gap: 12px; text-decoration: none; min-width: 0; }
+.wordmark img { width: 50px; height: 50px; flex: none; filter: drop-shadow(0 2px 4px rgba(20,22,26,.25)); }
+.wordmark b { display: block; font: 700 1.1rem/1.1 var(--caps); letter-spacing: 0.08em; }
+.wordmark span { display: block; font: 600 0.64rem/1.3 var(--sans); letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink-2); margin-top: 3px; }
+.nav { display: flex; gap: 22px; font-size: 0.88rem; white-space: nowrap; align-items: center; }
+.nav a { text-decoration: none; padding-block: 4px; border-bottom: 1px solid transparent; }
+.nav a:hover { border-bottom-color: var(--accent); }
+.menu { display: none; position: relative; }
+.menu summary { list-style: none; cursor: pointer; font: 700 0.76rem/1 var(--sans); letter-spacing: 0.14em; text-transform: uppercase; padding: 10px 14px; border: 1px solid var(--rule); }
+.menu summary::-webkit-details-marker { display: none; }
+.menu[open] .nav { position: absolute; right: 0; top: calc(100% + 8px); display: grid; gap: 6px; min-width: 220px; padding: 14px 18px; background: #fff; border: 1px solid var(--rule); }
+@media (max-width: 1180px) { .nav.wide { display: none; } .menu { display: block; } }
+@media (max-width: 520px) { .wordmark b { font-size: 0.95rem; } .wordmark span { font-size: 0.56rem; letter-spacing: 0.14em; } }
+
+/* Figures bar */
+.figures { background: var(--panel); border-block: 1px solid var(--rule); }
+.figures .wrap { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.figures .wrap > div { padding: 26px 22px; border-left: 1px solid var(--rule); display: grid; gap: 6px; align-content: start; }
+.figures .wrap > div:first-child { border-left: 0; padding-left: 0; }
+.figures strong { font: 700 2.2rem/1 var(--display); color: var(--accent); font-variant-numeric: lining-nums tabular-nums; }
+.figures span { font-size: 0.88rem; color: var(--ink-2); line-height: 1.45; }
+@media (max-width: 820px) {
+  .figures .wrap { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .figures .wrap > div { padding: 20px 14px; }
+  .figures .wrap > div:nth-child(odd) { border-left: 0; padding-left: 0; }
+  .figures .wrap > div:nth-child(n+3) { border-top: 1px solid var(--rule); }
+}
+
+/* Affiliations: grayscale at rest, full color on hover or focus */
+main > section.affil { background: #fff; border-bottom: 1px solid var(--rule); }
+.affil .wrap { padding-block: 26px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 18px 40px; }
+.affil .label { color: var(--ink-2); max-width: 14rem; }
+.logos { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; align-items: center; gap: 22px 48px; }
+.logos a { display: block; line-height: 0; }
+.logos img { height: 64px; width: auto; max-width: 100%; filter: grayscale(1) contrast(1.05); opacity: .72; transition: filter .25s, opacity .25s; }
+.logos img.wide { height: 40px; }
+.logos a:hover img, .logos a:focus-visible img { filter: none; opacity: 1; }
+@media (max-width: 640px) { .logos { gap: 18px 30px; } .logos img { height: 52px; } .logos img.wide { height: 32px; } }
+/* Advisory offer */
+.offer { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr); gap: 40px; padding: 32px; background: var(--paper); border: 1px solid var(--rule); border-top: 3px solid var(--bronze); }
+.offer-head { display: grid; gap: 12px; align-content: start; }
+.offer-head .label { color: var(--accent); }
+.offer-head h3 { font: 400 1.5rem/1.25 var(--display); }
+.offer-head p:last-child { color: var(--ink-2); font-family: var(--serif); font-size: 1.05rem; }
+.weeks { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; }
+.weeks li { display: grid; grid-template-columns: 5.5rem minmax(0, 1fr); gap: 16px; padding-block: 14px; border-top: 1px solid var(--rule); }
+.weeks li:first-child { border-top: 0; padding-top: 0; }
+.weeks b { font: 700 0.95rem/1.4 var(--display); color: var(--accent); }
+.weeks span { color: var(--ink-2); font-family: var(--serif); font-size: 1.02rem; }
+@media (max-width: 860px) { .offer { grid-template-columns: 1fr; padding: 22px; gap: 24px; } }
+/* Where the method was applied */
+.applied { display: grid; gap: 12px; }
+.applied h3 { font: 400 1.35rem/1.3 var(--display); }
+.applied table { width: 100%; border-collapse: collapse; font-size: 0.98rem; }
+.applied th { text-align: left; font: 700 0.72rem/1.3 var(--sans); letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-2); padding: 0 16px 8px 0; border-bottom: 2px solid var(--ink); }
+.applied td { padding: 12px 16px 12px 0; border-bottom: 1px solid var(--rule); vertical-align: top; font-family: var(--serif); color: var(--ink-2); }
+.applied td:first-child { font: 700 1rem/1.4 var(--display); color: var(--ink); width: 22%; }
+.applied td:last-child { width: 24%; font-size: 0.9rem; }
+.applied > p { font: italic 400 1.1rem/1.5 var(--display); }
+@media (max-width: 720px) { .applied thead { display: none; } .applied tr, .applied td { display: block; width: auto !important; } .applied td { padding: 4px 0; border: 0; } .applied tr { padding-block: 12px; border-bottom: 1px solid var(--rule); } }
+/* Then and now */
+.then-now { overflow-x: auto; }
+.then-now table { width: 100%; border-collapse: collapse; min-width: 0; }
+.then-now th { text-align: left; font: 700 0.72rem/1.3 var(--sans); letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-2); padding: 0 18px 10px 0; border-bottom: 2px solid var(--ink); }
+.then-now td { padding: 14px 18px 14px 0; border-bottom: 1px solid var(--rule); vertical-align: top; font-family: var(--serif); font-size: 1.02rem; color: var(--ink-2); }
+.then-now td:first-child { font: 700 1.02rem/1.35 var(--display); color: var(--ink); width: 22%; }
+.then-now td:first-child small { display: block; margin-top: 4px; font: 600 0.72rem/1.3 var(--sans); letter-spacing: 0.06em; color: var(--accent); }
+.then-now td:last-child { color: var(--ink); font-weight: 600; width: 28%; }
+@media (max-width: 720px) { .then-now thead { display: none; } .then-now tr, .then-now td { display: block; width: auto !important; } .then-now td { padding: 4px 0; border: 0; } .then-now tr { padding-block: 14px; border-bottom: 1px solid var(--rule); } }
+/* Founder's note: a letter set on white paper */
+main > section.note-sec { background: var(--stone); }
+.note { max-width: 44rem; margin: 0 auto; background: var(--paper); border: 1px solid var(--rule); border-top: 3px solid var(--bronze);
+  padding: 44px 48px; display: grid; gap: 16px; font-family: var(--serif); font-size: 1.1rem; line-height: 1.7; color: var(--ink); }
+.note .label { color: var(--accent); }
+.note h2 { margin-bottom: 4px; }
+.note .sign { margin-top: 8px; font: italic 400 1.2rem/1.3 var(--display); text-align: right; }
+.note .sign::before { content: "— "; }
+@media (max-width: 640px) { .note { padding: 26px 20px; font-size: 1.04rem; } }
+/* Case study */
+.case-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 36px; }
+.case-grid > div { display: grid; gap: 10px; align-content: start; padding-top: 18px; border-top: 3px solid var(--ink); min-width: 0; }
+.case-grid p, .case-grid li { color: var(--ink-2); font-family: var(--serif); font-size: 1.04rem; }
+.case-grid ul { margin: 0; padding-left: 1.1em; display: grid; gap: 6px; }
+@media (max-width: 900px) { .case-grid { grid-template-columns: 1fr; gap: 26px; } }
+.screen { margin: 0; display: grid; gap: 10px; }
+.screen img { width: 100%; max-width: 100%; height: auto; border: 1px solid var(--rule); background: #fff; }
+.screen figcaption { font: 600 0.8rem/1.4 var(--sans); color: var(--ink-2); }
+.aha { font: italic 400 clamp(1.15rem, 2.2vw, 1.45rem)/1.5 var(--display); max-width: 44rem; }
+.aha q { font-style: normal; font-weight: 700; color: var(--accent); }
+/* Sections */
+main > section.band { background-color: #152238 !important; }
+
+main > section:nth-of-type(odd) { background: var(--paper); }
+main > section:nth-of-type(even) { background: var(--stone); }
+main > section.intro { background: radial-gradient(ellipse 60% 70% at 50% 30%, rgba(226,192,138,.14), transparent 70%), #152238; }
+main > section.figures { background: var(--panel); }
+main > section.bg-paper { background: #ffffff; }
+.tg-patent { display: grid; grid-template-columns: minmax(0, 6fr) minmax(0, 5fr); gap: 44px; align-items: start; padding-top: 32px; border-top: 1px solid var(--rule); }
+.tg-patent-text { display: grid; gap: 14px; }
+.tg-patent .kicker { margin: 0; font: 700 0.76rem/1.3 var(--sans); letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); }
+.tg-patent h3 { margin: 0; font: 400 clamp(1.35rem, 2.4vw, 1.75rem)/1.28 var(--display); }
+.tg-patent-text > p { margin: 0; font-family: var(--serif); font-size: 1.06rem; line-height: 1.65; color: var(--ink-2); }
+.tg-patent b { color: var(--ink); }
+.tg-features { margin: 0; padding-left: 1.1em; display: grid; gap: 8px; font-family: var(--serif); font-size: 1.02rem; color: var(--ink-2); }
+@media (max-width: 900px) { .tg-patent { grid-template-columns: 1fr; gap: 28px; } }
+
+#core .kicker { margin: 0; font: 700 0.76rem/1.3 var(--sans); letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); }
+#core h3 { margin: 0; font: 400 clamp(1.35rem, 2.4vw, 1.75rem)/1.28 var(--display); }
+#core .wrap { gap: 56px; }
+.origin { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 4fr); gap: 48px; align-items: start; }
+.origin-story { display: grid; gap: 14px; }
+.origin-story p { margin: 0; font-family: var(--serif); font-size: 1.08rem; line-height: 1.65; color: var(--ink-2); }
+.origin-story q { color: var(--ink); font-style: italic; }
+.origin-quotes { display: grid; gap: 18px; }
+.origin-quotes figure { margin: 0; padding: 18px 20px; background: var(--stone); border-left: 3px solid var(--bronze); display: grid; gap: 8px; }
+.origin-quotes blockquote { margin: 0; font: italic 400 1.15rem/1.5 var(--display); color: var(--ink); }
+.origin-quotes figcaption { font: 600 0.78rem/1.4 var(--sans); color: var(--ink-2); }
+.origin-quotes .scene p { margin: 0; font-family: var(--serif); font-size: 1rem; color: var(--ink-2); }
+.origin-quotes .scene .scene-today { color: var(--ink); font-weight: 600; }
+.void-block { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 7fr); gap: 48px; align-items: center; }
+.void-block > div:first-child { display: grid; gap: 12px; }
+.void-block p { margin: 0; font-family: var(--serif); font-size: 1.05rem; color: var(--ink-2); }
+.void { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 6px; }
+.void span { display: flex; align-items: center; justify-content: center; text-align: center; min-height: 64px; padding: 8px; background: var(--stone); border: 1px solid var(--rule); border-radius: 10px; font: 600 0.8rem/1.25 var(--sans); color: var(--ink-2); }
+.void .hole { background: var(--deep); border: 2px dashed var(--accent); color: #f3efe7; font-weight: 700; }
+.says-does { display: grid; gap: 16px; }
+.sd-grid { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); gap: 18px; align-items: stretch; }
+.sd { padding: 22px 24px; border: 1px solid var(--rule); display: grid; gap: 8px; align-content: start; }
+.sd.says { background: #f4f6fa; border-top: 3px solid #5b6b86; }
+.sd.does { background: #fbf6ec; border-top: 3px solid var(--bronze); }
+.sd-tag { margin: 0; font: 700 0.72rem/1.3 var(--sans); letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-2); }
+.sd h4 { margin: 0; font: 400 1.4rem/1.25 var(--display); }
+.sd p { margin: 0; font-family: var(--serif); font-size: 1.03rem; color: var(--ink-2); }
+.sd .sd-today { font: 700 0.84rem/1.4 var(--sans); color: var(--ink); padding-top: 8px; border-top: 1px solid var(--rule); }
+.sd-vs { align-self: center; font: italic 400 1.6rem/1 var(--display); color: var(--accent); }
+.sd-note { margin: 0; max-width: 60rem; font-family: var(--serif); font-size: 1.08rem; color: var(--ink); }
+.sd-shots { display: grid; grid-template-columns: minmax(0, 6fr) minmax(0, 5fr); gap: 24px; align-items: start; }
+@media (max-width: 900px) { .origin, .void-block, .sd-shots { grid-template-columns: 1fr; gap: 28px; } .sd-grid { grid-template-columns: 1fr; } .sd-vs { justify-self: center; } }
+@media (max-width: 560px) { .void { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.proof-block { display: grid; gap: 22px; }
+.stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0; border-top: 2px solid var(--ink); border-bottom: 1px solid var(--rule); }
+.stats > div { padding: 20px 18px 20px 0; display: grid; gap: 6px; align-content: start; }
+.stats > div + div { padding-left: 18px; border-left: 1px solid var(--rule); }
+.stats strong { font: 400 clamp(1.7rem, 3vw, 2.3rem)/1 var(--display); color: var(--accent); }
+.stats span { font-family: var(--serif); font-size: 0.98rem; color: var(--ink-2); }
+@media (max-width: 860px) { .stats { grid-template-columns: 1fr 1fr; } .stats > div:nth-child(3) { padding-left: 0; border-left: 0; } }
+@media (max-width: 480px) { .stats { grid-template-columns: 1fr; } .stats > div + div { padding-left: 0; border-left: 0; border-top: 1px solid var(--rule); } }
+.proof-story { display: grid; gap: 14px; max-width: 62rem; }
+.proof-story p { margin: 0; font-family: var(--serif); font-size: 1.06rem; line-height: 1.65; color: var(--ink-2); }
+.proof-story b { color: var(--ink); }
+.tune-wrap, .cmp-wrap, .map-wrap { overflow-x: auto; }
+.tune.wide { max-width: 760px; }
+.tune caption { caption-side: top; text-align: left; padding-bottom: 10px; font: 600 0.84rem/1.4 var(--sans); color: var(--ink-2); }
+.tune.wide td:nth-child(n+2), .tune.wide th:nth-child(n+2) { text-align: right; }
+.tune.wide td:last-child { color: var(--accent); font-weight: 700; }
+.tune tfoot td { font-weight: 700; color: var(--ink); border-top: 2px solid var(--ink); border-bottom: 0; }
+.compare-block, .map-block { display: grid; gap: 16px; }
+.cmp { width: 100%; min-width: 640px; border-collapse: separate; border-spacing: 0; }
+.cmp th, .cmp td { padding: 12px 14px; text-align: left; vertical-align: top; border-bottom: 1px solid var(--rule); font-family: var(--serif); font-size: 0.98rem; color: var(--ink-2); }
+.cmp thead th { font: 700 0.74rem/1.3 var(--sans); letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-2); border-bottom: 2px solid var(--ink); }
+.cmp tbody th { font: 700 0.86rem/1.35 var(--sans); color: var(--ink); width: 20%; }
+.cmp .mine { background: #fbf6ec; color: var(--ink); font-weight: 600; }
+.cmp thead .mine { background: var(--deep); color: #e2c08a; }
+.cmp-src { margin: 0; font-size: 0.82rem; color: var(--ink-2); }
+.map2 { width: 100%; min-width: 640px; border-collapse: collapse; }
+.map2 th { text-align: left; font: 700 0.74rem/1.3 var(--sans); letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-2); padding: 0 14px 10px 0; border-bottom: 2px solid var(--ink); }
+.map2 td { padding: 12px 14px 12px 0; border-bottom: 1px solid var(--rule); vertical-align: top; font-family: var(--serif); font-size: 1rem; color: var(--ink-2); }
+.map2 td:first-child { font: 700 0.92rem/1.4 var(--sans); color: var(--ink); width: 28%; }
+.map2 td:last-child { color: var(--accent); font-weight: 600; width: 30%; }
+.core-cta { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px; padding: 26px 28px; background: var(--deep); color: #f3efe7; }
+.core-cta p { margin: 0; max-width: 46rem; font-family: var(--serif); font-size: 1.08rem; color: #c4beb2; }
+.core-cta b { color: #f3efe7; }
+
+.trio { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; }
+.trio article { border-top: 3px solid var(--bronze); padding-top: 14px; display: grid; gap: 8px; align-content: start; min-width: 0; }
+.trio .kicker { margin: 0; font: 700 0.74rem/1.3 var(--sans); letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); }
+.trio h3 { margin: 0; font: 400 1.3rem/1.3 var(--display); }
+.trio p { margin: 0; font-family: var(--serif); font-size: 1.02rem; color: var(--ink-2); }
+.big-claim { margin: 0; font: italic 400 clamp(1.4rem, 2.6vw, 1.9rem)/1.3 var(--display); color: var(--ink); border-left: 3px solid var(--bronze); padding-left: 16px; }
+.prose-col .plain { margin: 0; font-family: var(--serif); font-size: 1.06rem; color: var(--ink-2); }
+@media (max-width: 860px) { .trio { grid-template-columns: 1fr; } }
+
+.fill { background: #fff3c4; color: #5a4300; font: 600 0.82em/1.3 var(--sans); padding: 1px 6px; border: 1px dashed #b98d55; white-space: normal; }
+.dark .fill { background: #3a3220; color: #f1d79a; }
+.journey { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 0; border-top: 2px solid var(--ink); }
+.journey li { position: relative; display: grid; gap: 4px; align-content: start; padding: 18px 18px 22px 0; border-bottom: 1px solid var(--rule); }
+.journey li::before { content: ""; position: absolute; top: -7px; left: 0; width: 12px; height: 12px; border-radius: 50%; background: var(--bronze); }
+.journey .yr { font: 700 1.5rem/1 var(--display); color: var(--accent); margin-top: 6px; }
+.journey b { font: 700 0.95rem/1.3 var(--sans); color: var(--ink); }
+.journey span:last-child { font-family: var(--serif); font-size: 0.98rem; line-height: 1.5; color: var(--ink-2); }
+.journey li.now .yr { color: var(--ink); }
+.journey li.now::before { background: var(--ink); }
+.needs { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; }
+.needs article { border: 1px solid #34466a; border-top: 3px solid var(--accent); padding: 22px 22px 20px; display: grid; gap: 10px; align-content: start; background: rgba(255,255,255,.03); min-width: 0; }
+.needs .need { margin: 0; font: 700 0.74rem/1.3 var(--sans); letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); }
+.needs h3 { margin: 0; font: 400 1.25rem/1.3 var(--display); color: var(--ink); }
+.needs p { margin: 0; font-family: var(--serif); font-size: 1rem; line-height: 1.55; color: var(--ink-2); }
+.needs .proof { font: 600 0.8rem/1.45 var(--sans); color: var(--ink-2); border-top: 1px solid #34466a; padding-top: 10px; }
+.needs .today-tag { font: 700 0.84rem/1.4 var(--sans); color: var(--ink); }
+@media (max-width: 1000px) { .needs { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 640px) { .needs { grid-template-columns: 1fr; } }
+.stack { display: grid; gap: 14px; }
+.stack .label { color: var(--accent); }
+.stack ol { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; max-width: 54rem; }
+.stack li { display: grid; grid-template-columns: 210px minmax(0, 1fr); gap: 18px; align-items: center; padding: 12px 18px; background: rgba(226,192,138,.08); border-left: 3px solid var(--accent); }
+.stack li:first-child { background: rgba(255,255,255,.10); border-left-color: #f3efe7; }
+.stack li b { font: 700 0.82rem/1.3 var(--sans); letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink); }
+.stack li span { font-family: var(--serif); font-size: 1rem; color: var(--ink-2); }
+.stack-cta { margin: 0; font-family: var(--serif); font-size: 1.05rem; color: var(--ink-2); }
+.stack-cta a { color: var(--accent); }
+@media (max-width: 640px) { .stack li { grid-template-columns: 1fr; gap: 4px; } }
+.ventures { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; }
+.ventures article { background: var(--paper); border: 1px solid var(--rule); border-top: 3px solid var(--bronze); padding: 20px 22px; display: grid; gap: 8px; align-content: start; min-width: 0; }
+.ventures h3 { margin: 0; font: 400 1.2rem/1.3 var(--display); }
+.ventures p { margin: 0; font-family: var(--serif); font-size: 1rem; color: var(--ink-2); }
+.giving { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px; }
+.giving h3 { margin: 0 0 10px; font: 700 0.78rem/1.3 var(--sans); letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); }
+.giving ul { margin: 0; padding-left: 1.1em; display: grid; gap: 8px; font-family: var(--serif); font-size: 1.02rem; color: var(--ink-2); }
+.giving b { color: var(--ink); }
+@media (max-width: 900px) { .ventures { grid-template-columns: repeat(2, minmax(0, 1fr)); } .giving { grid-template-columns: 1fr; } }
+@media (max-width: 560px) { .ventures { grid-template-columns: 1fr; } }
+
+main > section.bg-stone { background: #f6f5f2; }
+.split { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 4fr); gap: 48px; align-items: start; }
+.prose-col { display: grid; gap: 22px; }
+.nasa-pull { border-left: 3px solid var(--bronze); background: var(--stone); }
+.nasa-pull blockquote { font-size: 1.22rem; }
+.nasa-pull a, .af-text a { color: var(--accent); }
+.facts { margin: 0; padding: 0; list-style: none; display: grid; gap: 14px; }
+.facts li { font-family: var(--serif); font-size: 1.06rem; color: var(--ink-2); padding-left: 18px; border-left: 1px solid var(--rule); }
+.facts b { color: var(--ink); font-family: var(--sans); font-weight: 700; font-size: 0.98rem; }
+.small-screen { max-width: 440px; }
+.today-line { margin: 0; padding-top: 18px; border-top: 1px solid var(--rule); font-family: var(--serif); font-size: 1.08rem; color: var(--ink); max-width: 60rem; }
+.today-line b { font: 700 0.78rem/1 var(--sans); letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-right: 6px; }
+@media (max-width: 900px) { .split { grid-template-columns: 1fr; gap: 28px; } }
+.af-grid { display: grid; grid-template-columns: minmax(0, 6fr) minmax(0, 6fr); gap: 48px; align-items: start; }
+.af-hero { margin: 0; display: grid; gap: 10px; }
+.af-hero img, .af-thumbs img { width: 100%; height: auto; display: block; border: 1px solid #3a4a66; box-shadow: 0 20px 44px rgba(0,0,0,.4); }
+.af-hero figcaption, .af-thumbs figcaption { font-size: 0.84rem; color: var(--ink-2); }
+.af-text { display: grid; gap: 16px; font-family: var(--serif); font-size: 1.06rem; color: var(--ink-2); }
+.af-text p { margin: 0; }
+.af-press { padding: 16px 20px; border-left: 3px solid var(--accent); background: rgba(255,255,255,.04); }
+.af-press span { display: block; margin-bottom: 6px; font: 700 0.74rem/1.3 var(--sans); letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); }
+.af-press q { color: var(--ink); font-style: italic; }
+.af-steps { margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; counter-reset: s; }
+.af-steps li { counter-increment: s; padding: 12px 14px; border: 1px solid #34466a; display: grid; gap: 4px; }
+.af-steps b { font: 700 0.76rem/1 var(--sans); letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); }
+.af-steps b::before { content: counter(s) " · "; }
+.af-steps span { font: 500 0.86rem/1.45 var(--sans); color: var(--ink-2); }
+.af-thumbs { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+.af-thumbs figure { margin: 0; display: grid; gap: 8px; }
+.af-team { margin: 0; font-size: 0.88rem; color: var(--ink-2); max-width: 70rem; }
+@media (max-width: 900px) { .af-grid { grid-template-columns: 1fr; gap: 32px; } .af-thumbs { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 520px) { .af-steps { grid-template-columns: 1fr; } .af-thumbs { grid-template-columns: 1fr; } }
+.mapping { display: grid; gap: 18px; padding-top: 28px; border-top: 1px solid var(--rule); }
+.mapping-head { display: grid; gap: 8px; max-width: 46rem; }
+.mapping-head .label { color: var(--accent); }
+.mapping-head h3 { margin: 0; font: 400 1.4rem/1.3 var(--display); }
+.mapping-head p { margin: 0; font-family: var(--serif); font-size: 1.06rem; color: var(--ink-2); }
+.map-table { width: 100%; max-width: 52rem; border-collapse: collapse; }
+.map-table th { text-align: left; font: 700 0.72rem/1.3 var(--sans); letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-2); padding: 0 12px 10px 0; border-bottom: 2px solid var(--ink); }
+.map-table td { padding: 12px 12px 12px 0; border-bottom: 1px solid var(--rule); font-family: var(--serif); font-size: 1.04rem; color: var(--ink); }
+.map-table td:nth-child(2) { color: var(--bronze); width: 40px; text-align: center; font-size: 1.2rem; }
+.map-table td:first-child { font-style: italic; color: var(--ink-2); width: 46%; }
+.complexity { margin: 0; max-width: 52rem; font-family: var(--serif); font-size: 1.04rem; color: var(--ink-2); }
+.complexity b { color: var(--ink); }
+.case2 { display: grid; gap: 22px; padding-top: 36px; border-top: 3px solid var(--ink); }
+.case2-h { margin: 0; font: 400 clamp(1.4rem, 2.6vw, 1.9rem)/1.25 var(--display); }
+.case2-grid { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: 40px; align-items: start; }
+.case2-figs { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; align-items: start; }
+.case2-intro, .case2-note { margin: 0 0 16px; font-family: var(--serif); font-size: 1.05rem; color: var(--ink-2); }
+.tune { width: 100%; border-collapse: collapse; margin-bottom: 16px; }
+.tune th { text-align: left; font: 700 0.72rem/1.3 var(--sans); letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-2); padding: 0 10px 8px 0; border-bottom: 2px solid var(--ink); }
+.tune td { padding: 9px 10px 9px 0; border-bottom: 1px solid var(--rule); font: 500 0.98rem/1.3 var(--sans); }
+.tune td:first-child { color: var(--ink-2); }
+.tune b { color: var(--accent); }
+@media (max-width: 900px) { .case2-grid { grid-template-columns: 1fr; } }
+.tg-grid { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 7fr); gap: 48px; align-items: center; }
+.tg-photo { margin: 0; display: grid; gap: 10px; }
+.tg-photo img { width: 100%; height: auto; display: block; border: 1px solid var(--rule); }
+.tg-photo figcaption { font-size: 0.84rem; color: var(--ink-2); }
+.tg-text { display: grid; gap: 14px; }
+.tg-text .label { color: var(--accent); }
+.tg-text h2 { margin: 0; }
+.tg-text p { margin: 0; font-family: var(--serif); font-size: 1.08rem; color: var(--ink-2); }
+.tg-text q { color: var(--ink); font-style: italic; }
+.draft-note { font: 600 0.84rem/1.4 var(--sans) !important; color: var(--accent) !important; border: 1px dashed var(--bronze); padding: 8px 12px; justify-self: start; }
+@media (max-width: 860px) { .tg-grid { grid-template-columns: 1fr; gap: 28px; } .tg-photo { max-width: 420px; } }
+.client-cols { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 28px 32px; }
+.client-cols > div { border-top: 2px solid var(--ink); padding-top: 12px; display: grid; gap: 8px; align-content: start; min-width: 0; }
+.client-cols h3 { margin: 0; font: 700 0.76rem/1.3 var(--sans); letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); }
+.client-cols p { margin: 0; font-family: var(--serif); font-size: 1rem; line-height: 1.65; color: var(--ink); }
+@media (max-width: 1000px) { .client-cols { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 560px) { .client-cols { grid-template-columns: 1fr; } }
+main > section.ferro { background: var(--stone); }
+.ferro-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px; align-items: start; }
+.ferro-card { background: var(--paper); border: 1px solid var(--rule); border-top: 3px solid var(--bronze); padding: 30px 32px; display: grid; gap: 14px; min-width: 0; }
+.ferro-card .kicker { margin: 0; font: 700 0.74rem/1.3 var(--sans); letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); }
+.ferro-card h3 { margin: 0; font: 400 1.35rem/1.3 var(--display); }
+.ferro-card p { margin: 0; font-family: var(--serif); font-size: 1.04rem; color: var(--ink-2); }
+.ferro-card .today { padding-top: 12px; border-top: 1px solid var(--rule); color: var(--ink); }
+.ferro-card .today b { font: 700 0.78rem/1 var(--sans); letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); }
+.flow { list-style: none; margin: 6px 0 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; counter-reset: f; }
+.flow li { position: relative; background: var(--deep); color: #f3efe7; padding: 12px 12px 14px; display: grid; gap: 6px; align-content: start; counter-increment: f; }
+.flow li b { font: 700 0.74rem/1 var(--sans); letter-spacing: 0.14em; text-transform: uppercase; color: #e2c08a; }
+.flow li b::before { content: counter(f) " · "; }
+.flow li span { font: 500 0.8rem/1.4 var(--sans); color: #c4beb2; }
+.flow li:not(:last-child)::after { display: none; content: "\203A"; position: absolute; right: -8px; top: 50%; transform: translateY(-50%); font: 700 1.2rem/1 var(--sans); color: var(--bronze); z-index: 1; }
+.ferro-note { margin: 0; font-family: var(--serif); color: var(--ink-2); }
+@media (max-width: 1000px) { .ferro-grid { grid-template-columns: 1fr; } }
+@media (max-width: 560px) { .ferro-card { padding: 24px 20px; } }
+.flow li span { overflow-wrap: anywhere; }
+main > section.dark.story { background: radial-gradient(ellipse 60% 50% at 20% 20%, rgba(226,192,138,.10), transparent 70%), #152238; color: var(--ink); }
+.story h2 { color: var(--ink); }
+.story-grid { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 56px; align-items: start; }
+.story .ad { margin: 0; display: grid; gap: 12px; }
+.story .ad img { width: 100%; height: auto; display: block; border: 1px solid #3a4a66; box-shadow: 0 24px 50px rgba(0,0,0,.45); }
+.story .ad figcaption { font-size: 0.86rem; color: var(--ink-2); }
+.timeline { list-style: none; margin: 0; padding: 0 0 0 26px; border-left: 1px solid var(--bronze); display: grid; gap: 26px; }
+.timeline li { position: relative; display: grid; gap: 6px; }
+.timeline li::before { content: ""; position: absolute; left: -32px; top: 5px; width: 11px; height: 11px; border-radius: 50%; background: var(--accent); }
+.timeline .when { font: 700 0.76rem/1.35 var(--sans); letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); }
+.timeline p { margin: 0; font-family: var(--serif); font-size: 1.06rem; color: var(--ink-2); }
+.timeline i { color: var(--ink); }
+.timeline a { color: var(--accent); }
+.story-now { border-top: 1px solid var(--rule); padding-top: 24px; display: grid; gap: 16px; }
+.story-now .label { color: var(--accent); }
+.story-now dl { margin: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; }
+.story-now dt { font: italic 400 1rem/1.5 var(--display); color: var(--ink-2); }
+.story-now dd { margin: 6px 0 0; font: 700 1rem/1.4 var(--sans); color: var(--ink); }
+@media (max-width: 900px) { .story-grid { grid-template-columns: 1fr; gap: 36px; } .story .ad { max-width: 420px; } .story-now dl { grid-template-columns: 1fr; gap: 18px; } }
+.section .wrap { padding-block: 80px; display: grid; gap: 40px; }
+@media (max-width: 820px) { .section .wrap { padding-block: 56px; } }
+.section-head { display: grid; gap: 14px; max-width: 46rem; }
+.section-head .label { display: flex; align-items: center; gap: 14px; color: var(--accent); }
+.section-head .label::before { content: ""; width: 32px; height: 1px; background: var(--bronze); }
+.section-head p { color: var(--ink-2); font-family: var(--serif); font-size: 1.15rem; }
+
+.practices { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 40px; }
+.practice { display: grid; gap: 12px; align-content: start; padding-top: 22px; border-top: 3px solid var(--ink); min-width: 0; }
+.practice p { color: var(--ink-2); font-family: var(--serif); font-size: 1.05rem; }
+.practice small { font: 700 0.66rem/1.3 var(--caps); letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); }
+@media (max-width: 900px) { .practices { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 600px) { .practices { grid-template-columns: 1fr; gap: 32px; } }
+
+/* Record: set like a table of authorities */
+.record { list-style: none; margin: 0; padding: 0; display: grid; }
+.record li { display: grid; grid-template-columns: minmax(0, 19rem) minmax(0, 1fr); gap: 8px 40px; padding-block: 22px; border-top: 1px solid var(--rule); }
+.record li:last-child { border-bottom: 1px solid var(--rule); }
+.record .case { font: 700 1.04rem/1.35 var(--display); }
+.record .cite { display: block; font: 400 0.84rem/1.4 var(--sans); color: var(--ink-2); margin-top: 6px; }
+.record p { color: var(--ink-2); font-family: var(--serif); font-size: 1.05rem; }
+.record a { text-decoration-color: var(--bronze); }
+.docs .case a { text-decoration: underline; text-decoration-thickness: 1px; }
+.also-links { font-size: 0.92rem; color: var(--ink-2); }
+.record .num { font: 700 1.05em/1 var(--display); color: var(--accent); }
+@media (max-width: 720px) { .record li { grid-template-columns: 1fr; } }
+
+/* Method: a real three-phase sequence, so it is numbered */
+.philosophy { display: grid; gap: 14px; max-width: 46rem; font-family: var(--serif); font-size: 1.1rem; color: var(--ink-2); }
+.pull { margin: 6px 0; display: grid; gap: 8px; padding: 18px 22px; background: var(--paper); border: 1px solid var(--rule); }
+.pull blockquote { margin: 0; font: italic 400 1.05rem/1.6 var(--display); color: var(--ink); }
+.pull figcaption { font: 600 0.78rem/1.4 var(--sans); letter-spacing: 0.04em; color: var(--ink-2); }
+.philosophy .big { font: italic 400 clamp(1.25rem, 2.4vw, 1.6rem)/1.45 var(--display); color: var(--ink); border-left: 3px solid var(--bronze); padding-left: 18px; }
+.steps { list-style: none; margin: 0; padding: 0; counter-reset: step; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 36px; }
+.steps li { counter-increment: step; display: grid; gap: 10px; align-content: start; min-width: 0; }
+.steps li::before { content: counter(step); width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center;
+  border: 2px solid var(--bronze); color: var(--bronze); font: 700 1.15rem/1 var(--display); }
+.steps p { color: var(--ink-2); font-family: var(--serif); font-size: 1.05rem; }
+.steps .q { font: italic 400 1rem/1.5 var(--display); color: var(--ink); border-left: 2px solid var(--bronze); padding-left: 12px; }
+@media (max-width: 820px) { .steps { grid-template-columns: 1fr; gap: 28px; } }
+
+/* Quotes */
+.quotes { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 40px; }
+.quote { margin: 0; display: grid; gap: 14px; align-content: start; min-width: 0; }
+.quote blockquote { margin: 0; font: italic 400 1.12rem/1.6 var(--display); }
+.quote blockquote::before { content: "\201C"; display: block; font: 400 3rem/0.6 var(--display); color: var(--accent); margin-bottom: 10px; }
+.quote figcaption { font-size: 0.86rem; color: var(--ink-2); }
+.quote figcaption b { color: var(--ink); font-weight: 600; }
+@media (max-width: 900px) { .quotes { grid-template-columns: 1fr; gap: 32px; } }
+
+/* About */
+.about { display: grid; grid-template-columns: 280px minmax(0, 1fr); gap: 64px; align-items: start; }
+.portrait { margin: 0; display: grid; gap: 10px; }
+.portrait .ph { aspect-ratio: 4 / 5; max-width: 100%; background: linear-gradient(160deg, #1d2d48, #152238); display: grid; place-items: center; color: #e2c08a;
+  font: 700 2.4rem/1 var(--caps); letter-spacing: 0.12em; }
+.portrait figcaption { font-size: 0.8rem; color: var(--ink-2); }
+.prose { display: grid; gap: 1.1em; max-width: var(--measure); font-family: var(--serif); font-size: 1.1rem; }
+.honors { list-style: none; margin: 8px 0 0; padding: 0; display: grid; gap: 10px; font-family: var(--sans); font-size: 0.95rem; }
+.honors li { padding-left: 22px; position: relative; color: var(--ink-2); }
+.honors li::before { content: ""; position: absolute; left: 0; top: 0.6em; width: 10px; height: 10px; border: 2px solid var(--bronze); border-radius: 50%; }
+.honors b { color: var(--ink); font-weight: 600; }
+@media (max-width: 820px) { .about { grid-template-columns: 1fr; gap: 32px; } .portrait { max-width: 240px; } }
+
+/* Call band and footer */
+.band { background: var(--paper); color: var(--ink); }
+.band .wrap { padding-block: 64px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 28px; }
+.band h2 { max-width: 22ch; }
+.band .label { color: var(--accent); }
+.band-text { display: grid; gap: 12px; }
+.contact-line { display: grid; gap: 10px; justify-items: start; }
+.email { font: 400 clamp(1.2rem, 2.6vw, 1.6rem)/1.2 var(--display); color: var(--accent); user-select: all; word-break: break-all; }
+.copy { font: 700 0.72rem/1 var(--sans); letter-spacing: 0.12em; text-transform: uppercase; background: none; color: var(--ink);
+  border: 1px solid var(--bronze); padding: 10px 14px; cursor: pointer; }
+.copy:hover { background: var(--bronze); color: #fff; }
+.footer { background: #0f1a2d; color: #c4beb2; font-size: 0.84rem; }
+.footer .wrap { padding-block: 40px; display: grid; gap: 14px; }
+.footer .cols { display: flex; flex-wrap: wrap; gap: 10px 28px; }
+.footer a { text-decoration: none; }
+.footer b { color: #f3efe7; font: 700 0.9rem/1 var(--caps); letter-spacing: 0.1em; }
+</style>
+
+<div class="draft"><div class="wrap"><span><b>Preview</b> Not yet public. Every fact is drawn from the master CV.</span><a href="seal.html">Seal studies</a></div></div>
+
+<header class="masthead">
+  <div class="wrap">
+    <a class="wordmark" href="#top" aria-label="Tanvir Y. Goraya, Ph.D., home">
+      <img src="img/seal-small.webp" alt="" width="50" height="50">
+      <span><b>Tanvir Y. Goraya, Ph.D.</b><span>Mind Modelers · AI Advisory</span></span>
+    </a>
+    <nav class="nav wide" aria-label="Main">
+      <a href="#journey">Journey</a><a href="#agents">AI agents</a><a href="#core">Core idea</a><a href="#advisory">Advisory</a><a href="#record">Record</a><a href="#case">Case study</a><a href="#about">About</a><a href="#sources">Sources</a><a href="resume.html">Résumé</a><a href="#contact">Contact</a>
+    </nav>
+    <details class="menu"><summary>Menu</summary>
+      <nav class="nav" aria-label="Main, compact"><a href="#journey">Journey</a><a href="#agents">AI agents</a><a href="#core">Core idea</a><a href="#advisory">Advisory</a><a href="#record">Record</a><a href="#case">Case study</a><a href="#about">About</a><a href="#sources">Sources</a><a href="resume.html">Résumé</a><a href="#contact">Contact</a></nav>
+    </details>
+  </div>
+</header>
+
+<main id="top">
+  <section class="intro dark" aria-labelledby="name">
+    <div class="wrap">
+      <div class="seal-slot"><img src="img/seal.webp" alt="Seal of Tanvir Y. Goraya, Ph.D.: Pioneer, Inventor, Founder, Advisor. Mens et Machina, since 1987." width="440" height="440"></div>
+      <h1 id="name">Tanvir Y. Goraya, Ph.D.</h1>
+      <div class="inscription"><span>Pioneer</span><i></i><span>Professor</span><i></i><span>Inventor</span><i></i><span>Founder</span><i></i><span>Advisor</span></div>
+      <p class="lede">Machine learning, AI and robotics since 1985, on inventions of his own. Production AI for the U.S. Air Force, NASA and the Fortune 500 since 1987. Now building tacit knowledge assistants: AI that captures, and grows with, the judgment your best people cannot put into words.</p>
+      <div class="actions"><a class="btn solid" href="#contact">Start a conversation</a><a class="btn" href="resume.html">Read the résumé</a></div>
+    </div>
+  </section>
+
+  <section class="figures" aria-label="At a glance">
+    <div class="wrap">
+      <div><strong>130+</strong><span>Named client organizations, from Eli Lilly to NASA</span></div>
+      <div><strong>500+</strong><span>Customer installations of AI WARE's products</span></div>
+      <div><strong>80%</strong><span>Faster Air Force casting design, as Principal Investigator</span></div>
+      <div><strong>8,326,792</strong><span>U.S. patent, sole inventor (MindModeler)</span></div>
+    </div>
+  </section>
+
+  <section class="affil" aria-labelledby="affil-h">
+    <div class="wrap">
+      <p class="label" id="affil-h">Selected past and current affiliations</p>
+      <ul class="logos">
+        <li><a href="resume.html" title="Case Western Reserve University: faculty since 1987; Director, AI &amp; Big Data"><img src="img/logos/cwru.png" alt="Case Western Reserve University" width="64" height="64"></a></li>
+        <li><a href="resume.html" title="Harvard University: Adviser to the Director of Emerging Financial Paradigms, 1996–97"><img src="img/logos/harvard.png" alt="Harvard University" width="66" height="64"></a></li>
+        <li><a href="docs/usaf-rfts-success-story.pdf" title="U.S. Air Force: Project Head and Principal Investigator, Rapid Foundry Tooling System"><img src="img/logos/usaf.png" alt="U.S. Air Force" width="79" height="64"></a></li>
+        <li><a href="#nasa" title="NASA Lewis (Glenn) Research Center: Senior Scientific Adviser to the Chief Scientist, 1987–94"><img class="wide" src="img/logos/nasa.png" alt="NASA" width="144" height="40"></a></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section bg-paper" id="journey" aria-labelledby="journey-h">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="label">The journey</p>
+        <h2 id="journey-h">Forty years, one thread: model how experts think, then let machines act on it</h2>
+        <p>Machine learning, AI and robotics, built on his own inventions, from a card game in Ankara to the AI agents companies are deploying now.</p>
+      </div>
+      <ol class="journey">
+        <li><span class="yr">1985</span><b>Pishti Challenger</b><span>An AI that bluffs and calls bluffs, finished two years early at Middle East Technical University.</span></li>
+        <li><span class="yr">1987</span><b>Case Western Reserve</b><span>Runs the computer facility of an AI and robotics research center; teaches its graduate AI courses.</span></li>
+        <li><span class="yr">1989</span><b>AI WARE and the Air Force</b><span>Co-founds AI WARE; begins the Air Force's memory-driven design work at Wright-Patterson.</span></li>
+        <li><span class="yr">1990</span><b>NASA</b><span>An AI that chooses its own experiments, later a NASA SBIR success story.</span></li>
+        <li><span class="yr">1993</span><b>Ferro</b><span>AI color matching over telephone wire in 40 countries; a vice-president-equivalent rank in his twenties.</span></li>
+        <li><span class="yr">1995</span><b>Air Force Success Story</b><span>Casting-pattern design cut from two weeks to under two days.</span></li>
+        <li><span class="yr">1997</span><b>Acquisition</b><span>Computer Associates acquires AI WARE; MindModeler is first released.</span></li>
+        <li><span class="yr">1998</span><b>"Software That Can Think"</b><span>CA launches the technology worldwide as Neugents, neural agents.</span></li>
+        <li><span class="yr">2001</span><b>Ph.D.</b><span>Case Western Reserve; the research becomes MindModeler's patent.</span></li>
+        <li><span class="yr">2005</span><b>Theory Garden</b><span>Causal reasoning for everyone, with no equations to write.</span></li>
+        <li><span class="yr">2012</span><b>U.S. Patent 8,326,792</b><span>Capturing an expert's tacit judgment in a working model.</span></li>
+        <li><span class="yr">2014</span><b>Director, AI &amp; Big Data</b><span>Case Western Reserve University.</span></li>
+        <li class="now"><span class="yr">Now</span><b>Advising on AI agents</b><span>Helping leaders make today's agents dependable with what he has already built and proved.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section dark story" id="agents" aria-labelledby="agents-h">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="label">Why it matters now</p>
+        <h2 id="agents-h">What today's AI agents still need, he has already built</h2>
+        <p>Large language models made AI fluent. Making an agent dependable inside a real organization takes what fluency cannot supply: memory of experience, the judgment of seasoned people, a model of cause and effect, hard optimization, and the discipline to act in a plant or a network without breaking it. He has built each one, in production, starting four decades ago.</p>
+      </div>
+      <div class="needs">
+        <article><p class="need">Agents need memory</p><h3>Episodic memory of real experience</h3><p>In 1990 the Air Force's design system recalled how pattern makers had handled similar parts before proposing a design. MindModeler stores every episode of an expert's work and links it to its causes.</p><p class="proof">Proof: <i>Design News</i>, 1990 · database tuned from 6 hours to 32 minutes</p><p class="today-tag">Today: agent memory; retrieval-augmented generation</p></article>
+        <article><p class="need">Agents need judgment</p><h3>An expert's tacit knowledge, captured</h3><p>An LLM knows the internet's average answer, not what your best engineer knows and cannot put into words. His patented method turns that judgment into a working model an agent can be grounded on.</p><p class="proof">Proof: U.S. Patent 8,326,792 · <a href="#core">74 of 74 database experts</a> said it would help</p><p class="today-tag">Today: grounding agents in proprietary expertise</p></article>
+        <article><p class="need">Agents need cause and effect</p><h3>Causal models people can build</h3><p>Language models learn correlations. Theory Garden and MindModeler let people draw what causes what, including loops that feed back, and simulate the consequences before acting.</p><p class="proof">Proof: Case Western feature with Prof. Boland · patent application on cause-model simulation</p><p class="today-tag">Today: world models; causal AI</p></article>
+        <article><p class="need">Agents need to compute, not guess</p><h3>Optimization under hard constraints</h3><p>LLMs are unreliable at arithmetic and constraint satisfaction, so agents call solvers. His solvers found formulations experts had ruled out and cracked problems that brute force could not finish.</p><p class="proof">Proof: Glidden, 96% less monomer · NASA, under 9 seconds instead of 28 billion years</p><p class="today-tag">Today: tool use; solvers as agent tools</p></article>
+        <article><p class="need">Agents need to learn from little data</p><h3>Sparse data, and the right next question</h3><p>CAD/Chem built accurate models from a few dozen lab batches. His NASA method chose which experiment to run next to learn the most.</p><p class="proof">Proof: NASA SBIR success story · drug dissolution predicted within 0.8%</p><p class="today-tag">Today: active learning; self-driving labs</p></article>
+        <article><p class="need">Agents need to act safely</p><h3>Autonomy with a human in the loop</h3><p>Process Advisor ran inside industrial controllers; Neugents predicted outages before they happened; the Air Force system was "self directing" yet built to augment people, not replace them.</p><p class="proof">Proof: Elsag Bailey controllers · IndustryWeek Technology of the Year, 1998</p><p class="today-tag">Today: agentic AI; AIOps; physical AI</p></article>
+      </div>
+      <div class="stack" aria-label="How he would build a dependable agent today">
+        <p class="label">A dependable agent, built his way</p>
+        <ol>
+          <li><b>Conversation</b><span>A large language model talks with people and drafts the work.</span></li>
+          <li><b>Judgment and memory</b><span>The expert's semantic and episodic models, captured with the patented method.</span></li>
+          <li><b>Cause and effect</b><span>Causal simulation tests a plan before anyone acts on it.</span></li>
+          <li><b>Computation</b><span>Optimizers and predictive models do the math the language model cannot.</span></li>
+          <li><b>Action, with oversight</b><span>Connections to plant, network and business systems, with the expert approving what matters.</span></li>
+        </ol>
+        <p class="stack-cta">This is what the <a href="#advisory">Expert Knowledge Capture engagement</a> delivers: the expert's model, ready to ground your agents.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-paper" id="core" aria-labelledby="core-h">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="label">The core idea · Ph.D. research, 2001, and U.S. Patent 8,326,792</p>
+        <h2 id="core-h">What today's AI is missing: gut feel, know-how and judgment</h2>
+        <p>Language models learn from what people have written down. The most valuable knowledge in an organization was never written down, because the people who hold it cannot put it into words. His life's work is the method that captures it anyway.</p>
+      </div>
+
+      <div class="origin">
+        <div class="origin-story">
+          <p class="kicker">How it began</p>
+          <h3>A B-52 brake pedal, and craftsmen who could not say what they knew</h3>
+          <p>At the Air Force, his team set out to replicate the manufacture of a B-52 brake pedal. The master craftsmen helped willingly, with their time, their manuals and their answers. What they could not hand over was the tacit knowledge that made their parts come out right. Without it, the work could not be reproduced.</p>
+          <p>The software of the day failed the same way. He tried six expert-system shells, among them NASA's CLIPS, its fuzzy-logic extension and NEXPERT Object. Interviews, diaries and LISP programs captured little more than the rules already in the books. <q>Nothing has worked very well in capturing and computerizing the experts' skills,</q> his dissertation records.</p>
+          <p>The question took him out of computer engineering and into philosophy, back to Plato's <i>Meno</i>, where Socrates draws geometry out of a boy who was never taught it, and confronts the riddle of how anyone can look for knowledge they do not know they have. At NASA, Laszlo Berke, Ph.D., chief scientist for structures, put the same riddle in engineering terms: <q>There are experts who can look at a mechanical structure or its design and pronounce whether it is an optimal design or not. How can we capture and replicate that expertise?</q></p>
+          <p>His answer became his Ph.D. at Case Western Reserve in 2001, under Professors Richard Boland, Yoh-Han Pao, Miles Kennedy and Fred Collopy. He filed for the patent the same year, on April 30, 2001; U.S. Patent 8,326,792, "Adaptive Dynamic Personal Modeling System and Method," was granted in 2012. Its first claim protects the move at the heart of the method: the expert sees the model’s answer, enters the answer it should have given, and the model rewrites its own cause-and-effect values to match.</p>
+        </div>
+        <aside class="origin-quotes">
+          <figure><blockquote>We can know more than we can tell.</blockquote><figcaption>Michael Polanyi, 1966, quoted in the dissertation</figcaption></figure>
+          <figure><blockquote>The decision-maker is not necessarily aware of how he arrives at a particular decision and of his own tacit knowledge.</blockquote><figcaption>Goraya, dissertation, 2001</figcaption></figure>
+          <figure class="scene"><figcaption>From his early research proposal, "Knowledge Matrix" <span class="fill">[year]</span></figcaption><p>Its domain was rigging in aluminum sand casting, the Air Force craft. Its notes name the source: "Let the person be aware of their theories. They may not know what they know. E.g. Plato elicited geometric knowledge from a slave boy." It also planned for the tool to run "standalone, as an agent or as an embeddable component."</p><p class="scene-today">An agent grounded in an expert's judgment, proposed decades before agents were the word of the year.</p></figure>
+          <figure class="scene"><figcaption>From the dissertation · a Fortune 500 formulation expert retires</figcaption><p>Three man-years built a rule-based expert system that "failed to generate acceptable custom formulations." His laboratory notebooks were digitized, but that did "little more than to provide faster search capability."</p><p class="scene-today">That is what retrieval over documents does today. It finds what was written. It cannot find what never was.</p></figure>
+        </aside>
+      </div>
+
+      <div class="void-block">
+        <div>
+          <p class="kicker">The gap he set out to fill</p>
+          <h3>A void among the decision technologies</h3>
+          <p>Every established method assumed the knowledge could be stated as data, probabilities or rules. None handled the knowledge experts act on but cannot state. His dissertation drew it as a missing piece, and set out to "map cognition onto computation, and computation back onto cognition."</p>
+        </div>
+        <div class="void" aria-label="Decision technologies arranged as puzzle pieces, with the missing piece labeled void">
+          <span>Rule-based expert systems</span><span>Fuzzy logic</span><span>Statistics</span><span>Probability</span><span>Bayesian networks</span><span>Neural networks</span><span>Optimization</span><span class="hole">The void: tacit knowledge, judgment, gut feel</span><span>Clustering</span><span>Case-based reasoning</span><span>Judgmental bootstrapping</span><span>Analytic hierarchy process</span><span>Systems dynamics</span><span>Decision trees</span><span>Evolutionary programming</span><span>Self-organizing maps</span>
+        </div>
+      </div>
+
+      <div class="says-does">
+        <p class="kicker">The invention</p>
+        <h3>Two models of one expert: what they say, and what they do</h3>
+        <div class="sd-grid">
+          <article class="sd says"><p class="sd-tag">The semantic model</p><h4>What the expert says</h4><p>In conversation the expert names the factors that matter and scores how each cause moves each effect. The result is a working model of the rules and procedures the expert would recite.</p><p class="sd-today">Today: the written policy, the system prompt, the knowledge graph</p></article>
+          <div class="sd-vs" aria-hidden="true">vs.</div>
+          <article class="sd does"><p class="sd-tag">The episodic model</p><h4>What the expert actually did</h4><p>Ten to twenty real episodes from memory, situations and outcomes, train a neural model of how the expert really decides, gut feel included.</p><p class="sd-today">Today: agent memory, few-shot examples, case-based reasoning</p></article>
+        </div>
+        <p class="sd-note">The patent also covers many experts contributing to one shared model, an "organizational memory." Laid side by side, the two reveal the gap between the rules people profess and the judgment they practice. The expert sees it, corrects the model by dragging its answers to where they should be, and the model learns. Nobody else stands between the expert and the model, and the expert owns it.</p>
+        <div class="sd-shots">
+          <figure class="screen"><img src="img/adpme-casting-model.webp" alt="ADPME screen: an Air Force casting artisan's semantic model, rigging choices such as sprue, basin and pouring cup against effects such as turbulence, vortex formation, energy losses and air pockets, with a push-and-pull adjustment window" width="1024" height="744"><figcaption>A casting artisan's knowledge as a working model: rigging choices against turbulence, energy losses and air pockets. Left: the expert pushes or pulls an answer to correct it.</figcaption></figure>
+          <figure class="screen"><img src="img/adpme-emodel.webp" alt="ADPME episodic memory screen: stimuli such as memory size and partitioned tables, ten episodes, and responses time, space and administrator load" width="800" height="387"><figcaption>The episodic model of a database tuner: ten real episodes, from situation to result.</figcaption></figure>
+        </div>
+      </div>
+
+      <div class="proof-block">
+        <p class="kicker">The evidence</p>
+        <h3>What it did for experts who could not explain themselves</h3>
+        <div class="stats">
+          <div><strong>&lt; 1 hour</strong><span>to build each expert's two models; a rule-based system for another expert took three man-years and failed</span></div>
+          <div><strong>74 of 74</strong><span>database professionals said it would help them; 70 said no existing tool could</span></div>
+          <div><strong>9×</strong><span>faster across 13 production processes, 73 minutes down to 8</span></div>
+          <div><strong>90 s → 1 s</strong><span>for an interactive query, on another real problem</span></div>
+        </div>
+        <div class="proof-story">
+          <p><b>The tuner who discovered herself.</b> Three award-winning database tuners from a Fortune 50 consulting firm built their models in under an hour each. The first had always said she tuned mainly by fixing bad SQL, the textbook approach. Her own models contained almost nothing about SQL, and she could not recall a single episode where she had relied on it. She was, the dissertation concludes, a contrarian, and the tool had given her "a window into her cognitive working style." She had simply never known how she really worked.</p>
+          <p><b>Proved, not assumed.</b> The episodic model learns the parity problem (XOR), the case Minsky and Papert used to show a single-layer perceptron's limits. Its neural predictions matched the semantic model's statistics almost exactly (mean −4.08 against −4.07), showing it adds no spurious complexity, and its optimizers showed a reasonable ability to avoid getting trapped in local optima.</p>
+          <p><b>First of its kind.</b> In 1989 at NASA Lewis, his search shows, he became the first to apply neural networks to learning the judgment of structures experts. At NASA, near-optimal answers to classic benchmark problems projected at 8.6 × 10<sup>50</sup> and 9.4 × 10<sup>98</sup> years of computing came in 33 and 109 minutes.</p>
+        </div>
+        <div class="tune-wrap">
+          <table class="tune wide">
+            <caption>Real-life wicked tuning problem no. 1: thirteen production processes, before and after (dissertation, Table 11)</caption>
+            <thead><tr><th scope="col">Process</th><th scope="col">Elements</th><th scope="col">Before</th><th scope="col">After</th><th scope="col">Faster</th></tr></thead>
+            <tbody>
+              <tr><td>Xq1</td><td>14,651</td><td>17 min 15 s</td><td>1 min 48 s</td><td>9.6×</td></tr>
+              <tr><td>Xq2</td><td>1,359</td><td>1 min 40 s</td><td>10 s</td><td>10×</td></tr>
+              <tr><td>Xq3</td><td>7,445</td><td>7 min 47 s</td><td>41 s</td><td>11.4×</td></tr>
+              <tr><td>Xq4</td><td>808</td><td>55 s</td><td>5 s</td><td>11×</td></tr>
+              <tr><td>Xq5</td><td>924</td><td>58 s</td><td>6 s</td><td>9.7×</td></tr>
+              <tr><td>Xq6</td><td>13</td><td>6 s</td><td>2 s</td><td>3×</td></tr>
+              <tr><td>Xq7</td><td>810</td><td>52 s</td><td>9 s</td><td>5.8×</td></tr>
+              <tr><td>Xq8</td><td>437</td><td>32 s</td><td>4 s</td><td>8×</td></tr>
+              <tr><td>Xq9</td><td>613</td><td>45 s</td><td>6 s</td><td>7.5×</td></tr>
+              <tr><td>Xq10</td><td>640</td><td>45 s</td><td>6 s</td><td>7.5×</td></tr>
+              <tr><td>Xq11</td><td>5,000</td><td>4 min 49 s</td><td>34 s</td><td>8.5×</td></tr>
+              <tr><td>Xq12</td><td>6,000</td><td>6 min 8 s</td><td>53 s</td><td>6.9×</td></tr>
+              <tr><td>Xq13</td><td>31,000</td><td>30 min 54 s</td><td>3 min 26 s</td><td>9×</td></tr>
+            </tbody>
+            <tfoot><tr><td>Total</td><td></td><td>73 min 26 s</td><td>8 min 10 s</td><td>9×</td></tr></tfoot>
+          </table>
+        </div>
+      </div>
+
+      <div class="compare-block">
+        <p class="kicker">Why nothing else worked</p>
+        <h3>Rule-based systems, neural networks, and his environment, side by side</h3>
+        <div class="cmp-wrap">
+          <table class="cmp">
+            <thead><tr><th scope="col"></th><th scope="col">Rule-based expert system</th><th scope="col">Neural network alone</th><th scope="col" class="mine">His environment (ADPME, MindModeler)</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">Captures judgment</th><td>Only rules the expert can state</td><td>No human judgment</td><td class="mine">Stated rules and lived judgment</td></tr>
+              <tr><th scope="row">Who builds it</th><td>A knowledge engineer</td><td>A machine-learning specialist</td><td class="mine">The expert, unaided</td></tr>
+              <tr><th scope="row">Who owns it</th><td>Not the expert</td><td>Not the expert</td><td class="mine">The expert</td></tr>
+              <tr><th scope="row">Bias added by others</th><td>Yes, through framing and coding</td><td>Not addressed</td><td class="mine">None; no intermediary</td></tr>
+              <tr><th scope="row">Handles in-between cases</th><td>No: crisp rules either fire or not</td><td>Yes</td><td class="mine">Yes, fuzzy and crisp</td></tr>
+              <tr><th scope="row">Goal seeking under constraints</th><td>No</td><td>Not by itself</td><td class="mine">Yes, weighted and constrained</td></tr>
+              <tr><th scope="row">Changes as the expert grows</th><td>Expensive rework</td><td>Retraining</td><td class="mine">Drag a result; the model adapts</td></tr>
+              <tr><th scope="row">Explains itself</th><td>Readable rules, but no judgment</td><td>A black box</td><td class="mine">Visual what-if and trends</td></tr>
+              <tr><th scope="row">Time to build</th><td>Months to years</td><td>Needs many observations</td><td class="mine">Under an hour, from 10–20 episodes</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="cmp-src">Adapted from the dissertation's Tables 3 and 4.</p>
+      </div>
+
+      <div class="map-block">
+        <p class="kicker">In today's terms</p>
+        <h3>The 2001 design, mapped onto today's AI</h3>
+        <div class="map-wrap">
+          <table class="map2">
+            <thead><tr><th scope="col">In the dissertation (2001)</th><th scope="col">What it does</th><th scope="col">Today's name</th></tr></thead>
+            <tbody>
+              <tr><td>Semantic model vs. episodic model</td><td>Separates what experts say from what they do, and shows the gap</td><td>Stated vs. revealed behavior; policy vs. practice in agent evaluation</td></tr>
+              <tr><td>Recall by weighted, partial or distorted cues</td><td>"What have I seen before that resembles this situation?"</td><td>Similarity search; retrieval-augmented generation</td></tr>
+              <tr><td>Cluster the episodes, then a neural model per cluster</td><td>Smoother, more reliable learning from sparse data</td><td>Mixture of experts</td></tr>
+              <tr><td>Adaptive conjoint feedback (patent claim 1)</td><td>The expert drags a wrong answer to the right value, with a confidence level, and the model learns</td><td>Learning from human feedback; human-in-the-loop correction</td></tr>
+              <tr><td>Many experts, one shared model</td><td>An "organizational memory" built from several people’s judgment</td><td>Shared agent memory; enterprise knowledge layer</td></tr>
+              <tr><td>Expert as own knowledge engineer</td><td>A model in under an hour, with no programmer</td><td>No-code AI; few-shot personalization</td></tr>
+              <tr><td>Personal model, owned by the expert</td><td>Grows and adapts as the expert does</td><td>Digital twin of an expert; personal AI; data sovereignty</td></tr>
+              <tr><td>Optimizers that learn from their own searches</td><td>Tune their parameters and escape local optima</td><td>Learned optimizers; automatic hyperparameter tuning</td></tr>
+              <tr><td>Visual cognitive feedback</td><td>Colored 3-D surfaces, trends and what-if views</td><td>Explainable AI; interpretability</td></tr>
+              <tr><td>Hermeneutic tacking back and forth</td><td>Expert and model refine each other in a loop</td><td>Human–AI co-reasoning; reflection loops</td></tr>
+              <tr><td>Moderate-resolution models</td><td>Useful beats perfect; small models solve novel problems</td><td>Small, specialized models</td></tr>
+              <tr><td>Mapping an intractable problem to an energy function</td><td>Near-optimal answers in polynomial time</td><td>Neural combinatorial optimization</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="core-cta dark">
+        <p><b>What this means for your AI program.</b> A language model brings fluency. Your experts bring the judgment that makes the answer right. This method puts the second inside the first: each expert's model, built in hours, owned by the expert, ready to ground an agent and to stay when the expert retires.</p>
+        <a class="btn solid" href="#advisory">See the Expert Knowledge Capture engagement</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="advisory" aria-labelledby="advisory-h">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="label">Advisory</p>
+        <h2 id="advisory-h">Where decades of deployed AI meet this year's decisions</h2>
+        <p>Engagements run from a single strategy session to a seat on an advisory board. Each draws on systems that were built, shipped and paid for.</p>
+      </div>
+      <div class="practices">
+        <div class="practice"><small>For boards &amp; CEOs</small><h3>AI strategy</h3><p>Separate hype from value, set priorities and build a roadmap your organization can actually execute.</p></div>
+        <div class="practice"><small>For retiring expertise</small><h3>Tacit knowledge assistants</h3><p>Turn the judgment of your most senior people into working models that ground your AI agents, grow with the expert, and stay when the expert retires.</p></div>
+        <div class="practice"><small>For hard problems</small><h3>Optimization &amp; decision intelligence</h3><p>Formulation, process control, scheduling and design problems that conventional software cannot solve.</p></div>
+        <div class="practice"><small>For industry</small><h3>Physical AI</h3><p>AI in industrial controls, robotics and mechatronics, from foundry automation to combustion optimization.</p></div>
+        <div class="practice"><small>For investors</small><h3>Technology due diligence</h3><p>An assessment of AI ventures and acquisitions from someone who co-founded a company that was acquired.</p></div>
+        <div class="practice"><small>For universities</small><h3>Research centers &amp; programs</h3><p>Building AI centers and industry–defense–academia partnerships that last.</p></div>
+      </div>
+      <div class="offer">
+        <div class="offer-head">
+          <p class="label">A defined engagement</p>
+          <h3>Expert Knowledge Capture, in four weeks</h3>
+          <p>Today's AI agents are fluent, but they know nothing of your senior people's judgment. A model of an expert's causes, effects and real episodes is the structured expertise an agent can be grounded on, and it stays with the organization when the expert retires. This is the patented MindModeler method, delivered as a fixed four-week proof of concept.</p>
+        </div>
+        <ol class="weeks">
+          <li><b>Week 1</b><span>Interview the expert. Build the semantic model: what they control, what they cannot, and how each factor moves the others.</span></li>
+          <li><b>Week 2</b><span>The expert authenticates the model and starts using it for "what if" questions.</span></li>
+          <li><b>Week 3</b><span>Build the episodic model from real episodes: the times it went right, and wrong.</span></li>
+          <li><b>Week 4</b><span>Validate both models with the expert. Report findings and the path to training, procedures and AI tools.</span></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="record" aria-labelledby="record-h">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="label">Selected record</p>
+        <h2 id="record-h">Systems that left the lab</h2>
+      </div>
+      <ul class="record">
+        <li><div><span class="case">Pishti Challenger: where it began</span><span class="cite">Graduation project · Middle East Technical University · 1985, two years early</span></div>
+          <p>An AI opponent for a bluffing card game like poker. Minimax search with alpha-beta pruning chose its plays; a model of the human across the table predicted and optimized when to bluff and when to call. Every system below grew from the same three ideas: learn a model, predict, optimize.</p></li>
+        <li><div><span class="case">Rapid Foundry Tooling System</span><span class="cite"><a href="#airforce">the full story</a> · U.S. Air Force Wright Laboratory · Principal Investigator · <a href="docs/usaf-rfts-success-story.pdf">Success Story, 1995</a> · <a href="https://ngstage.aviationweek.com/sand-dollars">Aviation Week, 1995</a></span></div>
+          <p>Automated the design of sand-casting patterns for aircraft, missile and spacecraft parts, cutting the time from two weeks to under two days, a reduction of up to <span class="num">80%</span>. In use at the San Antonio Air Logistics Center.</p></li>
+        <li><div><span class="case">AI WARE, Inc.</span><span class="cite">Co-founder; Director, CIO &amp; CTO · <a href="https://www.01net.it/?p=1170">Acquired by Computer Associates, 1997</a></span></div>
+          <p>Co-founded with Prof. Yoh-Han Pao on his TG-Engine technology. Its products reached <span class="num">500+</span> customer installations, including Eli Lilly, Merck, Pfizer, 3M, Dow, DuPont and Procter &amp; Gamble, and won R&amp;D Magazine's 1994 R&amp;D Elite Award. CA relaunched the technology as CA Neugents.</p></li>
+        <li><div><span class="case">NeuSight and Pegasus Technologies</span><span class="cite">Combustion optimization for coal-fired power plants · spun off from AI WARE</span></div>
+          <p>He named NeuSight and spun off Pegasus Technologies to take it to the power industry, cutting NO<sub>x</sub> and CO emissions. Shares were sold: KFx Inc. took a controlling interest in 1998, and Computer Associates later acquired AI WARE's holding.</p></li>
+        <li><div><span class="case">CAD/Chem formulation system</span><span class="cite">AI WARE flagship · application notes, 1998 · cover story, Scientific Computing &amp; Automation, 1992</span></div>
+          <p>Learned how ingredients become product properties from sparse, noisy lab data, then searched for the best recipe under cost and process constraints. At Glidden it found an optimum outside the chemist's expected range that cut an expensive monomer from 22% to 0.9%, a <span class="num">96%</span> reduction, in about an hour. In drug-dissolution tests its held-out predictions came within 0.8%.</p></li>
+        <li><div><span class="case">Process Advisor: a digital assistant for operators</span><span class="cite">AI WARE · NIST-supervised die-casting project · Elsag Bailey technology partner</span></div>
+          <p>Built nonlinear process models from plant data and kept updating them as equipment aged. On some 1,200 die castings it flagged <span class="num">83–90%</span> of defective parts in held-out tests. Its models ran inside Elsag Bailey controllers for real-time estimation and optimization.</p></li>
+        <li><div><span class="case">CA Neugents: "Software That Can Think"</span><span class="cite">Computer Associates, 1998–99 · IndustryWeek Technology of the Year, 1998 · <a href="#neugents">the full story</a></span></div>
+          <p>Computer Associates relaunched the technology worldwide as Neugents, short for neural agents, and built it into Unicenter TNG, its flagship, to predict server, database, application and network outages before they happened.</p></li>
+
+        <li><div><span class="case">NASA: structures and experiments by AI</span><span class="cite"><a href="#nasa">the full story</a> · NASA Lewis (Glenn) Research Center · Senior Scientific Adviser to the Chief Scientist · Principal Investigator</span></div>
+          <p>Combined neural networks and genetic algorithms on a CRAY X-MP to cut structural design time from months to hours.</p></li>
+        <li><div><span class="case">MindModeler</span><span class="cite"><a href="https://patents.google.com/patent/US8326792B2/en">U.S. Patent 8,326,792</a> · sole inventor · offered through Ernst &amp; Young's Intellinex</span></div>
+          <p>Captures an expert's tacit judgment in a working model in days, with no team of programmers. Applied to emissions trade-offs (SO₂, NOₓ, CO) at one of the world's largest mining operations.</p></li>
+        <li><div><span class="case">Ferro: color matched across 40 countries, over telephone wire</span><span class="cite">Senior Scientist Level III, a vice-president-equivalent rank · Ferro Corporation, Fortune 300 · 1993–95 · <a href="#ferro">the full story</a></span></div>
+          <p>Fuzzy logic and neural networks in his lab identified paint pigments and process conditions from spectrophotometer readings sent over twisted-pair telephone lines, and sent recipes back to automotive customers in <span class="num">40</span> countries. He also captured a retiring scientist's 50 years of tacit design judgment in a working model.</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section bg-paper" id="nasa" aria-labelledby="nasa-h">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="label">Case in point · NASA Lewis (Glenn) Research Center, 1987–1994</p>
+        <h2 id="nasa-h">An AI that chose its own experiments</h2>
+        <p>Every experiment in a design program costs time and money, so the question is which ones to run. In 1990 his work for NASA answered it with AI, and NASA later listed the result among its SBIR success stories. His one-on-one adviser and NASA contact throughout was Laszlo Berke, Ph.D., NASA Lewis's chief scientist for structures.</p>
+      </div>
+      <div class="split">
+        <div class="prose-col">
+          <figure class="pull nasa-pull"><blockquote>A general purpose computational method using artificial intelligence that selects experiments required to develop a design model.</blockquote><figcaption>NASA, <a href="https://ntrs.nasa.gov/api/citations/20000018018/downloads/20000018018.pdf"><i>SBIR Success Stories at NASA Glenn Research Center</i></a>, NASA/TM-1999-209649 · AI WARE, Inc., Design of Experiments Module, 1990 Phase II · NASA contact: Dr. Laszlo Berke</figcaption></figure>
+          <ul class="facts">
+            <li><b>Used inside NASA</b> in Glenn Research Center's Structural Analysis program, and at Wright-Patterson Air Force Base for composites.</li>
+            <li><b>Sold to industry</b> as part of CAD/Chem, to customers including Eli Lilly, S.C. Johnson Wax, B.F. Goodrich, Dow Chemical and Glidden.</li>
+            <li><b>Recognized</b> by the scientific community, NASA's report says, as "a very useful contribution" for redesigning experiments and cutting their cost.</li>
+            <li><b>Structures that design themselves.</b> He paired neural networks with genetic algorithms on Cray supercomputers to optimize both aircraft and Space Station structures under bending, buckling and displacement limits, choosing each member's material and cross-section, choices NASA's engineers had been making by judgment. The work included structural optimization for the forward-swept wing of the X-29A, the experimental fighter flown by NASA, DARPA and the Air Force (released under FOIA) <span class="fill">[NASA report number]</span>. He also worked on energy forecasting and optimization for the Space Station.</li>
+            <li><b>The payoff</b>, in the words of NASA's chief scientist: <q>Solved computationally impossible problems in under 9 seconds on a Sun 3, which would have required more than 28 billion years with all DoD Cray supercomputers dedicated.</q> <span class="fill">[Source: letter, report or talk, and year]</span></li>
+          </ul>
+        </div>
+        <figure class="screen small-screen">
+          <img src="img/cadchem-shot.webp" alt="CAD/Chem for Windows: a trained neural-network model shown as a contour plot and a 3D response surface" width="490" height="417">
+          <figcaption>CAD/Chem for Windows, the product that carried the NASA-funded method to industry.</figcaption>
+        </figure>
+      </div>
+      <p class="today-line"><b>Today:</b> letting a model pick the most informative next experiment is called active learning or Bayesian optimization, and it is the engine of today's self-driving laboratories.</p>
+    </div>
+  </section>
+
+  <section class="section dark story" id="airforce" aria-labelledby="airforce-h">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="label">Case in point · U.S. Air Force Wright Laboratory, 1989–1998</p>
+        <h2 id="airforce-h">A memory for a craft that lived in pattern makers' hands</h2>
+        <p>A cast metal part starts as a pattern, and good patterns took years of apprenticeship to learn. When a pattern maker retired, that experience went too. His Air Force work gave the craft a memory.</p>
+      </div>
+      <div class="af-grid">
+        <figure class="af-hero">
+          <img src="img/rfts-four.webp" alt="Rapid Foundry Tooling System screens: a casting pattern built up step by step with cope, drag, parting line and core" width="1100" height="891">
+          <figcaption>Rapid Foundry Tooling System: a part built up into its casting pattern, with cope, drag, parting line and core.</figcaption>
+        </figure>
+        <div class="af-text">
+          <p class="af-press"><span>Design News · November 19, 1990</span>The Air Force's Rapid Design System at Wright-Patterson, the program his work grew from, remembered past designs. The magazine called that "episodal associative memory" <q>perhaps the most advanced, ambitious, and unique aspect of RDS.</q> The Air Force's technical lead, Maj. Steven LeClair, Ph.D.: <q>The RDS system is self directing. The system augments humans, and, in many cases, makes decisions on its own based on rules regarding producibility, inspectability, and cost.</q></p>
+          <p>As Project Head and Principal Investigator, he led its successor, the Rapid Foundry Tooling System, which worked in four steps:</p>
+          <ol class="af-steps">
+            <li><b>Model</b><span>A feature-based design environment turns the blueprint into a solid model of the pattern.</span></li>
+            <li><b>Remember</b><span>An episodic associative memory recalls how pattern makers handled similar parts before.</span></li>
+            <li><b>Design</b><span>Expert casting knowledge adds the gates, risers, chills and parting lines.</span></li>
+            <li><b>Print</b><span>Stereolithography produces a physical prototype of the pattern.</span></li>
+          </ol>
+          <p>The result became an Air Force Success Story: pattern design cut from two weeks to under two days, up to <span class="num">80%</span>, for complex castings in Air Force aircraft, missiles and spacecraft. It went into use at the San Antonio Air Logistics Center, and a civilian version was developed with a consortium of metal foundries at Youngstown State University.</p>
+          <p>Parts designed with it went into Air Force systems deployed in war theaters <span class="fill">[which theaters and systems; FOIA reference]</span>. Its stereolithography prototyping supported the B-52 brake-pedal redesign at San Antonio: a design flaw was caught before manufacture, saving about $516,000 and cutting prototype time by 80%. Its memory-driven, feature-based design led to CATIA <span class="fill">[how: licensing, people or published lineage]</span>.</p>
+        </div>
+      </div>
+      <div class="af-thumbs">
+        <figure><img src="img/rfts-arm.webp" alt="RFTS casting interface: a part with its parting line marked" width="900" height="679"><figcaption>Parting line found automatically</figcaption></figure>
+        <figure><img src="img/rfts-arm-cope.webp" alt="RFTS casting interface: the same part with cope and drag checked" width="900" height="684"><figcaption>Cope and drag checked</figcaption></figure>
+        <figure><img src="img/fbd-cover.webp" alt="Memory-driven feature-based design: features linked to design intent, analysis, process and disposal evaluation through memory" width="900" height="663"><figcaption>Memory-driven, feature-based design</figcaption></figure>
+      </div>
+      <p class="af-team">Team: Air Force Wright Laboratory (lead), Case Western Reserve University, AI WARE (product and support), Wisdom Systems, XOX Corporation, the San Antonio Air Logistics Center and the Cleveland Advanced Manufacturing Program, with basic research funded by the Air Force Office of Scientific Research.</p>
+      <div class="story-now">
+        <p class="label">What it is called today</p>
+        <dl>
+          <div><dt>Recalling how experts handled similar cases</dt><dd>Retrieval-augmented generation (RAG)</dd></div>
+          <div><dt>"Self directing … makes decisions on its own"</dt><dd>Agentic AI</dd></div>
+          <div><dt>From blueprint to printed prototype</dt><dd>Generative design and 3D printing</dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section class="section ferro" id="ferro" aria-labelledby="ferro-h">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="label">Case in point · Ferro Corporation, 1993–1995</p>
+        <h2 id="ferro-h">Two kinds of expertise no one could write down</h2>
+        <p>Ferro, a Fortune 300 maker of colors, coatings and specialty materials, depended on knowledge that lived in a few people's eyes and instincts. He turned both kinds into working AI. The results made him a Senior Scientist Level III, a rank equivalent to vice president, while he was still in his twenties.</p>
+      </div>
+      <div class="ferro-grid">
+        <article class="ferro-card">
+          <p class="kicker">Global color matching</p>
+          <h3>A paint recipe, sent around the world over telephone wire</h3>
+          <p>Matching an automotive paint color means working out exactly which pigments, under which processing conditions, will reproduce it. That was a job for specialists with decades of experience, studying samples under special lights.</p>
+          <p>He replaced the trained eye with a measurement and a model. An instrument at the customer's plant read the color. The readings traveled over ordinary twisted-pair telephone lines to his lab, where fuzzy logic and trained neural networks identified the pigments and processing conditions. The recipe went back around the globe on the same lines, to automotive customers in <span class="num">40</span> countries.</p>
+          <ol class="flow" aria-label="How the color-matching service worked">
+            <li><b>Read</b><span>A spectrophotometer measures the color at the customer's plant</span></li>
+            <li><b>Send</b><span>The signal crosses twisted-pair telephone lines</span></li>
+            <li><b>Infer</b><span>Fuzzy logic and neural networks identify pigments and process conditions</span></li>
+            <li><b>Return</b><span>The recipe goes back down the same wire</span></li>
+          </ol>
+          <p class="today"><b>Today:</b> AI delivered as a remote service, sensor to model and back, more than a decade before the cloud.</p>
+        </article>
+        <article class="ferro-card">
+          <p class="kicker">Expert knowledge capture</p>
+          <h3>The scientist who knew more than he could say</h3>
+          <p>A Ph.D. scientist with 50 years of experience was about to retire. He could look at a design and tell what would work, what would not, and which sensitive parameters to change. Asked how he knew, he recited the textbook. His real expertise was tacit, and it was about to walk out the door.</p>
+          <p>He captured that judgment in a working model that kept the expert's know-how in the company after he left. The project succeeded.</p>
+          <p class="today"><b>Today:</b> capturing tacit expertise to ground AI agents, the problem his MindModeler patent was later built to solve.</p>
+        </article>
+      </div>
+      <p class="ferro-note">Also at Ferro: solved an NP-complete simulation and scheduling problem.</p>
+    </div>
+  </section>
+
+  <section class="section bg-paper" id="aiware" aria-labelledby="aiware-h">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="label">Case in point · AI WARE, 1989–1997</p>
+        <h2 id="aiware-h">One engine, three advisors</h2>
+        <p>After CAD/Chem proved his neural-network and optimization engine on chemical recipes, AI WARE launched it twice more: Process Advisor for plants, and an advisor for finance and business. Each learned from history, predicted what comes next, searched for the best action, and corrected itself as new data arrived.</p>
+      </div>
+      <div class="trio">
+        <article><p class="kicker">For chemists</p><h3>CAD/Chem</h3><p>Formulation modeling and optimization: learns how ingredients become properties, then finds the best recipe under cost and process constraints.</p></article>
+        <article><p class="kicker">For plants</p><h3>Process Advisor</h3><p>Builds time-series models from historical and live plant data, finds the best setpoints and sends them to the controls, and "dynamically updates the model with on-line, real time data."</p></article>
+        <article><p class="kicker">For finance and management</p><h3>Business Advisor</h3><p>Financial forecasting, investment optimization, risk and credit assessment, fraud detection and demand forecasting. Neural networks build "dynamic time series models"; the GESA optimizer seeks the best strategy; models update "as new data becomes available."</p></article>
+      </div>
+      <div class="split">
+        <figure class="screen"><img src="img/business-advisor-ca-stock.webp" alt="AI WARE chart: Computer Associates share price, actual close versus Business Advisor's predicted close, trained October 1992 to August 1994 and predicting August 1994 to September 1995" width="1000" height="719"><figcaption>AI WARE's own demonstration: Computer Associates' share price, actual (blue) against predicted (green).</figcaption></figure>
+        <div class="prose-col">
+          <p class="big-claim">It learned a stock, then called the next year.</p>
+          <p class="plain">Business Advisor learned the price changes of Computer Associates' shares from October 1992 to August 1994. Its predictions then tracked the stock through September 1995, in AI WARE's words, "accurately predicted future changes."</p>
+          <p class="plain">The stock it forecast belonged to the company that went on to buy AI WARE in 1997.</p>
+          <p class="today-line"><b>Today:</b> time-series forecasting, algorithmic trading, fraud detection, and AI agents that forecast, decide and correct themselves as the data changes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section dark story" id="neugents" aria-labelledby="neugents-h">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="label">Case in point · 1997–1999</p>
+        <h2 id="neugents-h">From a Cleveland lab to "Software That Can Think"</h2>
+        <p>In December 1998 the world's largest business-software company told the world it had software that could predict the future. The engine inside was the neural-network and optimization technology he had built at AI WARE.</p>
+      </div>
+      <div class="story-grid">
+        <figure class="ad">
+          <a href="img/ca-neugents-ad.webp"><img src="img/ca-neugents-ad.webp" alt="Computer Associates advertisement: Predict the future and you can change the world. With Neugents, you can do both. Neugents: Software That Can Think." width="900" height="1167"></a>
+          <figcaption>Computer Associates advertisement for Neugents, about 1999. In CA's words: "The secret is Neural Network Technology. Computer Associates has taken this powerful technology and turned it into a patented application."</figcaption>
+        </figure>
+        <ol class="timeline">
+          <li><span class="when">1985–1997 · Cleveland</span>
+            <p>AI WARE's self-teaching neural networks and genetic-algorithm optimizers were proven in "hundreds of successful design and processing support applications," in the company's words, and won R&amp;D Magazine's R&amp;D Elite Award in 1994.</p></li>
+          <li><span class="when">December 23, 1997 · Computer Associates acquires AI WARE</span>
+            <p>"Neural net technology will be instrumental in addressing the next generation of business challenges," said Marc Sokol, CA's senior vice president of advanced technology.</p></li>
+          <li><span class="when">December 1998 · Launched worldwide as Neugents</span>
+            <p>"Neural agents," built into Unicenter TNG to predict server, database, application and network outages before they occurred, and to warn of network blockages. The launch was covered in English, Chinese, Japanese, German, Dutch, Russian and Hungarian.</p></li>
+          <li><span class="when">December 1998 · IndustryWeek Technology of the Year</span>
+            <p>The editors named Neugents one of the 25 technologies most impacting business and industry.</p></li>
+          <li><span class="when">1999 · In the field</span>
+            <p>"Here at Dow Chemical, we rely on CA's neural network technology to support our mission-critical chemical manufacturing operations." <i>Jack Morris, project manager, Dow Chemical.</i> PC Week gave Neugents "high marks" for troubleshooting at Brigham Young University.</p></li>
+          <li><span class="when">Scale</span>
+            <p>Unicenter TNG, the product Neugents went into, was about a quarter of CA's revenue: some <span class="num">$1.3 billion</span> of <span class="num">$5.25 billion</span> in fiscal 1999, according to <a href="https://www.sec.gov/Archives/edgar/data/0000356028/000035602899000024/0000356028-99-000024.txt">CA's annual report to the SEC</a>.</p></li>
+        </ol>
+      </div>
+      <div class="story-now">
+        <p class="label">What it is called today</p>
+        <dl>
+          <div><dt>"Predict server, database, application and network outages before they occur"</dt><dd>AIOps and predictive observability</dd></div>
+          <div><dt>"Neugents get smarter every second, every hour, every day"</dt><dd>Continual learning; self-improving agents</dd></div>
+          <div><dt>Neural "agents" that watch, decide and act</dt><dd>AI agents</dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="now" aria-labelledby="now-h">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="label">Then and now</p>
+        <h2 id="now-h">The vocabulary changed. The problems did not.</h2>
+        <p>Much of what industry now buys as new AI, his systems were doing for paying customers in the 1990s. That is the experience he brings to an advisory engagement.</p>
+      </div>
+      <div class="then-now">
+        <table>
+          <thead><tr><th scope="col">Then</th><th scope="col">What it did</th><th scope="col">What it is called today</th></tr></thead>
+          <tbody>
+            <tr><td>Pishti Challenger<small>1985</small></td><td>Played a bluffing card game against people: minimax search with alpha-beta pruning, plus a model of the opponent to decide when to bluff or call.</td><td>Game-playing AI under hidden information; opponent modeling, the problem behind today's poker-champion AIs</td></tr>
+            <tr><td>NASA design-of-experiments method<small>1990</small></td><td>AI chose which experiments to run to build a design model; used in NASA structural analysis and sold with CAD/Chem.</td><td>Active learning; Bayesian optimization; self-driving labs</td></tr>
+            <tr><td>Air Force design memory<small>1990–95</small></td><td>Recalled how pattern makers handled similar parts and proposed the design; "self directing."</td><td>Retrieval-augmented generation; agentic design copilots</td></tr>
+            <tr><td>CAD/Chem<small>early 1990s</small></td><td>Learned recipes from sparse lab data; searched under cost and process constraints for the best formulation, including ones experts had ruled out.</td><td>AI-driven inverse design; materials and formulation discovery</td></tr>
+            <tr><td>Process Advisor<small>1990s</small></td><td>Modeled a plant from its own data, updated as equipment aged, sent optimal setpoints; ran inside the controller.</td><td>Digital twins; soft sensors; edge AI; continual learning</td></tr>
+            <tr><td>Die-casting advisor<small>NIST project</small></td><td>Warned operators which castings were likely defective.</td><td>Operator copilot; predictive quality</td></tr>
+            <tr><td>CA Neugents<small>1998</small></td><td>"Neural agents" that learned continuously and predicted outages across corporate networks, servers and applications.</td><td>AIOps; AI agents</td></tr>
+            <tr><td>Ferro color matching<small>1993–95</small></td><td>Spectrophotometer readings sent over twisted-pair phone lines to fuzzy logic and neural networks, which returned the paint recipe.</td><td>AI as a remote service; sensor-to-cloud inference</td></tr>
+            <tr><td>Business Advisor<small>1990s</small></td><td>Financial and demand forecasting from time series, best strategy by optimization, self-updating models, credit-risk assessment, transaction fraud detection.</td><td>Predictive analytics; fraud machine learning</td></tr>
+            <tr><td>MindModeler and RFTS<small>1989–2002</small></td><td>Captured the judgment of master craftsmen and senior engineers as working models.</td><td>Expert-in-the-loop AI; grounding agents in tacit knowledge</td></tr>
+            <tr><td>"Capture and grow a digital persona"<small>MindModeler</small></td><td>A model of how one particular expert decides, which keeps learning from new episodes.</td><td>Digital twin of an expert; personal AI</td></tr>
+            <tr><td>"No statistician required"<small>all products</small></td><td>Spreadsheet import, guided screens, automatic model building.</td><td>No-code AI; AutoML</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="method" aria-labelledby="method-h">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="label">Method</p>
+        <h2 id="method-h">How an expert's judgment becomes a working model</h2>
+        <p>The MindModeler process, patented and used in industry. Each phase begins with a plain question to the expert.</p>
+      </div>
+      <div class="philosophy">
+        <p class="big">Experts know more than they can say. Rule-based systems ask them to spell it out, and the most valuable part, their judgment, gets lost.</p>
+        <p>MindModeler works the other way. It turns an expert's qualitative judgments into a quantitative model of how they think, with their goals weighted and their constraints respected. The expert then holds a reflective dialogue with that model: asking "what if," challenging its answers, and refining it until it decides the way they would. The model keeps adapting as new experience arrives and as the organization's norms change. When the expert retires, the judgment stays.</p>
+        <figure class="pull"><blockquote>His tacit, amorphous, or intangible knowledge is visible in his work. Furthermore, he is able to make a wide variety of decisions without being able to exactly explain the reasons for his acts, much less provide precise rules. … Such experts are precious intellectual assets of an organization, and when they leave, the organization is drained of decades of experience.</blockquote><figcaption>From U.S. Patent 8,326,792, on the master craftsman · reprinted in <a href="https://books.google.com/books?id=5E2BSvz8dEAC&amp;pg=PA220"><i>Advances in Machine Learning</i> (2013)</a></figcaption></figure>
+        <p>The same idea runs through Theory Garden, his software for visual causal modeling, which helps teams make their hidden assumptions explicit when they define a problem. It was studied in published research with Richard J. Boland, Jr. at Case Western Reserve.</p>
+      </div>
+      <ol class="steps">
+        <li><h3>Build the semantic model</h3><p class="q">"What can you control, what can't you, and how does each one move the others?"</p><p>The expert's own causes and effects become a mathematical model that can answer "what if?"</p></li>
+        <li><h3>Build the episodic model</h3><p class="q">"Tell me about the times it went right, and wrong."</p><p>Real episodes from memory refine the model and surface knowledge the expert never thought to mention.</p></li>
+        <li><h3>Validate and apply</h3><p class="q">"Is this how you would decide?"</p><p>The expert challenges the model until it holds, then it goes into procedures, training and decision tools.</p></li>
+      </ol>
+      <div class="mapping">
+        <div class="mapping-head">
+          <p class="label">The idea underneath</p>
+          <h3>Mapping cognition onto computation, and back</h3>
+          <p>Each way an expert thinks has a computing counterpart. MindModeler maps the expert's qualitative judgment onto those methods, computes, and maps the answer back into terms the expert can challenge.</p>
+        </div>
+        <table class="map-table">
+          <thead><tr><th scope="col">How an expert thinks</th><th scope="col" aria-hidden="true"></th><th scope="col">Its computing counterpart</th></tr></thead>
+          <tbody>
+            <tr><td>Learning explicit relationships</td><td aria-hidden="true">⟷</td><td>Rule-based systems</td></tr>
+            <tr><td>Categorization</td><td aria-hidden="true">⟷</td><td>Unsupervised learning and self-organization</td></tr>
+            <tr><td>Memorizing and recalling objects and associations</td><td aria-hidden="true">⟷</td><td>Auto- and hetero-associative memories</td></tr>
+            <tr><td>Inference and prediction</td><td aria-hidden="true">⟷</td><td>Interpolation and extrapolation</td></tr>
+            <tr><td>Learning implicit relationships</td><td aria-hidden="true">⟷</td><td>Pattern recognition and exemplar-based learning</td></tr>
+          </tbody>
+        </table>
+        <p class="complexity"><b>On the curse of complexity.</b> Some problems cannot be solved exactly in any practical time. His approach recasts such a problem as an equivalent one, for example by constructing a Lyapunov function, solves that in polynomial time to a near-optimal answer, and maps the answer back. It is how he took on problems that would otherwise need impossible computing time.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section note-sec" id="why" aria-labelledby="why-h">
+    <div class="wrap">
+      <article class="note">
+        <p class="label">A note from the inventor</p>
+        <h2 id="why-h">Why I built MindModeler</h2>
+        <p>Experts in every field decide by skill, know-how, gut feel and judgment, at operational, tactical and strategic levels. When I began this work, no method, process or system could reliably draw that knowledge out, capture it, store it and put it to use again.</p>
+        <p>My career in artificial intelligence began in 1985. Working with the U.S. Air Force, NASA, Harvard, Case Western Reserve and Fortune 500 companies, I kept meeting the same limit: the AI of the day could only follow pre-programmed "if-then" rules. What industry needed was to keep its intellectual capital, the judgment of its best people, which walks out the door when they retire and costs untold sums.</p>
+        <p>So I spent about nine years, on my own time and at my own expense, studying psychology, neuroscience, artificial intelligence, advanced mathematics, optimization and the behavioral sciences, until I had a first blueprint. Testing the theory and the software in real operations took several more years, and more than a few setbacks.</p>
+        <p>MindModeler was first released in 1997 and reached version 3.0 by 2002. Under the hood it combines clustering, data filtering and repair, statistical analysis, neural networks, evolutionary programming, simulated annealing, dynamic graphing and proprietary algorithms. The method is protected by U.S. Patent 8,326,792. It has always been a work in progress, shaped by its users, by new science and by the people who collaborate on it.</p>
+        <p class="sign">Tanvir Y. Goraya, Ph.D.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section bg-paper" id="theorygarden" aria-labelledby="tg-h">
+    <div class="wrap">
+      <div class="tg-grid">
+        <figure class="tg-photo"><img src="img/tg-photo.webp" alt="Richard J. Boland, Jr. and Tanvir Y. Goraya at a computer running Theory Garden Seed" width="790" height="765"><figcaption>Richard J. Boland, Jr. and Tanvir Y. Goraya with Theory Garden Seed, Case Western Reserve University.</figcaption></figure>
+        <div class="tg-text">
+          <p class="label">Theory Garden · since 2005</p>
+          <h2 id="tg-h">Reasoning about causal loops, without the mathematics</h2>
+          <p>Managers face long chains of cause and effect that loop back on themselves. Systems-dynamics software can simulate them, but only for people who can build stocks, flows and equations. Theory Garden lets anyone draw what they believe causes what, then simulates it, with no stocks and flows and no mathematical programming.</p>
+          <p>Case Western Reserve featured it as <q>a powerful new tool solving complex problems that require calculation skills that exceed human cognitive ability.</q> Built with Prof. Richard J. Boland, Jr. as the visual thinking tool Theory Garden Seed, it rests on his algorithms: in the university's words, <q>Dr. Goraya's research provides the algorithms necessary for solving those equations.</q></p>
+          <p>Its users have included thousands of people worldwide, more than 1,500 universities, Case Western's Executive Doctor of Management candidates, the Intelligence Advanced Research Projects Activity (IARPA) and the Department of Defense. It was applied to Afghanistan stability and counterinsurgency dynamics, the tangle of loops behind the strategy diagram <a href="https://www.nytimes.com/2010/04/27/world/27powerpoint.html">the New York Times wrote about in 2010</a> <span class="fill">[for whom, when, and what Theory Garden showed]</span>. The film <i>War Machine</i> (2017) <span class="fill">[how the film shows his work]</span>.</p>
+          <p class="draft-note">More on Theory Garden's products and users is being prepared.</p>
+        </div>
+      </div>
+
+      <div class="tg-patent">
+        <div class="tg-patent-text">
+          <p class="kicker">The invention · U.S. Patent Application 2008/0184154, with Richard J. Boland, Jr.</p>
+          <h3>A drawing of your theory becomes a working simulation</h3>
+          <p>Systems dynamics, the established way to simulate feedback loops, models the world as tanks and pipes: stocks, flows, and "decision valves" the user must write as "explicit mathematical equations." The application notes this takes "a high degree of sophistication," and "even a minor change in the system may require its equations to be rewritten."</p>
+          <p>Theory Garden is <b>equationless</b>. You draw the elements of your theory and the arrows between them, then describe each in plain qualitative terms: high or low, growing or shrinking, strong or weak, immediate or delayed, even how you feel about it. From that sparse description it builds "a robust mathematical simulation" of how every element behaves over time, so you can test the logical consequences of your own theory and compare them with what really happened.</p>
+          <ul class="tg-features">
+            <li><b>Watch the theory run</b>: links pulse and thicken as cause travels through the map, with ribbon, spiral and bar charts over time.</li>
+            <li><b>Hear it</b>: tones and chords mark the interactions, so patterns can be heard as well as seen.</li>
+            <li><b>Brainstorm into a model</b>: type a list of ideas, then connect them by dragging.</li>
+            <li><b>Learn across a community</b>: saved maps cluster by structure and behavior, so people see patterns across subjects.</li>
+            <li><b>Same engine as MindModeler</b>: a "hybrid algorithm developed to solve otherwise intractable computational problems."</li>
+          </ul>
+          <p>It was designed for everyone from fourth graders to graduate students and professionals, to theorize about "the behavior of a chemical reaction, the dynamics of rainforest ecology, the causes of the civil war, or the experience of peer pressure," and test those theories by simulation.</p>
+        </div>
+        <figure class="screen tg-map"><img src="img/tg-cause-map.webp" alt="Theory Garden cause map, Theory of Knowledge Creation in Science: experiences and actions, openness to new ideas, reflective awareness of patterns, creation of new theories, analyzing and discussing theories, challenging rival theories, testing a hypothesis, and strength of your theory, linked by positive and negative arrows" width="900" height="483"><figcaption>Theory Garden's own example: a theory of how knowledge is created in science, ready to simulate (patent application, Fig. 19).</figcaption></figure>
+      </div>
+      <p class="today-line"><b>Today:</b> causal AI and world models built from human understanding rather than big data; no-code simulation; and a way for people and AI agents to test a plan's consequences, loops included, before acting on it.</p>
+    </div>
+  </section>
+
+
+  <section class="section" id="case" aria-labelledby="case-h">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="label">Case study</p>
+        <h2 id="case-h">Thirty years of furnace judgment, made explicit</h2>
+        <p>A large mining company · MindModeler · 2002</p>
+      </div>
+      <div class="case-grid">
+        <div><h3>Situation</h3><p>A senior process engineer with more than 30 years' experience, eligible to retire, ran a low-pressure coal-burning furnace. He balanced SO₂, NOₓ and CO limits against fuel, furnace and air flows. Every mine differed in ore, fuel and equipment, which made operating it an art. None of that judgment was written down.</p></div>
+        <div><h3>Approach</h3><p>He named what he could control and what he could not, and described how each factor moved the others. That became a semantic model. His recollections of real episodes became an episodic model. MindModeler's clustering, what-if analysis and weighted goal-seeking then turned both into working tools.</p></div>
+        <div><h3>What the model showed</h3><ul>
+          <li>Primary air temperature was the single most important variable.</li>
+          <li>NOₓ followed a complex parabolic surface, high when both heat inputs were high and when both were low.</li>
+          <li>For CO, the share of heat replaced, not total heat input, was the culprit.</li>
+          <li>To reduce NOₓ, increase fired pellets.</li>
+        </ul></div>
+      </div>
+      <figure class="screen">
+        <img src="img/mindmodeler-response-surface.webp" alt="MindModeler 3D response surface: NOx emissions against percent heat replaced and total heat input" width="1535" height="840">
+        <figcaption>MindModeler screen, 2002: NOₓ against percent heat replaced and total heat input, built from the engineer's own judgment.</figcaption>
+      </figure>
+      <p class="aha">One finding drew this note from the expert: <q>Ah-ha: never gave this info.</q> The model had surfaced knowledge he had never put into words.</p>
+      <div class="applied">
+        <h3>Where the method was applied</h3>
+        <table>
+          <thead><tr><th scope="col">Field</th><th scope="col">What it did</th><th scope="col">Evidence</th></tr></thead>
+          <tbody>
+            <tr><td>Fossil-fuel power plants</td><td>NeuSight, the combustion optimizer he named and spun off as Pegasus Technologies, cut NO<sub>x</sub> and CO at coal-fired plants. Utilities included Houston Lighting &amp; Power and Ameren.</td><td>Pegasus and KFx press releases, 1998</td></tr>
+            <tr><td>Specialty smelting and mining</td><td>Captured a retiring expert's furnace judgment as working models (the case above).</td><td>MindModeler engagement, 2002</td></tr>
+            <tr><td>Aluminum sand casting</td><td>Automated pattern design for Air Force parts; a multi-objective decision aid for rigging.</td><td><a href="docs/usaf-rfts-success-story.pdf">Air Force Success Story</a>; invited paper, 1998</td></tr>
+          </tbody>
+        </table>
+        <p>In each case the system learned judgment that rule-based systems and plain neural networks could not capture.</p>
+      </div>
+      <div class="case2">
+        <div class="section-head">
+          <p class="label">Second case</p>
+          <h3 class="case2-h">A production database, from hours to minutes</h3>
+          <p>A production Oracle database · MindModeler episodic memory · three tuning phases</p>
+        </div>
+        <div class="case2-grid">
+          <div class="case2-figs">
+            <figure class="screen"><img src="img/mm-surface.webp" alt="MindModeler response surface: run time against SGA size and operating-system swap parameters" width="900" height="585"><figcaption>Run time against memory (SGA) size and operating-system swap settings.</figcaption></figure>
+            <figure class="screen"><img src="img/mm-episodic.webp" alt="MindModeler episodic memory window: tuning episodes on the left, factor categories such as SGA size, partitioned tables, SQL WHERE clauses, time, space and DBA load on the right" width="700" height="853"><figcaption>Episodic memory: each tuning episode linked to the factors involved.</figcaption></figure>
+          </div>
+          <div>
+            <p class="case2-intro"><b>The experts.</b> The knowledge came from three award-winning database tuners at a Fortune 50 consulting firm <span class="fill">[which awards]</span>; this is real-life wicked tuning problem no. 2 in his dissertation. Like the mining engineer and the retiring Ferro scientist, they were a textbook case of experiential learning: asked how they worked, they recited the rules and standard operating procedures, yet at the keyboard they did something different, guided by gut feel, intuition, know-how and judgment, often without realizing they were departing from the rules. In the words of his patent, <q>a decision-maker is not necessarily aware of how he arrives at a particular decision and of his own tacit knowledge.</q></p>
+            <p class="case2-intro"><b>The problem.</b> Two processes in a production database took six and eight hours to run. MindModeler organized every tuning attempt as an episode, linked it to the factors involved (memory size, partitioned tables, SQL WHERE clauses, time, space and the administrator's workload) and showed which changes paid off.</p>
+            <table class="tune">
+              <thead><tr><th scope="col">Phase</th><th scope="col">Process 1</th><th scope="col">Process 2</th></tr></thead>
+              <tbody>
+                <tr><td>In production</td><td>6 hours</td><td>8 hours</td></tr>
+                <tr><td>After phase 1</td><td>3 h 3 min</td><td>9 min</td></tr>
+                <tr><td>After phase 2</td><td>1 hour</td><td>5 min</td></tr>
+                <tr><td>After phase 3</td><td><b>32 min</b></td><td><b>2 min 16 s</b></td></tr>
+              </tbody>
+            </table>
+            <p class="case2-note">Process 1 ran <span class="num">91%</span> faster and process 2 <span class="num">99.5%</span> faster. The model also showed a trade-off the written rules missed: forcing the optimizer with hints made the administrator's workload climb steeply, while improving the queries themselves kept it nearly flat.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="words-h">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="label">In their words</p>
+        <h2 id="words-h">What clients and the press said</h2>
+      </div>
+      <div class="quotes">
+        <figure class="quote"><blockquote>CAD/Chem is consistently able to locate an optimal product design within minutes. Using our most sophisticated statistical software tools, it would take days of manual iterations [with a statistics-based package] to find a similar solution.</blockquote><figcaption><b>Tyson Gill</b>, Glidden Paints, on CAD/Chem</figcaption></figure>
+        <figure class="quote"><blockquote>CAD/Chem is very useful in our formulation optimization. In an application we finished recently, the predicted properties are incredibly close to the confirmation experiments.</blockquote><figcaption><b>Miles Inc.</b>, on CAD/Chem</figcaption></figure>
+        <figure class="quote"><blockquote>The memory-driven software system reduces the time for design and generation of foundry sand casting patterns from two weeks to less than two days.</blockquote><figcaption><b>U.S. Air Force</b>, Wright Laboratory Success Story</figcaption></figure>
+        <figure class="quote"><blockquote>CAD/Chem automatically develops nonlinear models with no limitations in types of relationships or number of variables. This ability to manage complexity has enabled the development of product and process designs that surpassed the best efforts of our experts.</blockquote><figcaption><b>A specialty polymers manufacturer</b>, on CAD/Chem</figcaption></figure>
+        <figure class="quote"><blockquote>Neural networks provide a powerful new tool for formulation scientists. As an alternative to statistical analysis, they are simpler to use, are more flexible, and can provide more detailed information.</blockquote><figcaption><b>Scientific Computing &amp; Automation</b></figcaption></figure>
+        <figure class="quote"><blockquote>During two days of training, [the AI WARE instructor] showed great expertise and patience in helping our staff. The assistance in setting up the system and providing an overview was outstanding. Excellent work.</blockquote><figcaption><b>BASF Corporation</b></figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-stone" id="clients" aria-labelledby="clients-h">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="label">Clients</p>
+        <h2 id="clients-h">Who relied on the work</h2>
+        <p>A partial list of organizations that used systems he invented or led, with distributors in Japan, Korea, India, the United Kingdom, France, Italy, the Netherlands and Canada.</p>
+      </div>
+      <div class="client-cols">
+        <div><h3>Pharmaceutical &amp; medical</h3><p>Eli Lilly · Merck · Pfizer · Schering-Plough · Zeneca · Miles Laboratories · Bio-Rad</p></div>
+        <div><h3>Chemicals</h3><p>3M · Procter &amp; Gamble · Unilever · S.C. Johnson · Mitsubishi Chemical · Hitachi Chemical · Asahi Chemical · W.R. Grace · Nalco · Clorox · Gillette</p></div>
+        <div><h3>Plastics &amp; rubber</h3><p>Dow Chemical · BASF · Monsanto · B.F. Goodrich · Goodyear · Bridgestone/Firestone · Yokohama Rubber · Sumitomo Rubber · Nike</p></div>
+        <div><h3>Paint, coatings &amp; adhesives</h3><p>Glidden (ICI) · DuPont · Sherwin-Williams · Xerox · Lord Corporation · Dow Corning · Avery Dennison · H.B. Fuller · Loctite</p></div>
+        <div><h3>Petroleum &amp; energy</h3><p>Exxon · Amoco · BP Chemical · Lubrizol · Castrol · Ashland Oil · UOP · Ohio Edison · Salt River Project</p></div>
+        <div><h3>Manufacturing &amp; process</h3><p>Ford Motor · Kobe Steel · LTV Steel · Allied Signal · Libbey-Owens-Ford · PPG · Boise Cascade · Bailey Controls · Motorola</p></div>
+        <div><h3>Government &amp; research</h3><p>NASA Lewis Research Center · U.S. Air Force Wright Laboratory · USDA · Harvard · Case Western Reserve</p></div>
+        <div><h3>Finance, law &amp; food</h3><p>Credit Suisse · Arter &amp; Hadden · Archer Daniels Midland · Kraft General Foods · Warner-Lambert</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-stone" id="ventures" aria-labelledby="ventures-h">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="label">Founder and giver</p>
+        <h2 id="ventures-h">Companies started, and software given away</h2>
+        <p>A serial entrepreneur who has also given his software to schools and other institutions, and taught graduate AI for more than twenty years.</p>
+      </div>
+      <div class="ventures">
+        <article><h3>AI WARE, Inc.</h3><p>Co-founded 1989 with Prof. Yoh-Han Pao. CAD/Chem, Process Advisor, Business Advisor. Acquired by Computer Associates, 1997.</p></article>
+        <article><h3>Pegasus Technologies</h3><p>Spun off to take NeuSight combustion optimization to coal-fired power plants. KFx took control in 1998; CA later acquired AI WARE's shares.</p></article>
+        <article><h3>Mind Modelers</h3><p>His own practice since <span class="fill">[2001 or 2002]</span>. MindModeler software, released 1997, offered through Ernst &amp; Young's Intellinex.</p></article>
+        <article><h3>Theory Garden</h3><p>Founded 2005, with operations in the USA, UK, UAE and Asia. Causal reasoning software built with Prof. Richard J. Boland, Jr.</p></article>
+        <article><h3>NeoVision</h3><p>Outsourcing, consulting and intelligence software, in Cleveland, Pakistan and Dubai; he served as Chief Technology Officer and Chief Strategist. <span class="fill">[Years, what it built, clients]</span></p></article>
+        <article><h3>MOJAZA</h3><p>With Rakuten, Japan. <span class="fill">[The MOJAZA story: what it was, his role, results]</span></p></article>
+      </div>
+      <div class="giving">
+        <div><h3>Software donated</h3>
+          <ul>
+            <li><b>Gilmour Academy</b>, valued at $250,000</li>
+            <li><b>St. Jerome's</b>, valued at $250,000 <span class="fill">[full name and city]</span></li>
+            <li><b>CCF</b>, valued at more than $250,000 <span class="fill">[full name]</span></li>
+            <li><span class="fill">[Other schools that received his software, with year and value]</span></li>
+          </ul></div>
+        <div><h3>Teaching</h3>
+          <ul>
+            <li>Graduate AI courses for more than 20 years, beginning as an adjunct professor while still a master's student at Case Western Reserve.</li>
+            <li><span class="fill">[Course titles, universities and years]</span></li>
+          </ul></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="about" aria-labelledby="about-h">
+    <div class="wrap">
+      <div class="about">
+        <figure class="portrait"><div class="ph" aria-hidden="true">TYG</div><figcaption>Headshot to come</figcaption></figure>
+        <div class="prose">
+          <p class="label" style="color:var(--accent)">About</p>
+          <h2 id="about-h">Professor and practitioner-scientist</h2>
+          <p>His core is machine learning, AI and robotics, and the robotics has always run on machine-learning and AI methods he invented himself.</p>
+          <p>It began in 1985 with <b>Pishti Challenger</b>, his graduation project at Middle East Technical University in Turkey, finished two years ahead of schedule. It played a bluffing card game, much like poker, against human opponents, complete with graphics and music. Underneath, it searched minimax game trees with alpha-beta pruning, and it modeled its opponent to predict, and then optimize, when to bluff and when to call a bluff. Reasoning about a hidden hand and a human who may be lying is still one of the hard problems in AI.</p>
+          <p>In 1987 he came to Case Western Reserve University to run the computer facility of its Center for Automation and Intelligent Systems Research, an AI and robotics center. While still a master's student, he was appointed Adjunct Professor and taught its graduate AI courses.</p>
+          <p>Since then he has led Air Force and NASA research as Principal Investigator and co-founded AI WARE. At Ferro he ran AI color matching for automotive customers in 40 countries over telephone lines and reached a vice-president-equivalent scientific rank in his twenties. He earned a Ph.D. whose results became his own patent. A professor who taught graduate AI for more than twenty years, he most recently served as Director of AI &amp; Big Data at Case Western Reserve University. His career has woven through industry, academia and government research, in AI, big data and learning from sparse data, often decades ahead of the field; some of that work cannot be described publicly for reasons of national security. He works in English, Turkish, Urdu and Punjabi.</p>
+          <ul class="honors">
+            <li><b>Chairman of the Joint Chiefs of Staff</b>, commendation for inventions</li>
+            <li><b>U.S. Air Force</b>, Wright Laboratory Success Story, 1995</li>
+            <li><b>R&amp;D Magazine</b>, R&amp;D Elite Award (AI WARE), 1994</li>
+            <li><b>Chief of Army Staff</b>, Gold Medal for academic excellence</li>
+            <li><b>President of Pakistan</b>, Gold Medal for academic performance, 1982</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="sources" aria-labelledby="sources-h">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="label">On the record</p>
+        <h2 id="sources-h">Documents and sources</h2>
+        <p>The claims on this site can be checked. These are the primary documents and public records behind them.</p>
+      </div>
+      <ul class="record docs">
+        <li><div><span class="case"><a href="https://ntrs.nasa.gov/api/citations/20000018018/downloads/20000018018.pdf"><i>SBIR Success Stories at NASA Glenn Research Center</i></a></span><span class="cite">NASA/TM-1999-209649 · December 1999 · Structures section</span></div>
+          <p>NASA's own account of the AI design-of-experiments method from AI WARE's 1990 Phase II contract, its use at NASA and Wright-Patterson, and its commercial customers.</p></li>
+        <li><div><span class="case">"Air Force system offers design advice"</span><span class="cite">Design News · November 19, 1990 · copy on request</span></div>
+          <p>Independent report on the Air Force's Rapid Design System and its episodal associative memory, the program the Rapid Foundry Tooling System grew from.</p></li>
+        <li><div><span class="case"><a href="docs/usaf-rfts-success-story.pdf">Rapid Foundry Tooling System</a></span><span class="cite">U.S. Air Force Wright Laboratory Success Story · PDF</span></div>
+          <p>The Air Force's own account: pattern design for cast parts cut from two weeks to under two days.</p></li>
+        <li><div><span class="case"><a href="https://ngstage.aviationweek.com/sand-dollars">"Sand Dollars"</a></span><span class="cite">Aviation Week &amp; Space Technology · July 3, 1995</span></div>
+          <p>Independent report on the system's 80% reduction in casting-pattern design time at the San Antonio Air Logistics Center.</p></li>
+        <li><div><span class="case"><a href="https://patents.google.com/patent/US8326792B2/en">U.S. Patent 8,326,792 B2</a></span><span class="cite">Adaptive Dynamic Personal Modeling System and Method · sole inventor · 2012</span></div>
+          <p>The MindModeler patent: turning an expert's qualitative judgment into a working quantitative model.</p></li>
+        <li><div><span class="case"><a href="https://patents.google.com/patent/US20080184154A1/en">U.S. Patent Application 2008/0184154</a></span><span class="cite">Mathematical Simulation of a Cause Model · with R.J. Boland, Jr. · 2008</span></div>
+          <p>The cause-model simulation behind Theory Garden's software.</p></li>
+        <li><div><span class="case"><a href="https://books.google.com/books?id=5E2BSvz8dEAC&amp;pg=PA220"><i>Advances in Machine Learning</i> (2013)</a></span><span class="cite">Chapter 1, Artificial Intelligence · pp. 220–229 · reprinted from news coverage, December 2012</span></div>
+          <p>The MindModeler patent featured at length: its case for capturing tacit expertise, and its critique of rule-based systems, OLAP, Bayesian networks and statistics.</p></li>
+        <li><div><span class="case"><a href="https://aisel.aisnet.org/icis2009/68">"IT for Creativity in Problem Formulation"</a></span><span class="cite">International Conference on Information Systems (ICIS) · 2009 · with Boland, Berente and Hansen</span></div>
+          <p>Theory Garden as a tool for distributed, creative problem formulation by managers and software teams.</p></li>
+        <li><div><span class="case"><a href="http://www.tms.org/pubs/journals/JOM/9704/Goraya/Goraya-9704.html">"Metal-Casting Process Design"</a></span><span class="cite">JOM-e 49(4), The Minerals, Metals &amp; Materials Society · 1997</span></div>
+          <p>Clustering and associative memory for casting design, with Wright Laboratory's Materials Directorate.</p></li>
+        <li><div><span class="case"><a href="https://doi.org/10.1109/ICSYSE.1991.161078">"A Computer-Based Adaptive Associative Memory"</a></span><span class="cite">IEEE International Conference on Systems Engineering · 1991</span></div>
+          <p>With Yoh-Han Pao, Ph.D., K. Komeyli and Maj. Steven LeClair, Ph.D., of the Air Force Materials Directorate.</p></li>
+        <li><div><span class="case"><a href="https://www.01net.it/?p=1170">Computer Associates acquires AI WARE</a></span><span class="cite">01net (Italian) · December 22, 1997</span></div>
+          <p>Press report of the acquisition of AI WARE and its CAD/Chem and Process Advisor products.</p></li>
+        <li><div><span class="case"><a href="#neugents">CA Neugents launch and coverage</a></span><span class="cite">Computer Associates press releases, December 1998 · IndustryWeek · Computerworld · InformationWeek · PC Week · archived copies on request</span></div>
+          <p>CA's launch of Neugents, its Technology of the Year honor and client statements, with coverage in seven languages.</p></li>
+        <li><div><span class="case"><a href="https://www.sec.gov/Archives/edgar/data/0000356028/000035602899000024/0000356028-99-000024.txt">Computer Associates Form 10-K, fiscal 1999</a></span><span class="cite">U.S. Securities and Exchange Commission</span></div>
+          <p>CA's revenue and the share of it from Unicenter TNG, the product Neugents were built into.</p></li>
+        <li><div><span class="case">"Optimizing Product Formulations Using Neural Networks"</span><span class="cite">Scientific Computing &amp; Automation (Elsevier) · cover story, September 1992</span></div>
+          <p>Glidden (ICI) and Lord Corporation on CAD/Chem. A copy is available on request.</p></li>
+      </ul>
+      <p class="also-links"><a href="https://www.linkedin.com/in/tanvirgorayaphd/">LinkedIn profile</a> · <a href="https://scholar.google.com/citations?user=8eEzGBMAAAAJ">Google Scholar profile</a> · <a href="resume.html">Full résumé</a></p>
+    </div>
+  </section>
+
+  <section class="band dark" id="contact" aria-labelledby="contact-h">
+    <div class="wrap">
+      <div class="band-text"><p class="label">Contact</p><h2 id="contact-h">Bring the problem your team hasn't been able to solve.</h2></div>
+      <div class="contact-line">
+        <span class="email" id="email">TGoraya@gmail.com</span>
+        <button class="copy" id="copy" type="button">Copy email address</button>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <b>Mind Modelers</b>
+    <div class="cols"><span>Bratenahl, Ohio</span><a href="#advisory">Advisory</a><a href="#record">Record</a><a href="#about">About</a><a href="https://www.linkedin.com/in/tanvirgorayaphd/">LinkedIn</a></div>
+    <span>© 2026 Tanvir Y. Goraya, Ph.D.</span>
+  </div>
+</footer>
+
+<script>
+document.getElementById('copy').addEventListener('click', function () {
+  var b = this, t = document.getElementById('email').textContent;
+  function done(msg) { b.textContent = msg; setTimeout(function () { b.textContent = 'Copy email address'; }, 1800); }
+  function select() { var r = document.createRange(); r.selectNodeContents(document.getElementById('email'));
+    var s = window.getSelection(); s.removeAllRanges(); s.addRange(r); done('Selected. Press copy'); }
+  try { navigator.clipboard.writeText(t).then(function () { done('Copied'); }, select); } catch (e) { select(); }
+});
+document.querySelectorAll('.menu .nav a').forEach(function (a) { a.addEventListener('click', function () { a.closest('details').open = false; }); });
+</script>
+</body>
+</html>

@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Résumé of Tanvir Y. Goraya, Ph.D.: AI advisor, inventor and company co-founder.">
+<meta property="og:title" content="Tanvir Y. Goraya Résumé">
+<meta property="og:description" content="Résumé of Tanvir Y. Goraya, Ph.D.: AI advisor, inventor and company co-founder.">
+<link rel="icon" href="img/favicon.png">
+<title>Tanvir Y. Goraya Résumé</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Manrope:wght@500;600;700&display=swap">
+</head>
+<body>
+<style>
+/* Layout: a résumé set as two sheets of fine paper on a stone desk. Navy rule and nameplate at the head,
+   a narrow left column for credentials, a wide right column for the record. Bronze for small marks only.
+   Single light look by design; every color is set explicitly. */
+:root {
+  --desk: #e9e6df;
+  --paper: #ffffff;
+  --ink: #0e1117;
+  --ink-2: #3b404a;
+  --rule: #d2cec5;
+  --navy: #152238;
+  --bronze: #8a6634;
+  --display: "Libre Baskerville", Baskerville, Georgia, serif;
+  --serif: "Source Serif 4", "Source Serif Pro", Georgia, serif;
+  --caps: "Cinzel", "Trajan Pro", Georgia, serif;
+  --sans: "Manrope", system-ui, -apple-system, "Segoe UI", sans-serif;
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--desk); color: var(--ink); font: 400 15px/1.55 var(--serif); }
+.desk { padding-block: 32px 56px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
+  display: grid; justify-items: center; gap: 28px; }
+.sheet { width: 100%; max-width: 8.5in; background: var(--paper); box-shadow: 0 1px 2px rgba(20,22,26,.08), 0 18px 40px rgba(20,22,26,.10);
+  padding: 0.6in 0.65in 0.55in; border-top: 6px solid var(--navy); min-width: 0; }
+@media (max-width: 700px) { .sheet { padding: 28px 20px; } }
+a { color: inherit; text-decoration-color: var(--bronze); text-underline-offset: 2px; }
+
+/* Nameplate */
+.head { display: grid; grid-template-columns: auto 1fr; gap: 20px; align-items: center; padding-bottom: 18px; border-bottom: 1px solid var(--ink); }
+.mono { width: 84px; height: 84px; display: block; filter: drop-shadow(0 3px 6px rgba(20,22,26,.25)); }
+.head h1 { margin: 0; font: 700 clamp(1.5rem, 3.6vw, 2.05rem)/1.1 var(--caps); letter-spacing: 0.06em; text-wrap: balance; }
+.roles { margin-top: 6px; font: 700 0.72rem/1.4 var(--caps); letter-spacing: 0.22em; color: var(--bronze); text-transform: uppercase; }
+.contact { margin-top: 8px; font: 500 0.8rem/1.5 var(--sans); color: var(--ink-2); display: flex; flex-wrap: wrap; gap: 2px 14px; }
+@media (max-width: 520px) { .head { grid-template-columns: 1fr; } .mono { width: 64px; height: 64px; } }
+
+.summary { margin: 18px 0 0; font: italic 400 1.02rem/1.6 var(--display); color: var(--ink); }
+
+/* Two columns */
+.cols { display: grid; grid-template-columns: 2.05in minmax(0, 1fr); gap: 0 34px; margin-top: 22px; }
+.side { border-right: 1px solid var(--rule); padding-right: 22px; display: grid; gap: 22px; align-content: start; min-width: 0; }
+.main { display: grid; gap: 22px; align-content: start; min-width: 0; }
+@media (max-width: 760px) { .cols { grid-template-columns: 1fr; gap: 24px; } .side { border-right: 0; padding-right: 0; order: 2; } }
+
+h2 { margin: 0 0 8px; font: 700 0.74rem/1.3 var(--sans); letter-spacing: 0.2em; text-transform: uppercase; color: var(--navy);
+  display: flex; align-items: center; gap: 10px; }
+h2::after { content: ""; flex: 1; height: 1px; background: var(--rule); }
+.side h2::after { display: none; }
+.side p, .side li { font-size: 0.86rem; line-height: 1.45; color: var(--ink-2); }
+.side b { color: var(--ink); font-weight: 600; }
+.side ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+
+ul.impact { margin: 0; padding: 0; list-style: none; display: grid; gap: 9px; }
+ul.impact li { padding-left: 16px; position: relative; }
+ul.impact li::before { content: ""; position: absolute; left: 0; top: 0.62em; width: 6px; height: 6px; background: var(--bronze); transform: rotate(45deg); }
+ul.impact b { font-weight: 600; }
+.num { font-family: var(--display); font-weight: 700; font-variant-numeric: lining-nums; }
+
+/* Experience */
+.role { display: grid; gap: 3px; padding-block: 9px; border-top: 1px solid var(--rule); }
+.role:first-of-type { border-top: 0; padding-top: 0; }
+.role-head { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 2px 16px; align-items: baseline; }
+.role-title { font: 700 0.95rem/1.35 var(--display); }
+.dates { font: 600 0.78rem/1.3 var(--sans); color: var(--ink-2); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.org { font: 500 0.82rem/1.4 var(--sans); color: var(--bronze); letter-spacing: 0.02em; }
+.role p { color: var(--ink-2); font-size: 0.92rem; }
+
+.clients p { font-size: 0.9rem; color: var(--ink-2); }
+.clients p + p { margin-top: 4px; }
+.clients b { color: var(--ink); font-weight: 600; }
+.pubs { margin: 0; padding-left: 18px; display: grid; gap: 6px; font-size: 0.88rem; color: var(--ink-2); }
+.pubs i { color: var(--ink); }
+.foot { margin-top: 22px; padding-top: 10px; border-top: 1px solid var(--rule); display: flex; justify-content: space-between; gap: 12px;
+  font: 600 0.68rem/1.3 var(--sans); letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-2); }
+p { margin: 0; }
+.block + .block, .block + .two, .two + .two { margin-top: 22px; }
+.two { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap: 0 34px; }
+.two > .block + .block { margin-top: 0; }
+@media (max-width: 760px) { .two { grid-template-columns: 1fr; } .two > .block + .block { margin-top: 22px; } }
+ul.plain { margin: 0; padding-left: 1.05em; display: grid; gap: 5px; font-size: 0.9rem; color: var(--ink-2); }
+ul.plain b { color: var(--ink); font-weight: 600; }
+.subnote { margin-top: 8px; font-size: 0.86rem; color: var(--ink-2); }
+.subnote b { color: var(--ink); }
+.back { background: #152238; color: #f3efe7; display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap;
+  padding-block: 12px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
+  font: 600 0.78rem/1.3 var(--sans); letter-spacing: 0.08em; }
+.back a { color: #e2c08a; text-decoration: none; } .back a:hover { text-decoration: underline; }
+.back span { color: #c4beb2; text-transform: uppercase; letter-spacing: 0.16em; }
+@media print { .back { display: none; } }
+@page { size: letter; margin: 0.45in 0.5in; }
+@media print {
+  html { font-size: 13.4px; } body { background: #fff; font-size: 11.4px; line-height: 1.4; }
+  .desk { padding: 0; gap: 0; display: block; }
+  .sheet { box-shadow: none; max-width: none; width: auto; padding: 0; border-top: 0; break-after: auto; }
+  .sheet + .sheet { margin-top: 18px; }
+  .sheet:last-child { break-after: auto; }
+  .head { border-top: 5px solid var(--navy); padding-top: 14px; }
+  .role, .pubs li, .side section, ul.impact li, .block { break-inside: avoid; }
+  h2 { break-after: avoid; }
+  .head h1 { font-size: 1.75rem; } .mono { width: 70px; height: 70px; }
+  .summary { font-size: .95rem; margin-top: 12px; } .cols { margin-top: 14px; grid-template-columns: 1.9in minmax(0,1fr); }
+  .side, .main { gap: 14px; } ul.impact { gap: 5px; } .role { padding-block: 4px; gap: 1px; } .role p { font-size: .86rem; line-height: 1.34; }
+  .side p, .side li { font-size: .8rem; line-height: 1.34; } .side ul { gap: 4px; } h2 { margin-bottom: 6px; }
+  .foot { display: none; }
+}
+</style>
+
+<nav class="back" aria-label="Site"><a href="./">← Tanvir Y. Goraya, Ph.D. · Mind Modelers</a><span>Résumé</span></nav>
+<div class="desk">
+<!-- Page 1 -->
+<article class="sheet" aria-label="Résumé, page 1">
+  <header class="head">
+    <img class="mono" src="img/seal-small.webp" alt="Seal of Tanvir Y. Goraya, Ph.D." width="84" height="84">
+    <div>
+      <h1>Tanvir Y. Goraya, Ph.D.</h1>
+      <div class="roles">Pioneer · Professor · Inventor · Founder · AI Advisor</div>
+      <div class="contact"><span>Bratenahl, Ohio</span><span>(216) 280-7343</span><span>TGoraya@gmail.com</span><a href="https://www.linkedin.com/in/tanvirgorayaphd/">linkedin.com/in/tanvirgorayaphd</a><a href="https://scholar.google.com/citations?user=8eEzGBMAAAAJ">Google Scholar</a></div>
+    </div>
+  </header>
+
+  <p class="summary">Professor and practitioner-scientist; pioneer in machine learning, AI and robotics since 1985, building on his own inventions; most recently Director of AI &amp; Big Data, Case Western Reserve University; shipping production AI since 1987, decades before it went mainstream. Co-founder of AI WARE and inventor of its core technology, delivered to 130+ named organizations before its acquisition by Computer Associates. Principal Investigator for the U.S. Air Force and NASA. Sole inventor of U.S. Patent 8,326,792. Now advising executives and boards on where AI creates real value.</p>
+
+  <div class="cols">
+    <aside class="side">
+      <section><h2>Advisory focus</h2>
+        <ul><li><b>AI strategy</b> for boards and CEOs</li><li><b>Expert knowledge capture</b> and AI agents</li><li><b>Optimization</b> and decision intelligence</li><li><b>Physical AI</b>: controls, robotics, mechatronics</li><li><b>Technology due diligence</b></li><li><b>Research centers</b> and university programs</li></ul></section>
+      <section><h2>Education</h2>
+        <ul><li><b>Ph.D.</b>, Management of Information &amp; Decision Systems; minor, Computer Engineering (AI). Case Western Reserve University, 2001</li>
+        <li><b>M.S.</b>, Computer Engineering &amp; Computer Science. Case Western Reserve University, 1990. NASA-sponsored thesis</li>
+        <li><b>B.S.</b>, Computer Engineering. Middle East Technical University, Turkey, 1987. Graduation project <i>Pishti Challenger</i>, finished in 1985, two years early: an AI that played a bluffing card game, using minimax search, alpha-beta pruning and opponent modeling.</li></ul></section>
+      <section><h2>Selected honors</h2>
+        <ul><li><b>Chairman of the Joint Chiefs of Staff</b> Commendation for inventions</li><li><b>U.S. Air Force</b> Wright Laboratory Success Story, 1995</li><li><b>R&amp;D Magazine</b> R&amp;D Elite Award (AI WARE), 1994</li><li><b>Chief of Army Staff</b> Gold Medal, academic excellence</li><li><b>President of Pakistan</b> Gold Medal, 1982</li></ul></section>
+      <section><h2>Languages</h2>
+        <p>English, Turkish, Urdu, Hindi, Punjabi (fluent); Chinese (professional); Arabic, Persian, French (working)</p></section>
+    </aside>
+
+    <div class="main">
+      <section><h2>Selected impact</h2>
+        <ul class="impact">
+          <li><b>Air Force design time cut by <span class="num">80%</span>.</b> As Principal Investigator, led the Rapid Foundry Tooling System: casting-pattern design for aircraft, missile and spacecraft parts fell from two weeks to under two days. A <a href="docs/usaf-rfts-success-story.pdf">Wright Laboratory Success Story</a>. <i>Design News</i> (1990) called the episodic associative memory of its predecessor, the Rapid Design System, "perhaps the most advanced, ambitious, and unique" part of the program.</li>
+          <li><b>Co-founded AI WARE and invented its core technology.</b> <span class="num">500+</span> installations at <span class="num">130+</span> named organizations; R&amp;D Magazine Elite Award, 1994; acquired by Computer Associates, 1997, and relaunched worldwide as CA Neugents (“Software That Can Think”), an IndustryWeek 1998 Technology of the Year built into Unicenter TNG, about a quarter of CA’s revenue.</li>
+          <li><b>Power-plant emissions cut with AI.</b> Named NeuSight, a combustion optimizer that reduced NO<sub>x</sub> and CO at coal-fired plants, and spun off Pegasus Technologies to sell it to utilities including Houston Lighting &amp; Power and Ameren.</li>
+          <li><b>Formulation design from days to minutes.</b> CAD/Chem found an optimum Glidden's chemists had ruled out, cutting an expensive monomer 96%, in about an hour; held-out drug-dissolution predictions came within 0.8%. Reported by Glidden (ICI) and Lord Corporation in a 1992 <i>Scientific Computing &amp; Automation</i> cover story.</li>
+          <li><b>An operator's AI assistant in the 1990s.</b> Process Advisor flagged 83–90% of defective die castings in held-out tests on a NIST-supervised project, and its models ran inside Elsag Bailey process controllers.</li>
+          <li><b>A NASA SBIR success story.</b> An AI method that chooses which experiments to run to build a design model (1990, Phase II), listed by NASA in NASA/TM-1999-209649; used in NASA Lewis structural analysis and at Wright-Patterson for composites, and sold with CAD/Chem. Neural networks and genetic algorithms on Cray supercomputers cut structural design from months to hours.</li>
+          <li><b>Captured what experts cannot say.</b> His Ph.D. (2001) and patent model an expert twice, as what they say and what they actually do, and show the gap. Each model built in under an hour by the expert alone; 74 of 74 database professionals said it would help; 13 production processes ran 9&times; faster. First to apply neural networks to learning experts' judgment (NASA, 1989).</li>
+          <li><b>Database run times from hours to minutes.</b> With MindModeler's episodic memory, captured the tacit judgment of award-winning database tuners, who recited the rules but acted on intuition, and tuned a production Oracle database: one process from 6 hours to 32 minutes, another from 8 hours to 2 minutes 16 seconds.</li>
+          <li><b>Remote AI over telephone wire, 1990s.</b> At Ferro, spectrophotometer readings from automotive paint customers in <span class="num">40</span> countries crossed twisted-pair phone lines to his lab, where fuzzy logic and neural networks identified pigments and process conditions and sent the recipe back, replacing color experts with decades of experience.</li>
+          <li><b>Expert judgment captured in days.</b> MindModeler (U.S. Patent 8,326,792), offered to clients through Ernst &amp; Young's Intellinex.</li>
+        </ul></section>
+
+      <section class="clients"><h2>Selected clients</h2>
+        <p><b>Pharmaceuticals:</b> Eli Lilly, Merck, Pfizer, Schering-Plough, Zeneca, Abbott. <b>Chemicals &amp; consumer:</b> 3M, Procter &amp; Gamble, Unilever, Dow, BASF, DuPont, Monsanto, Mitsubishi Chemical. <b>Energy:</b> Exxon, Amoco, BP Chemical, Castrol. <b>Industry:</b> Goodyear, Bridgestone/Firestone, Sherwin-Williams, Ford, Allied Signal, Kobe Steel. <b>Government:</b> U.S. Air Force, NASA, USDA. <b>Finance, law &amp; education:</b> Credit Suisse, Arter &amp; Hadden, Harvard, Case Western Reserve.</p>
+        <p>Theory Garden and MindModeler software: more than 1,500 universities and government agencies worldwide, plus Microsoft, HP and SPSS.</p>
+      </section>
+    </div>
+  </div>
+  <div class="foot"><span>Tanvir Y. Goraya, Ph.D.</span><span>Continued</span></div>
+</article>
+
+<!-- Page 2 -->
+<article class="sheet" aria-label="Résumé, page 2">
+  <section><h2>Career</h2>
+    <div class="role"><div class="role-head"><span class="role-title">Director, Artificial Intelligence &amp; Big Data and Information Design Studio</span><span class="dates">2014 – present</span></div>
+      <span class="org">Weatherhead School of Management, Case Western Reserve University</span>
+      <p>Leads work on intractable and "wicked" problems across engineering, design and information systems; advises Ph.D. students. Advisory status in recent years. Senior Associate, Information Design Studio, 2006–2013.</p></div>
+    <div class="role"><div class="role-head"><span class="role-title">President &amp; CEO</span><span class="dates">2005 – present</span></div>
+      <span class="org">Theory Garden, LLC &amp; FZE · USA, UK, UAE, Asia</span>
+      <p>Real-time solutions to NP-complete causal-loop graph problems, delivered as decision-support and executive-dashboard software that non-mathematicians can use. Co-inventor, with Prof. Richard J. Boland, Jr., of U.S. Patent Application 2008/0184154, "Mathematical Simulation of a Cause Model": equationless simulation of causal-loop maps from sparse qualitative input, with no stocks, flows or equations; subject of published research at ICIS 2009. Users include thousands worldwide, 1,500+ universities, Case Western's Executive Doctor of Management program, IARPA and the Department of Defense; applied to Afghanistan stability and counterinsurgency dynamics.</p></div>
+    <div class="role"><div class="role-head"><span class="role-title">Founder, Chief Scientist &amp; CTO</span><span class="dates">2002 – present</span></div>
+      <span class="org">Mind Modelers · Bratenahl, Ohio</span>
+      <p>Expert-knowledge capture and smart systems for CWRU, Cleveland Clinic, Ernst &amp; Young's Intellinex and Arter &amp; Hadden. Built an organizational memory for one of the world's largest mining operations; the model surfaced furnace relationships the expert had never put into words. Method packaged as a four-week proof of concept. Also an AI microworld for children with ADHD.</p></div>
+    <div class="role"><div class="role-head"><span class="role-title">Visiting Assistant Professor of Management Information Systems</span><span class="dates">2001 – 2002</span></div>
+      <span class="org">Weatherhead School of Management, Case Western Reserve University</span>
+      <p>Patented and commercialized MindModeler, the school's first patent. Taught courses and advised graduate research.</p></div>
+    <div class="role"><div class="role-head"><span class="role-title">Adviser to the Director of Emerging Financial Paradigms</span><span class="dates">1996 – 1997</span></div>
+      <span class="org">Harvard University · Boston</span>
+      <p>Co-founded a Center for Islamic Finance.</p></div>
+    <div class="role"><div class="role-head"><span class="role-title">Senior Scientist Level III (V.P.-equivalent), Corporate Research</span><span class="dates">1993 – 1995</span></div>
+      <span class="org">Ferro Corporation (Fortune 300) · Cleveland</span>
+      <p>Reached a vice-president-equivalent rank in his twenties. Built a global AI color-matching service: spectrophotometer readings traveled over twisted-pair telephone lines to his lab, where fuzzy logic and trained neural networks identified the pigments and processing conditions and returned the recipe to automotive customers in 40 countries. Captured the tacit design judgment of a retiring Ph.D. scientist with 50 years of experience in a working model. Solved an NP-complete simulation and scheduling problem.</p></div>
+    <div class="role"><div class="role-head"><span class="role-title">Project Head and Principal Investigator; Visiting, later Senior, Scientist</span><span class="dates">1989 – 1998</span></div>
+      <span class="org">U.S. Air Force Office of Scientific Research · Wright Laboratory, Wright-Patterson AFB · Kelly AFB</span>
+      <p>Led the Rapid Foundry Tooling System (begun as the Rapid Design System) from design through commercialization; about ten Ph.D. dissertations came out of the program; formed government–industry–academia alliances. Four modules: feature-based design, episodic associative memory of past patterns, automated casting design, and stereolithography output. Named a U.S. Air Force Success Story; deployed in support of war theaters (FOIA); its stereolithography prototyping caught a B-52 brake-pedal design flaw before manufacture, avoiding about $516,000; its memory-driven, feature-based design led to CATIA; in use at the San Antonio Air Logistics Center, with a civilian version for a Youngstown State University consortium of metal foundries.</p></div>
+    <div class="role"><div class="role-head"><span class="role-title">Co-founder; Director, CIO &amp; CTO</span><span class="dates">1989 – 1993</span></div>
+      <span class="org">AI WARE, Inc. (acquired by Computer Associates, 1997) · Cleveland</span>
+      <p>Co-founded with Prof. Yoh-Han Pao on his TG-Engine technology. Led the design of CAD/Chem, which grew from his earlier work with Lubrizol, and directed the core tools behind Process Advisor (plant time-series modeling, optimal setpoints, self-updating models) and Business Advisor (financial forecasting and optimal strategy; trained on Computer Associates' share price from 10/1992 to 8/1994, it predicted the price through 9/1995); Mitsubishi Kasei held exclusive distribution in Japan, with distributors in seven more countries; CA relaunched the technology in 1998 as Neugents ("neural agents"), built into Unicenter TNG to predict server, database, application and network outages, and named an IndustryWeek Technology of the Year; named NeuSight and spun off Pegasus Technologies (combustion optimization for coal-fired utilities; later KFx and Computer Associates); led 20 Ph.D. and other scientists; negotiated with Eli Lilly, Mitsubishi, Boeing, B.F. Goodrich and Allied Signal.</p></div>
+    <div class="role"><div class="role-head"><span class="role-title">Senior Scientific Adviser to the Chief Scientist</span><span class="dates">1987 – 1994</span></div>
+      <span class="org">NASA Lewis (Glenn) Research Center · Cleveland</span>
+      <p>One-on-one adviser and NASA contact: Laszlo Berke, Ph.D., chief scientist for structures. AI structural optimization for aircraft and the Space Station, including the X-29A forward-swept wing (FOIA), and Space Station power forecasting and stability. In the chief scientist's words, it "solved computationally impossible problems in under 9 seconds on a Sun 3, which would have required more than 28 billion years with all DoD Cray supercomputers dedicated." His AI design-of-experiments method (AI WARE, 1990 Phase II) is listed in NASA's <i>SBIR Success Stories at NASA Glenn Research Center</i> (1999).</p></div>
+    <div class="role"><div class="role-head"><span class="role-title">Manager, Computer Facility; Adjunct Professor</span><span class="dates">1987 – 1990</span></div>
+      <span class="org">Center for Automation &amp; Intelligent Systems Research, Case Western Reserve University</span>
+      <p>Ran the center's AI and robotics computing. Taught graduate AI-I and AI-II while still an M.S. student.</p></div>
+  </section>
+
+
+  <div class="foot"><span>Tanvir Y. Goraya, Ph.D.</span><span>Continued</span></div>
+</article>
+
+<!-- Page 3 -->
+<article class="sheet" aria-label="Résumé, page 3">
+  <section class="block"><h2>Patents</h2>
+    <ol class="pubs">
+      <li><i>Adaptive Dynamic Personal Modeling System and Method.</i> <a href="https://patents.google.com/patent/US8326792B2/en">U.S. Patent 8,326,792</a>. Sole inventor. Priority April 30, 2001; issued December 4, 2012. Featured in <a href="https://books.google.com/books?id=5E2BSvz8dEAC&amp;pg=PA220"><i>Advances in Machine Learning</i></a> (2013), pp. 220–229.</li>
+      <li><i>Mathematical Simulation of a Cause Model.</i> <a href="https://patents.google.com/patent/US20080184154A1/en">U.S. Patent Application 2008/0184154</a>. With R.J. Boland, Jr., 2008.</li>
+      <li>Contributions to further patents assigned to sponsoring companies and the U.S. Department of Defense.</li>
+    </ol>
+  </section>
+
+  <section class="block"><h2>Publications</h2>
+    <ol class="pubs">
+      <li><a href="https://aisel.aisnet.org/icis2009/68">"IT for Creativity in Problem Formulation."</a> <i>International Conference on Information Systems (ICIS)</i>, 2009. With R.J. Boland, N. Berente and S. Hansen.</li>
+      <li><i>Adaptive Dynamic Personal-Modeling Environment for Ill-Structured Problems.</i> Ph.D. dissertation, Case Western Reserve University, 2001. Committee: Richard Boland, Yoh-Han Pao, Miles Kennedy, Fred Collopy.</li>
+      <li>"Universal Expertise Modeling for Auto Industry: Exploiting the Art of Decision Making." <i>2nd Int'l Conf. on Information Technology Enabling the Automotive Future</i>, Troy, MI, 2001.</li>
+      <li>"Knowledge Matrix, a Multi-Objective Decision Aide: Application to Rigging in Aluminum Sand Casting." Invited paper, <i>1st Int'l Conf. on Aluminum Casting Technology</i>, Chicago, 1998.</li>
+      <li><a href="http://www.tms.org/pubs/journals/JOM/9704/Goraya/Goraya-9704.html">"Metal-Casting Process Design: Postmortem and Predictive Troubleshooting."</a> <i>JOM-e</i> 49(4), 1997. With M.S. Soclof, D.G. Yan and Z. Meng.</li>
+      <li>"Self-Organized Data Structure for Postmortem and Predictive Troubleshooting." <i>Adaptive Distributive Parallel Computing Symposium</i>, Dayton, 1996.</li>
+      <li><a href="https://doi.org/10.1109/ICSYSE.1991.161078">"A Computer-Based Adaptive Associative Memory in Support of Design and Planning."</a> <i>IEEE Int'l Conf. on Systems Engineering</i>, 1991. With Y.-H. Pao, K. Komeyli and S. LeClair.</li>
+      <li><i>Investigation of Light Weight Load Carrying Mechanical Structures for Optimization using Parallel Distributed Processing.</i> M.S. thesis, Case Western Reserve University, 1990. Sponsored by NASA Lewis.</li>
+      <li>"On-Line Transient Stability Evaluation by Associative Dichotomous Classification." <i>2nd Symposium on Expert System Applications to Power Systems</i>, Seattle, 1989. With D.J. Sobajic and Y.-H. Pao.</li>
+      <li>Results of NASA structural optimization project. <i>International Optimization Conference</i>, London, 1989. With L. Berke.</li>
+      <li>Neural-network programs (Appendices A and B) in Y.-H. Pao, <i>Adaptive Pattern Recognition and Neural Networks</i>, Addison-Wesley, 1989.</li>
+    </ol>
+    <p class="subnote"><b>Technical reports:</b> <i>Structural Optimization using Artificial Neural Networks</i>, NASA SBIR final report, NASA Lewis, 1992 · <i>Neural Net Computation of Solutions to Ill-Formed Optimization Problems</i> (with Pao), CAISR TR 91-167, 1991 · <i>Near Optimal Solutions for Lightweight Structural Elements</i>, CAISR, 1990 · <i>Polynomial Time Neural Network Solution to an NP-Complete Problem</i> (with Pao), CAISR, 1989 · <i>Associative Information Processing using Artificial Neural Networks in Product Analysis and Design</i>, CAISR, 1988 · <i>The Pishti Challenger</i>, METU, 1987.</p>
+    <p class="subnote"><b>Invited lecture:</b> "Genetic Algorithms: Genesis of a New Optimization Technique," Special Interest Group on AI, American Society of Computing, Cleveland, 1989.</p>
+  </section>
+
+  <div class="two">
+    <section class="block"><h2>Teaching and advising</h2>
+      <ul class="plain">
+        <li>Adjunct Professor, CWRU, from 1987; Visiting Faculty at various levels from 1996. Sole responsibility for course design and syllabi.</li>
+        <li><b>Graduate:</b> AI-I and AI-II; Advances in Information Systems Technologies; Models of Management: Dynamics of the Firm; Design of Object-Oriented Systems; Seminar on Parallel Distributed Processing and Computational Intelligence.</li>
+        <li><b>Senior level:</b> Technology of Information Systems; Theory and Design of Database Management Systems.</li>
+        <li>Advisor to three doctoral students; research supervisor for M.S. theses in computer, systems and electrical engineering; MBA and M.S.-MIS independent studies.</li>
+      </ul>
+    </section>
+    <section class="block"><h2>Additional appointments and service</h2>
+      <ul class="plain">
+        <li>IT Advisor to the Government of Pakistan.</li>
+        <li>Chief Technology Officer and Chief Strategist, NeoVisionSoft (Cleveland, Pakistan, Dubai).</li>
+        <li>MOJAZA, with Rakuten, Japan.</li>
+        <li>Software donated to Gilmour Academy ($250,000), St. Jerome's ($250,000) and CCF ($250,000+).</li>
+        <li>Senior Lecturer, Case Western Reserve University.</li>
+        <li>Member, Editorial Board, <i>Applied Technology in Business Journal</i>.</li>
+        <li>Senator, CWRU Graduate Student Senate (2,600 graduate students), 1997–99.</li>
+        <li>Standards creation and compliance (PDES, ISO), since 1990.</li>
+        <li>Volunteer, Greater Cleveland Food Bank.</li>
+      </ul>
+    </section>
+  </div>
+
+  <div class="two">
+    <section class="block"><h2>Further honors</h2>
+      <ul class="plain">
+        <li>Nominated for the CWRU Teaching Excellence Award, 1997–98.</li>
+        <li>Best Electronics Innovator Award, Army Burnhall College, 1982.</li>
+        <li>Technical Scholarship, IAESTE, 1986; National Talent Scholarship, Government of Pakistan, 1979.</li>
+        <li>Best Declamation Award, students from 32+ countries, three consecutive years; state-level table tennis, 1977–87.</li>
+      </ul>
+    </section>
+    <section class="block"><h2>Earlier education</h2>
+      <ul class="plain">
+        <li><b>Pre-Engineering</b>, Army Burnhall College, 1982. Top of the graduating class; built more than 20 exhibited devices, including an anti-eavesdropping telecom device and self-switching solar and hydro power sources.</li>
+        <li><b>B.Com. (Part I)</b>, Government College of Commerce and Management Sciences, 1981–83.</li>
+        <li><b>O-Levels</b>, Beijing High School. Third in the country.</li>
+      </ul>
+      <h2 style="margin-top:16px">Expertise</h2>
+      <p class="subnote">Neural networks · genetic algorithms and evolutionary programming · knowledge engineering · expert systems · fuzzy logic · modeling and simulation · multi-criteria constrained optimization · data and text mining · forecasting · adaptive industrial robotics · knowledge management · enterprise architecture.</p>
+    </section>
+  </div>
+  <div class="foot"><span>Tanvir Y. Goraya, Ph.D.</span><span>Résumé</span></div>
+</article>
+</div>
+</body>
+</html>
