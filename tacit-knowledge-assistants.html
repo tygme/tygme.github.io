@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Tacit Knowledge Assistants: white paper, one-page brief, bio and spoken introduction by Tanvir Y. Goraya, Ph.D.">
+<meta property="og:title" content="Tacit Knowledge Assistants">
+<meta property="og:description" content="Tacit Knowledge Assistants: white paper, one-page brief, bio and spoken introduction by Tanvir Y. Goraya, Ph.D.">
+<link rel="icon" href="img/favicon.png">
+<title>Tacit Knowledge Assistants</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Manrope:wght@500;600;700&display=swap">
+</head>
+<body>
+<style>
+:root { --navy:#152238; --paper:#fff; --stone:#f6f5f2; --ink:#0e1117; --ink-2:#3b404a; --rule:#d2cec5; --bronze:#8a6634; --gold:#e2c08a; --accent:#7a5a2c;
+  --display:"Libre Baskerville",Georgia,serif; --serif:"Source Serif 4",Georgia,serif; --caps:"Cinzel",Georgia,serif; --sans:"Manrope",system-ui,sans-serif; color-scheme: light; }
+* { box-sizing: border-box; }
+body { margin:0; background:var(--paper); color:var(--ink); font:400 17px/1.65 var(--serif); }
+a { color:var(--accent); }
+.wrap { max-width:860px; margin:0 auto; padding-left:max(24px, env(safe-area-inset-left,0px)); padding-right:max(24px, env(safe-area-inset-right,0px)); }
+@media (max-width:520px) { .wrap { padding-left:16px; padding-right:16px; } }
+.back { background:#0f1a2d; } .back .wrap { padding-block:12px; display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap; font:600 .8rem/1.3 var(--sans); }
+.back a { color:var(--gold); text-decoration:none; } .back span { color:#c4beb2; letter-spacing:.14em; text-transform:uppercase; }
+.hero { background:radial-gradient(ellipse 60% 70% at 50% 30%, rgba(226,192,138,.14), transparent 70%), var(--navy); color:#f3efe7; }
+.hero .wrap { padding-block:56px 44px; display:grid; gap:12px; }
+.hero .kicker { margin:0; font:700 .78rem/1.3 var(--sans); letter-spacing:.18em; text-transform:uppercase; color:var(--gold); }
+.hero h1 { margin:0; font:400 clamp(2rem,4.6vw,3rem)/1.15 var(--display); }
+.hero p.sub { margin:0; font:italic 400 1.2rem/1.5 var(--display); color:#c4beb2; max-width:40ch; }
+.hero .by { margin-top:8px; font:600 .9rem/1.4 var(--sans); color:#c4beb2; }
+nav.tabs { position:sticky; top:0; z-index:5; background:#fff; border-bottom:1px solid var(--rule); }
+nav.tabs .wrap { display:flex; gap:6px 22px; flex-wrap:wrap; padding-block:12px; font:700 .78rem/1.3 var(--sans); letter-spacing:.1em; text-transform:uppercase; }
+nav.tabs a { color:var(--ink-2); text-decoration:none; padding:4px 0; border-bottom:2px solid transparent; } nav.tabs a:hover { color:var(--ink); border-color:var(--bronze); }
+section.part { padding-block:56px; border-bottom:1px solid var(--rule); }
+section.part:nth-of-type(even) { background:var(--stone); }
+.part-label { margin:0 0 6px; font:700 .76rem/1.3 var(--sans); letter-spacing:.16em; text-transform:uppercase; color:var(--accent); }
+h2 { font:400 clamp(1.5rem,3vw,1.9rem)/1.25 var(--display); margin:44px 0 14px; }
+.part > .wrap > h2:first-of-type, .part-label + h2 { margin-top:0; }
+h3 { font:700 1rem/1.3 var(--sans); letter-spacing:.06em; text-transform:uppercase; color:var(--accent); margin:30px 0 10px; }
+p, li { color:var(--ink-2); } strong, b { color:var(--ink); }
+ul, ol { padding-left:1.2em; } li { margin:6px 0; }
+.tw { overflow-x:auto; margin:18px 0; }
+table { width:100%; border-collapse:collapse; font:500 .92rem/1.45 var(--sans); }
+th { text-align:left; font:700 .72rem/1.3 var(--sans); letter-spacing:.1em; text-transform:uppercase; color:var(--ink-2); padding:0 12px 10px 0; border-bottom:2px solid var(--ink); vertical-align:bottom; }
+td { padding:11px 12px 11px 0; border-bottom:1px solid var(--rule); vertical-align:top; color:var(--ink-2); }
+td:first-child { color:var(--ink); font-weight:700; }
+figure.dia { margin:24px 0; padding:18px; background:#fff; border:1px solid var(--rule); } figure.dia svg { width:100%; height:auto; display:block; }
+figure.dia figcaption { font:600 .82rem/1.4 var(--sans); color:var(--ink-2); margin-top:8px; }
+.bio p { font-size:1.12rem; } .intro p { font:400 1.2rem/1.75 var(--display); color:var(--ink); }
+.words { font:600 .82rem/1.4 var(--sans); color:var(--ink-2); }
+.print { display:inline-block; margin-top:10px; font:700 .74rem/1 var(--sans); letter-spacing:.12em; text-transform:uppercase; color:var(--navy); background:var(--gold); padding:10px 14px; text-decoration:none; border:0; cursor:pointer; }
+footer { background:var(--navy); color:#c4beb2; font:500 .85rem/1.5 var(--sans); } footer .wrap { padding-block:28px; } footer a { color:var(--gold); }
+@media print { .back, nav.tabs, .print { display:none; } .hero { background:#fff; color:var(--ink); } .hero h1 { color:var(--ink); } .hero .kicker { color:var(--accent); } .hero p.sub, .hero .by { color:var(--ink-2); } section.part { background:#fff !important; break-before:page; padding-block:0; border:0; } body { font-size:11.5pt; } }
+</style>
+
+<nav class="back" aria-label="Site"><div class="wrap"><a href="./">← Tanvir Y. Goraya, Ph.D. · Mind Modelers</a><span>White paper</span></div></nav>
+<header class="hero"><div class="wrap">
+  <p class="kicker">White paper · November 2026</p>
+  <h1>Tacit Knowledge Assistants</h1>
+  <p class="sub">AI that captures, and grows with, the expertise your best people cannot put into words</p>
+  <p class="by">Tanvir Y. Goraya, Ph.D.</p>
+  <div><button class="print" onclick="window.print()">Print or save as PDF</button></div>
+</div></header>
+<nav class="tabs" aria-label="Sections"><div class="wrap"><a href="#white-paper">White paper</a><a href="#brief">One-page brief</a><a href="#bio">Bio</a><a href="#introduction">Spoken introduction</a></div></nav>
+<main>
+<section class="part" id="white-paper"><div class="wrap">
+<h2 id="executive-summary">Executive summary</h2>
+<p>Your most valuable knowledge is not in your documents, so your AI does not have it. It lives in the gut feel, know-how and judgment of a few senior people, and it leaves when they retire. Large language models and retrieval-augmented generation (RAG) learn only what was written down. A tacit knowledge assistant captures what was not: a working model of an expert’s judgment that grows with the expert and grounds your AI agents in it.</p>
+<p>The method is not a concept. It is a 2001 Ph.D. at Case Western Reserve University and U.S. Patent 8,326,792 (filed April 30, 2001), proven with experts from the U.S. Air Force, NASA, a Fortune 500 manufacturer and a Fortune 50 consulting firm:</p>
+<ul>
+<li>Each expert built a working model of their own judgment in <strong>under an hour</strong>, with no knowledge engineer or programmer.</li>
+<li><strong>74 of 74</strong> database professionals said it would help them; 70 said no existing tool could.</li>
+<li>Thirteen production database processes ran <strong>9× faster</strong> using the experts’ captured judgment.</li>
+<li>One award-winning expert discovered how she really worked, which contradicted what she had always said about her method.</li>
+</ul>
+<p>The offer is simple. In four weeks, one senior expert’s judgment becomes a model the organization owns, ready to ground its AI agents and to stay when the expert retires. The question for leadership is not whether to capture that judgment, but how much of it will already be gone when you start.</p>
+<h2 id="the-problem-what-ai-cannot-learn-from-documents">The problem: what AI cannot learn from documents</h2>
+<p>Large language models and the agents built on them know what has been written. They cannot know what an organization’s best people do but never wrote down. “We can know more than we can tell,” as Michael Polanyi put it in 1966.</p>
+<p>This knowledge has three properties that defeat today’s tools:</p>
+<ol type="1">
+<li><strong>The expert cannot state it.</strong> A decision-maker “is not necessarily aware of how he arrives at a particular decision and of his own tacit knowledge” (U.S. Patent 8,326,792). Asked how they work, experts recite the textbook.</li>
+<li><strong>What they say differs from what they do.</strong> In the dissertation’s database study, an award-winning tuner said she relied on fixing SQL code. Her own models showed she almost never did.</li>
+<li><strong>It changes as the expert grows.</strong> A rule base or a fine-tuned model is a snapshot. The expert keeps learning.</li>
+</ol>
+<p>The usual remedies fail for the same reason. A Fortune 500 company spent three man-years building a rule-based expert system for a retiring formulation scientist; it “failed to generate acceptable custom formulations.” It then digitized his laboratory notebooks, which did “little more than to provide faster search capability.” That is exactly what document retrieval for AI does today: it finds what was written, never what was not.</p>
+<p>The cost lands when experts retire. Their judgment walks out the door, and the AI the organization deploys knows nothing of it.</p>
+<h2 id="what-a-tacit-knowledge-assistant-is">What a tacit knowledge assistant is</h2>
+<p>A tacit knowledge assistant is a working model of one expert’s judgment that the expert builds, owns and keeps refining, and that AI agents can consult. It holds two models side by side:</p>
+<div class="tw"><table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th>Semantic model</th>
+<th>Episodic model</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Captures</td>
+<td>What the expert says</td>
+<td>What the expert actually did</td>
+</tr>
+<tr class="even">
+<td>Built from</td>
+<td>The factors that matter and how each cause moves each effect, scored in conversation</td>
+<td>10 to 20 real episodes from memory: the situation and the outcome</td>
+</tr>
+<tr class="odd">
+<td>Kind of model</td>
+<td>Linear, adaptive</td>
+<td>Nonlinear, exemplar-based</td>
+</tr>
+<tr class="even">
+<td>Today’s equivalent</td>
+<td>Written policy; a system prompt; a knowledge graph</td>
+<td>Agent memory; few-shot examples; case-based reasoning</td>
+</tr>
+</tbody>
+</table></div>
+<p>The gap between the two models is where the tacit knowledge shows. The expert sees it, then corrects the model by dragging any wrong answer to where it should be; the model rewrites its own values to match. This is claim 1 of U.S. Patent 8,326,792.</p>
+<p>Five properties set it apart:</p>
+<ul>
+<li><strong>Built by the expert, in hours.</strong> No knowledge engineer stands in between to add bias.</li>
+<li><strong>Owned by the expert.</strong> It answers the expert’s fear of being replaced, which otherwise keeps the best knowledge hidden.</li>
+<li><strong>Grows with the expert.</strong> Every correction and new episode updates it.</li>
+<li><strong>Explains itself.</strong> Visual what-if views, trend plots and 3-D surfaces show why it answers as it does.</li>
+<li><strong>Shares across experts.</strong> The patent covers many experts contributing to one “organizational memory.”</li>
+</ul>
+<h2 id="the-method-proven">The method, proven</h2>
+<p>The method has been tested with real experts for more than twenty-five years. It began with a failure: at the U.S. Air Force, a team could not replicate the manufacture of a B-52 brake pedal. The master craftsmen helped willingly, but their tacit knowledge did not transfer. Six expert-system shells, including NASA’s CLIPS and NEXPERT Object, captured little more than the rules already in the manuals. The question led back to Plato’s <em>Meno</em>, where Socrates draws geometry out of a boy who was never taught it.</p>
+<div class="tw"><table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Expert</th>
+<th>Organization</th>
+<th>What the method did</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Structures experts</td>
+<td>NASA Lewis (Glenn), 1989</td>
+<td>First application of neural networks to learning experts’ judgment of optimal structures; optimized aircraft and Space Station structures</td>
+</tr>
+<tr class="even">
+<td>Casting artisans</td>
+<td>U.S. Air Force</td>
+<td>Modeled rigging judgment: sprue, basin and pouring choices against turbulence, energy losses and air pockets</td>
+</tr>
+<tr class="odd">
+<td>Three award-winning database tuners</td>
+<td>Fortune 50 consulting firm</td>
+<td>Models built in under an hour each; 13 production processes 9× faster (73 min 26 s to 8 min 10 s); two processes from 6 h to 32 min and 8 h to 2 min 16 s; a query from 90 s to 1 s</td>
+</tr>
+<tr class="even">
+<td>74 database professionals</td>
+<td>Professional meetings</td>
+<td>74 of 74 said it would help; 70 said no existing tool could</td>
+</tr>
+<tr class="odd">
+<td>Process engineer, 30+ years</td>
+<td>Large mining company, 2002</td>
+<td>Captured furnace judgment on SO₂, NOₓ and CO; surfaced knowledge he “never gave”</td>
+</tr>
+<tr class="even">
+<td>Executive, formulation scientist, internist</td>
+<td>Industry and medicine</td>
+<td>Models of negotiation, formulation and clinical judgment</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Proved, not assumed.</strong> The episodic model learns the parity (XOR) problem that Minsky and Papert used to show a single-layer perceptron’s limits. Its predictions matched the semantic model’s statistics almost exactly (mean −4.08 against −4.07), so it adds no spurious complexity.</p>
+<p><strong>Protected.</strong> U.S. Patent 8,326,792, “Adaptive Dynamic Personal Modeling System and Method,” filed April 30, 2001, granted December 4, 2012. The companion Theory Garden application, U.S. 2008/0184154 with Richard J. Boland, Jr., turns a drawn cause map into a simulation with no equations.</p>
+<h2 id="how-it-fits-with-todays-ai-agents">How it fits with today’s AI agents</h2>
+<p>The language model supplies fluency; the tacit knowledge assistant supplies the expert’s judgment, and the expert stays in the loop.</p>
+<figure class="dia"><svg viewBox="0 0 760 420" role="img" aria-label="The expert model sits between the language model and action" font-size="13" font-family="Manrope, system-ui, sans-serif"><defs><marker id="arch-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#8a8576"/></marker></defs><text x="24" y="34" font-size="15" font-weight="600" fill="#0e1117">The expert model sits between the language model and action</text><g fill="none" stroke="#8a8576" stroke-width="1.25"><path d="M272 124V148" marker-end="url(#arch-arrow)"/><path d="M272 212V236" marker-end="url(#arch-arrow)"/><path d="M272 300V324" marker-end="url(#arch-arrow)"/><path d="M560 180H520" marker-end="url(#arch-arrow)"/><path d="M648 220V356H520" marker-end="url(#arch-arrow)"/></g><rect x="24" y="60" width="496" height="64" rx="8" fill="none" stroke="#8a8576" stroke-width="1.25"/><text x="40" y="84" font-weight="600" fill="#0e1117">Language model agent</text><text x="40" y="106" font-size="11.5" fill="#3b404a">Talks with people, drafts, plans and calls tools</text><rect x="24" y="148" width="496" height="64" rx="8" fill="#2f6fd1" fill-opacity="0.12" stroke="#2f6fd1" stroke-width="2"/><text x="40" y="172" font-weight="600" fill="#0e1117">Tacit knowledge assistant</text><text x="40" y="194" font-size="11.5" fill="#0e1117">Semantic model: what the expert says. Episodic model: what they did.</text><rect x="24" y="236" width="496" height="64" rx="8" fill="none" stroke="#8a8576" stroke-width="1.25"/><text x="40" y="260" font-weight="600" fill="#0e1117">Causal simulation and optimizers</text><text x="40" y="282" font-size="11.5" fill="#3b404a">Test a plan&#8217;s consequences; compute the best action</text><rect x="24" y="324" width="496" height="64" rx="8" fill="none" stroke="#8a8576" stroke-width="1.25"/><text x="40" y="348" font-weight="600" fill="#0e1117">Action, with oversight</text><text x="40" y="370" font-size="11.5" fill="#3b404a">Plant, network and business systems</text><rect x="560" y="148" width="176" height="72" rx="8" fill="none" stroke="#2f6fd1" stroke-width="2"/><text x="576" y="172" font-weight="600" fill="#0e1117">The expert</text><text x="576" y="190" font-size="11.5" fill="#3b404a"><tspan x="576">Builds, owns and</tspan><tspan x="576" dy="16">corrects the model</tspan></text><text x="648" y="138" text-anchor="middle" font-size="11.5" fill="#3b404a">drags wrong answers right</text><text x="658" y="290" font-size="11.5" fill="#3b404a"><tspan x="658">approves</tspan><tspan x="658" dy="16">what matters</tspan></text></svg><figcaption>A dependable agent: four layers and the expert.</figcaption></figure>
+<p>The agent consults the expert’s models before it acts, much as it would retrieve a document, but what it retrieves is judgment rather than text. Causal simulation and optimizers do the arithmetic a language model cannot do reliably. The expert keeps correcting the model and approves what matters.</p>
+<h2 id="where-it-pays">Where it pays</h2>
+<p>It pays wherever results depend on a few people’s judgment, the data is sparse, and the cost of losing them is high.</p>
+<div class="tw"><table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Field</th>
+<th>Whose judgment</th>
+<th>What the assistant does</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Manufacturing and foundries</td>
+<td>Master craftsmen, process engineers</td>
+<td>Keeps rigging, setup and troubleshooting know-how; grounds operator copilots</td>
+</tr>
+<tr class="even">
+<td>Chemicals and formulation</td>
+<td>Senior formulators</td>
+<td>Proposes recipes the way the expert would, including ones a textbook rules out</td>
+</tr>
+<tr class="odd">
+<td>Energy and utilities</td>
+<td>Plant and combustion engineers</td>
+<td>Balances emissions, efficiency and cost the way seasoned operators do</td>
+</tr>
+<tr class="even">
+<td>IT operations</td>
+<td>Senior database and systems tuners</td>
+<td>Diagnoses and tunes as the best tuner would; grounds AIOps agents</td>
+</tr>
+<tr class="odd">
+<td>Aerospace and defense</td>
+<td>Design and structures experts</td>
+<td>Judges designs early; preserves knowledge across long programs</td>
+</tr>
+<tr class="even">
+<td>Medicine</td>
+<td>Senior clinicians</td>
+<td>Models clinical judgment for training and decision support</td>
+</tr>
+<tr class="odd">
+<td>Executive leadership</td>
+<td>Executives and negotiators</td>
+<td>Tests strategies against the leader’s own weighted goals</td>
+</tr>
+<tr class="even">
+<td>Universities and training</td>
+<td>Master teachers and mentors</td>
+<td>Passes on judgment to the next generation; the Theory Garden tools teach scientific thinking from grade 4 up</td>
+</tr>
+</tbody>
+</table></div>
+<p>In every case the first model takes hours, not months, and the expert remains its owner.</p>
+<h2 id="how-an-engagement-runs">How an engagement runs</h2>
+<p>The Expert Knowledge Capture engagement takes four weeks and one senior expert.</p>
+<ol type="1">
+<li><strong>Week 1. The semantic model.</strong> The expert names what they control, what they cannot, and how each factor moves the others.</li>
+<li><strong>Week 2. Authentication.</strong> The expert tests the model with “what if” questions and drags wrong answers to where they belong.</li>
+<li><strong>Week 3. The episodic model.</strong> Ten to twenty real episodes, the times it went right and wrong, train the model of what the expert actually does.</li>
+<li><strong>Week 4. Validation and the path forward.</strong> The two models are compared, the gaps are discussed with the expert, and the findings go into procedures, training and AI agents.</li>
+</ol>
+<p>The client keeps the models. The expert keeps ownership of their own judgment within them, which is what makes experts willing to take part.</p>
+<p>Beyond the pilot, the same method scales to a team’s shared organizational memory and to agents grounded in it.</p>
+<h2 id="about-the-author">About the author</h2>
+<p>Tanvir Y. Goraya, Ph.D., is a practitioner-scientist who has worked at the front of machine learning, AI and robotics since 1985, in industry, academia and government research, often decades ahead of the field.</p>
+<ul>
+<li><strong>Professor and university leader.</strong> Taught graduate AI at Case Western Reserve University from 1987, beginning as an adjunct professor while still a master’s student. Most recently Director of AI and Big Data at Case Western Reserve.</li>
+<li><strong>Scientist for the nation.</strong> Senior Scientist and Principal Investigator for the U.S. Air Force, whose Rapid Foundry Tooling System became an Air Force Success Story. Senior scientific adviser to NASA Lewis (Glenn) Research Center’s chief scientist; his AI design-of-experiments method is a NASA SBIR success story. Much of his government work cannot be described publicly.</li>
+<li><strong>Founder.</strong> Co-founded AI WARE, whose CAD/Chem, Process Advisor and Business Advisor products reached 500+ installations at 130+ organizations before Computer Associates acquired it in 1997 and relaunched the technology worldwide as Neugents. Founded Mind Modelers and Theory Garden.</li>
+<li><strong>Industry leader.</strong> Senior Scientist Level III, a vice-president-equivalent rank, at Ferro Corporation in his twenties, running AI color matching for automotive customers in 40 countries.</li>
+<li><strong>Inventor.</strong> Sole inventor of U.S. Patent 8,326,792, the method in this paper.</li>
+</ul>
+<p>Contact: tgoraya@gmail.com · <a href="https://www.linkedin.com/in/tanvirgorayaphd/">linkedin.com/in/tanvirgorayaphd</a></p>
+<h2 id="sources">Sources</h2>
+<ul>
+<li>Goraya, T.Y. <em>Adaptive Dynamic Personal-Modeling Environment for Ill-Structured Problems.</em> Ph.D. dissertation, Case Western Reserve University, January 2001. Committee: Richard Boland, Yoh-Han Pao, Miles Kennedy, Fred Collopy.</li>
+<li><a href="https://patents.google.com/patent/US8326792B2/en">U.S. Patent 8,326,792 B2</a>, “Adaptive Dynamic Personal Modeling System and Method.” Provisional filed April 30, 2001; granted December 4, 2012.</li>
+<li><a href="https://patents.google.com/patent/US20080184154A1/en">U.S. Patent Application 2008/0184154 A1</a>, “Mathematical Simulation of a Cause Model,” Goraya and Boland, 2008.</li>
+<li><a href="https://books.google.com/books?id=5E2BSvz8dEAC&amp;pg=PA220"><em>Advances in Machine Learning</em></a> (2013), Chapter 1, pp. 220–229, on the MindModeler patent.</li>
+<li><a href="https://ntrs.nasa.gov/api/citations/20000018018/downloads/20000018018.pdf"><em>SBIR Success Stories at NASA Glenn Research Center</em></a>, NASA/TM-1999-209649, 1999.</li>
+<li>U.S. Air Force Wright Laboratory, Rapid Foundry Tooling System Success Story, 1995.</li>
+<li>Polanyi, M. <em>The Tacit Dimension.</em> 1966.</li>
+</ul>
+
+</div></section>
+<section class="part" id="brief"><div class="wrap"><p class="part-label">One-page brief</p>
+<h2 id="your-best-peoples-judgment-is-about-to-retire.-your-ai-cannot-learn-it-from-documents.">Your best people’s judgment is about to retire. Your AI cannot learn it from documents.</h2>
+<h3 id="the-cost-you-already-carry">The cost you already carry</h3>
+<ul>
+<li><strong>The retirement cliff.</strong> When a senior engineer, formulator or operator leaves, decades of judgment leave too. Replacing it takes years, if it can be replaced at all.</li>
+<li><strong>AI that sounds right but is not.</strong> Large language models and retrieval-augmented generation (RAG) know what was written. Your experts’ gut feel, know-how and judgment were never written down, so your agents reason without them.</li>
+<li><strong>Knowledge projects that do not pay back.</strong> Interviews, rule-based expert systems and digitized notebooks capture the textbook, not the expert. One Fortune 500 manufacturer spent three man-years on a rule-based system for a retiring scientist; it “failed to generate acceptable custom formulations.”</li>
+</ul>
+<h3 id="what-we-deliver">What we deliver</h3>
+<p>A <strong>tacit knowledge assistant</strong>: a working model of one expert’s judgment, built by the expert in hours, owned by the expert, and consulted by your AI agents.</p>
+<ul>
+<li><strong>Semantic model:</strong> what the expert says, as a matrix of causes and effects.</li>
+<li><strong>Episodic model:</strong> what the expert actually did, learned from 10 to 20 real episodes with a nonlinear, exemplar-based model.</li>
+<li><strong>Human-in-the-loop learning:</strong> the expert drags any wrong answer to the right value and the model updates itself (U.S. Patent 8,326,792, claim 1).</li>
+<li><strong>Grounding for agents:</strong> causal simulation and constrained optimization test a plan before your agent acts.</li>
+</ul>
+<h3 id="proof">Proof</h3>
+<div class="tw"><table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Result</th>
+<th>Where</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Each expert’s model built in under an hour, no programmer</td>
+<td>Ph.D. research, Case Western Reserve, 2001</td>
+</tr>
+<tr class="even">
+<td>74 of 74 database professionals said it would help; 70 said no tool could</td>
+<td>Same study</td>
+</tr>
+<tr class="odd">
+<td>13 production processes 9× faster with experts’ captured judgment</td>
+<td>Fortune 50 consulting firm</td>
+</tr>
+<tr class="even">
+<td>Air Force casting-pattern design: two weeks to under two days</td>
+<td>U.S. Air Force Success Story, 1995</td>
+</tr>
+<tr class="odd">
+<td>AI that chose its own experiments</td>
+<td>NASA SBIR success story</td>
+</tr>
+<tr class="even">
+<td>Technology relaunched worldwide by Computer Associates as Neugents</td>
+<td>IndustryWeek Technology of the Year, 1998</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="start-with-a-four-week-pilot">Start with a four-week pilot</h3>
+<p>One senior expert, four weeks: semantic model, expert authentication, episodic model, validation. You keep the models; the expert’s judgment stays when the expert retires, and your agents finally know what your best people know.</p>
+<p><strong>Tanvir Y. Goraya, Ph.D.</strong> Professor and practitioner-scientist; former Director of AI &amp; Big Data, Case Western Reserve University; co-founder of AI WARE (acquired by Computer Associates); sole inventor of the method. tgoraya@gmail.com</p>
+
+</div></section>
+<section class="part bio" id="bio"><div class="wrap"><p class="part-label">Bio · 148 words</p><h2>Tanvir Y. Goraya, Ph.D.</h2>
+<p>Tanvir Y. Goraya, Ph.D., is a professor and practitioner-scientist who has worked at the front of machine learning, AI and robotics since 1985, often decades ahead of the field. As Senior Scientist and Principal Investigator for the U.S. Air Force, he led the Rapid Foundry Tooling System, an Air Force Success Story; as senior scientific adviser to NASA Lewis’s chief scientist, he created an AI design-of-experiments method that NASA lists among its SBIR success stories. He co-founded AI WARE, whose CAD/Chem, Process Advisor and Business Advisor reached 500+ installations before Computer Associates acquired it and relaunched the technology as Neugents. He taught graduate AI for more than twenty years and most recently served as Director of AI &amp; Big Data at Case Western Reserve University. His Ph.D. and U.S. Patent 8,326,792 capture experts’ tacit judgment, the knowledge today’s AI agents still lack. He now builds tacit knowledge assistants.</p>
+
+</div></section>
+<section class="part intro" id="introduction"><div class="wrap"><p class="part-label">Spoken introduction</p><h2>Two minutes, in his own words</h2><p class="words">About 300 words. Read aloud at an easy pace.</p>
+<p>Every organization has a few people whose judgment it cannot afford to lose. The engineer who can look at a design and know it will fail. The formulator who knows which recipe will work before the lab runs a test.</p>
+<p>Ask them how they know, and they recite the textbook. Their real expertise was never written down. So today’s AI, which learns from what was written, never learns it either. And when they retire, it is gone.</p>
+<p>I have spent forty years on that problem.</p>
+<p>I started in 1985 with an AI that played a bluffing card game. At Case Western Reserve I taught graduate AI, and as a scientist for the U.S. Air Force and NASA I built systems that learned from sparse data: one cut Air Force casting design from two weeks to two days; another chose its own experiments and became a NASA success story. I co-founded AI WARE, which Computer Associates bought and relaunched worldwide as “software that can think.”</p>
+<p>But one failure shaped my life’s work. We could not replicate the manufacture of a B-52 brake pedal. The master craftsmen helped us in every way they could, and still their knowledge would not transfer. That question took me to Plato, to a Ph.D., and to a patent.</p>
+<p>The answer is to model an expert twice: what they say, and what they actually do. The gap between the two is the tacit knowledge. With three award-winning database tuners, each model took under an hour, and their captured judgment made thirteen production processes nine times faster.</p>
+<p>Today I build tacit knowledge assistants: models of your best people’s judgment, owned by them, growing with them, and grounding your AI agents.</p>
+<p>Your AI has read everything your company wrote. Let it learn what your best people never wrote down.</p>
+
+</div></section>
+</main>
+<footer><div class="wrap">Tanvir Y. Goraya, Ph.D. · <a href="mailto:tgoraya@gmail.com">tgoraya@gmail.com</a> · <a href="https://www.linkedin.com/in/tanvirgorayaphd/">LinkedIn</a> · <a href="./">Website</a> · <a href="resume.html">Résumé</a></div></footer>
+</body>
+</html>
