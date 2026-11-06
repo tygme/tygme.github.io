@@ -350,6 +350,7 @@ main > section.bg-stone { background: #f6f5f2; }
 .af-steps b { font: 700 0.76rem/1 var(--sans); letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); }
 .af-steps b::before { content: counter(s) " · "; }
 .af-steps span { font: 500 0.86rem/1.45 var(--sans); color: var(--ink-2); }
+.af-doc { margin: 8px auto 28px; max-width: 720px; display: grid; gap: 10px; } .af-doc > a { display: block; line-height: 0; } .af-doc img { width: 100%; height: auto; display: block; border: 1px solid var(--rule); box-shadow: 0 16px 36px rgba(15,26,45,.18); background: #fff; } .af-doc figcaption { font-size: 0.84rem; color: var(--ink-2); line-height: 1.5; } .af-doc figcaption b { color: var(--ink); }
 .af-thumbs { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
 .af-thumbs figure { margin: 0; display: grid; gap: 8px; }
 .af-team { margin: 0; font-size: 0.88rem; color: var(--ink-2); max-width: 70rem; }
@@ -873,6 +874,10 @@ main > section.dark.story { background: radial-gradient(ellipse 60% 50% at 20% 2
           <p>Parts designed with it went into Air Force systems deployed in war theaters <span class="fill">[which theaters and systems; FOIA reference]</span>. Its stereolithography prototyping supported the B-52 brake-pedal redesign at San Antonio: a design flaw was caught before manufacture, saving about $516,000 and cutting prototype time by 80%. Its memory-driven, feature-based design led to CATIA <span class="fill">[how: licensing, people or published lineage]</span>.</p>
         </div>
       </div>
+      <figure class="af-doc">
+        <a href="docs/usaf-rfts-success-story.pdf"><img src="img/usaf-success-story.webp" alt="United States Air Force Research Wright Laboratory Success Story: Rapid Foundry Tooling System automates pattern design for foundry castings, with a screen from the casting interface" width="1360" height="1100" loading="lazy"></a>
+        <figcaption><b>The Air Force's own record.</b> United States Air Force Research Wright Laboratory Success Story, <i>Rapid Foundry Tooling System Automates Pattern Design for Foundry Castings</i>, as published. A U.S. government work, reproduced as published and without implying Air Force endorsement. <a href="docs/usaf-rfts-success-story.pdf">Open the page as a PDF</a>.</figcaption>
+      </figure>
       <div class="af-thumbs">
         <figure><img src="img/rfts-arm.webp" alt="RFTS casting interface: a part with its parting line marked" width="900" height="679"><figcaption>Parting line found automatically</figcaption></figure>
         <figure><img src="img/rfts-arm-cope.webp" alt="RFTS casting interface: the same part with cope and drag checked" width="900" height="684"><figcaption>Cope and drag checked</figcaption></figure>
