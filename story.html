@@ -609,6 +609,19 @@ main > section.dark.story { background: radial-gradient(ellipse 60% 50% at 20% 2
 }
 @media (prefers-reduced-motion: reduce) { .pcard, .pcard .media img, .stickycta { transition: none; } }
 .pcard .media img.fit { object-fit: contain; object-position: center; background: #000; }
+
+/* v30: from the archive */
+.exh-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 30px; margin-top: 34px; align-items: start; }
+.exh { margin: 0; display: grid; gap: 14px; }
+.exh .mat { background: #ebe7de; border: 1px solid var(--rule); padding: 26px; display: grid; place-items: center; height: 300px; box-shadow: inset 0 0 0 6px #f6f5f2; }
+.exh .mat img { max-width: 100%; max-height: 248px; width: auto; height: auto; display: block; box-shadow: 0 10px 26px rgba(15,26,45,.28); background: #fff; }
+.exh .mat a { display: grid; place-items: center; max-width: 100%; max-height: 100%; line-height: 0; }
+.exh figcaption { display: grid; gap: 4px; }
+.exh .tag { font: 700 0.66rem/1.3 var(--sans); letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); margin: 0; }
+.exh h3 { font: 700 1.08rem/1.3 var(--display); }
+.exh figcaption p:not(.tag) { font-family: var(--serif); font-size: 0.98rem; line-height: 1.55; color: var(--ink-2); margin: 0; }
+.exh figcaption small { font: 400 0.8rem/1.45 var(--sans); color: var(--ink-2); }
+@media (max-width: 900px) { .exh-grid { grid-template-columns: 1fr; } .exh .mat { height: auto; min-height: 220px; } .exh .mat img { max-height: 420px; } }
 </style>
 <div class="progress" aria-hidden="true"><i></i></div>
 <div class="draft"><div class="wrap"><span><b>Preview</b> Not yet public. Every fact is drawn from the master CV.</span><a href="seal.html">Seal studies</a></div></div>
@@ -635,7 +648,7 @@ main > section.dark.story { background: radial-gradient(ellipse 60% 50% at 20% 2
       <p class="crumb"><a href="index.html">Home</a> / The Story</p>
       <h1 id="ph">Forty years, one thread</h1>
       <p class="lede">From a card game in Ankara to the AI agents companies are deploying now, and the companies and giving along the way.</p>
-      <nav class="subnav" aria-label="On this page"><a href="#journey">The journey</a><a href="#ventures">Companies and giving</a><a href="#about">About</a></nav>
+      <nav class="subnav" aria-label="On this page"><a href="#journey">The journey</a><a href="#archive">From the archive</a><a href="#ventures">Companies and giving</a><a href="#about">About</a></nav>
     </div>
   </section>
 
@@ -661,6 +674,30 @@ main > section.dark.story { background: radial-gradient(ellipse 60% 50% at 20% 2
         <li><span class="yr">2014</span><b>Director, AI &amp; Big Data</b><span>Case Western Reserve University.</span></li>
         <li class="now"><span class="yr">Now</span><b>Advising on AI agents</b><span>Helping leaders make today's agents dependable with what he has already built and proved.</span></li>
       </ol>
+    </div>
+  </section>
+
+  <section class="section" id="archive" aria-labelledby="archive-h">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="label">From the archive</p>
+        <h2 id="archive-h">Primary documents, as they were</h2>
+        <p>Three pieces from the record, shown as they were issued.</p>
+      </div>
+      <div class="exh-grid">
+        <figure class="exh">
+          <div class="mat"><a href="img/card-1987.webp" title="Open full size"><img src="img/card-1987.webp" alt="Business card, 1987: Tanvir Y. Goraya, Manager, Computer Facility, Center for Automation and Intelligent Systems Research, Case Western Reserve University, Cleveland, Ohio" width="942" height="528"></a></div>
+          <figcaption><p class="tag">September 1987</p><h3>Business card, Case Western Reserve</h3><p>Manager, Computer Facility, at the Center for Automation and Intelligent Systems Research, Cleveland. The start of his work in the United States.</p><small>Original card. The old telephone number is blurred.</small></figcaption>
+        </figure>
+        <figure class="exh">
+          <div class="mat"><a href="docs/usaf-rfts-success-story.pdf"><img src="img/usaf-success-story.webp" alt="United States Air Force Research Wright Laboratory Success Story: Rapid Foundry Tooling System" width="1360" height="1100"></a></div>
+          <figcaption><p class="tag">1995 · U.S. Air Force</p><h3>Wright Laboratory Success Story</h3><p>Rapid Foundry Tooling System automates pattern design for foundry castings. As published by the Air Force.</p><small>A U.S. government work, reproduced without implying endorsement. <a href="docs/usaf-rfts-success-story.pdf">Open the PDF</a>.</small></figcaption>
+        </figure>
+        <figure class="exh">
+          <div class="mat"><a href="img/ca-neugents-ad.webp" title="Open full size"><img src="img/ca-neugents-ad.webp" alt="Computer Associates advertisement: Neugents, software that can think" width="900" height="1167"></a></div>
+          <figcaption><p class="tag">Computer Associates</p><h3>"Software That Can Think"</h3><p>The advertisement for Neugents, the relaunch of AI WARE's technology worldwide.</p><small>Advertisement, undated.</small></figcaption>
+        </figure>
+      </div>
     </div>
   </section>
 
