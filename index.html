@@ -162,6 +162,13 @@ main > section.affil { background: #fff; border-bottom: 1px solid var(--rule); }
 .applied > p { font: italic 400 1.1rem/1.5 var(--display); }
 @media (max-width: 720px) { .applied thead { display: none; } .applied tr, .applied td { display: block; width: auto !important; } .applied td { padding: 4px 0; border: 0; } .applied tr { padding-block: 12px; border-bottom: 1px solid var(--rule); } }
 /* Then and now */
+.leak-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; margin-top: 34px; }
+.leak-grid article { padding: 24px 26px; background: var(--paper); border: 1px solid var(--rule); border-top: 3px solid var(--bronze); display: grid; gap: 10px; align-content: start; }
+.leak-grid .need { font: 700 0.72rem/1.3 var(--sans); letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); margin: 0; }
+.leak-grid h3 { font: 700 1.15rem/1.3 var(--display); }
+.leak-grid p:not(.need) { font-family: var(--serif); font-size: 1.04rem; color: var(--ink-2); }
+.leak-note { margin-top: 22px; font-size: 0.86rem; color: var(--ink-2); max-width: var(--measure); }
+@media (max-width: 760px) { .leak-grid { grid-template-columns: 1fr; } }
 .then-now { overflow-x: auto; }
 .then-now table { width: 100%; border-collapse: collapse; min-width: 0; }
 .then-now th { text-align: left; font: 700 0.72rem/1.3 var(--sans); letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-2); padding: 0 18px 10px 0; border-bottom: 2px solid var(--ink); }
@@ -613,6 +620,33 @@ main > section.dark.story { background: radial-gradient(ellipse 60% 50% at 20% 2
           <li><b>Action, with oversight</b><span>Connections to plant, network and business systems, with the expert approving what matters.</span></li>
         </ol>
         <p class="stack-cta">This is what the <a href="#advisory">Expert Knowledge Capture engagement</a> delivers: the expert's model, ready to ground your agents.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-stone" id="leak" aria-labelledby="leak-h">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="label">The leak</p>
+        <h2 id="leak-h">Why today's AI cannot plug the hole</h2>
+        <p>Every mainstream AI approach learns from a record: documents, tickets, transcripts, past data. Each is blind to what the record leaves out. Your best people's judgment is exactly what the record leaves out, so it keeps leaking out through retirements while the AI spend goes up.</p>
+      </div>
+      <div class="then-now">
+        <table>
+          <thead><tr><th>Approach</th><th>What it learns from</th><th>What it misses</th></tr></thead>
+          <tbody>
+            <tr><td>Chatbots and large language models</td><td>Public text and your documents</td><td>Whatever your experts never wrote. Gaps get filled with plausible text.</td></tr>
+            <tr><td>Search over your documents (RAG)</td><td>Manuals, tickets, wikis</td><td>It retrieves what was written, never what was known.</td></tr>
+            <tr><td>Fine-tuning</td><td>A frozen snapshot of past data</td><td>The expert keeps learning. The snapshot does not.</td></tr>
+            <tr><td>AI agents</td><td>The same language models, plus tools</td><td>They act on the same half-picture, with confidence.</td></tr>
+            <tr><td>Interviews and rule-based expert systems</td><td>What the expert can say</td><td>The expert recites the textbook. One Fortune 500 manufacturer spent three man-years on a rule system for a retiring scientist that "failed to generate acceptable custom formulations."</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="leak-note">This describes how these approaches work in general, not any named product. Newer tools that mine tickets and transcripts get closer to real behavior, but they still learn from a record. Accenture's authors in California Management Review (March 2026) reach the same point: the differentiator for agentic AI is not the data or even the models, but the tacit knowledge in people's judgment.</p>
+      <div class="leak-grid">
+        <article><p class="need">Why it is not an easy task</p><h3>Watch an expert, and the expert performs for you</h3><p>This is the Hawthorne effect, named for productivity studies at Western Electric's Hawthorne Plant in the 1920s and early 1930s: people change their behavior when they know they are being watched. Those original experiments have since been heavily criticized, and researchers now prefer the term "research participation effects," but the practical warning stands. Observation changes behavior, and interviews fare no better, because asked how they work, experts describe the textbook.</p></article>
+        <article><p class="need">An old problem</p><h3>Plato saw it 2,400 years ago</h3><p>In the <i>Meno</i>, a student asks how anyone can search for something they do not already know. Socrates answers by drawing geometry out of an untaught boy with questions alone. The puzzle has never gone away. His way through: do not ask the expert to explain. Put real cases in front of the expert, let the expert judge them, and learn from the corrections. His dissertation compared what experts said with what they did.</p></article>
       </div>
     </div>
   </section>
