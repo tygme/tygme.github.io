@@ -64,6 +64,8 @@ figure.dia figcaption { font:600 .82rem/1.4 var(--sans); color:var(--ink-2); mar
 .words { font:600 .82rem/1.4 var(--sans); color:var(--ink-2); }
 .print { display:inline-block; margin-top:10px; font:700 .74rem/1 var(--sans); letter-spacing:.12em; text-transform:uppercase; color:var(--navy); background:var(--gold); padding:10px 14px; text-decoration:none; border:0; cursor:pointer; }
 footer { background:var(--navy); color:#c4beb2; font:500 .85rem/1.5 var(--sans); } footer .wrap { padding-block:28px; } footer a { color:var(--gold); }
+.story { border-left:3px solid var(--accent); background:#f6f5f2; padding:6px 22px 8px; margin:22px 0; } .story h3 { margin-top:18px; } .story .tag { font:600 .72rem/1.3 var(--sans); letter-spacing:.16em; text-transform:uppercase; color:var(--accent); margin:16px 0 0; } .story .moral { font-style:italic; }
+@media print { #brief .wrap { max-width:none; padding:0; } #brief { font-size:9.3pt; line-height:1.34; } #brief h2 { font-size:15pt; margin:0 0 6px; } #brief h3 { font-size:8.6pt; margin:9px 0 3px; } #brief p, #brief li { margin:0 0 3px; } #brief ul { margin:0 0 3px; padding-left:16px; } #brief table { font-size:8pt; line-height:1.25; } #brief td, #brief th { padding:2px 6px; } #brief .story { padding:2px 12px 3px; margin:6px 0; } #brief .part-label { margin:0 0 4px; } @page { margin:0.55in; } }
 @media print { .back, nav.tabs, .print { display:none; } .hero { background:#fff; color:var(--ink); } .hero h1 { color:var(--ink); } .hero .kicker { color:var(--accent); } .hero p.sub, .hero .by { color:var(--ink-2); } section.part { background:#fff !important; break-before:page; padding-block:0; border:0; } body { font-size:11.5pt; } }
 </style>
 
@@ -98,6 +100,25 @@ footer { background:var(--navy); color:#c4beb2; font:500 .85rem/1.5 var(--sans);
 </ol>
 <p>The usual remedies fail for the same reason. A Fortune 500 company spent three man-years building a rule-based expert system for a retiring formulation scientist; it “failed to generate acceptable custom formulations.” It then digitized his laboratory notebooks, which did “little more than to provide faster search capability.” That is exactly what document retrieval for AI does today: it finds what was written, never what was not.</p>
 <p>The cost lands when experts retire. Their judgment walks out the door, and the AI the organization deploys knows nothing of it.</p>
+<h2 id="two-pictures-of-the-problem">Two pictures of the problem</h2>
+<p>The idea sounds abstract until you see it in a kitchen and in a bank. Both stories below are illustrations, not case studies, and name no real person or company.</p>
+<div class="story">
+<p class="tag">Illustration · Everyday life</p>
+<h3>The soup that tasted like home</h3>
+<p>Two people make the same soup from the same recipe: same onions, same stock, same pot. One soup is fine. The other makes the table go quiet.</p>
+<p>The recipe says, “Sauté onions 10 minutes. Add stock. Simmer 30 minutes. Season to taste.” Watch the chef, and you see what it leaves out. She lifts the lid and tilts her head. At minute seven she turns the heat down, though no step says to. She tastes, adds nothing, tastes again. Then a pinch of salt, a squeeze of lemon. “Now it’s awake,” she says.</p>
+<p>Ask her why. “The onions told me.” Ask how she knew the heat was too high. “It sounded wrong.” Ask for the rule, and she recites the cookbook recipe her own hands just ignored. She is not hiding anything. Thirty years of burned pans and plates sent back have trained her senses to read signals no one wrote down: the pitch of the sizzle, the shade of the onion edge, the weight of the steam.</p>
+<p>Give the same recipe to a very smart newcomer, or to an AI that has read every cookbook ever printed. Both will make the fine soup. Neither will make the soup that silences the table, because the difference was never in the recipe.</p>
+</div>
+<div class="story">
+<p class="tag">Illustration · A lender</p>
+<h3>The loan that the score said no to</h3>
+<p>A regional lender has a credit policy, a scorecard and a veteran underwriter we will call Ruth. Two applications land on her desk on the same morning.</p>
+<p>The first is a bakery owner with a thin credit file, a recent dip in revenue and a score just under the cutoff. The system says decline. Ruth approves it, with a smaller line and one condition. The second is a polished borrower with a high score and clean paperwork. The system says approve. Ruth declines it, and takes a day to do so.</p>
+<p>Asked why, she recites the policy: debt-to-income, collateral, years in business. But her own history shows she often overrides those rules, and she is right more often than the scorecard. She says the bakery owner “answered the question I didn’t ask,” and that the second borrower’s numbers “were too tidy for the business.” She cannot give the weights. She reads the pattern: how the owner talks about slow months, which receipts do not fit the story, what a real business looks like at ten in the morning.</p>
+<p>Every override she gets right earns money twice, once by the loan that performs and once by the loan never made. Every one she gets wrong costs money in either direction. When she retires, the policy stays on the shelf and the scorecard keeps scoring. The lender’s new AI assistant, trained on the policy manual and ten years of approved files, will faithfully reproduce the rules she ignored. What walks out is the part that made the money.</p>
+</div>
+<p><strong>What the stories share.</strong> The expert’s written method and her actual method differ. The difference is worth real money. It lives in gut feel, intuition and experience she cannot put into words, and it cannot be learned from documents. It can be learned from her choices, which is what a tacit knowledge assistant does.</p>
 <h2 id="what-a-tacit-knowledge-assistant-is">What a tacit knowledge assistant is</h2>
 <p>A tacit knowledge assistant is a working model of one expert’s judgment that the expert builds, owns and keeps refining, and that AI agents can consult. It holds two models side by side:</p>
 <div class="tw"><table>
@@ -298,6 +319,12 @@ footer { background:var(--navy); color:#c4beb2; font:500 .85rem/1.5 var(--sans);
 <li><strong>AI that sounds right but is not.</strong> Large language models and retrieval-augmented generation (RAG) know what was written. Your experts’ gut feel, know-how and judgment were never written down, so your agents reason without them.</li>
 <li><strong>Knowledge projects that do not pay back.</strong> Interviews, rule-based expert systems and digitized notebooks capture the textbook, not the expert. One Fortune 500 manufacturer spent three man-years on a rule-based system for a retiring scientist; it “failed to generate acceptable custom formulations.”</li>
 </ul>
+<h3 id="two-pictures">Two pictures of the problem</h3>
+<div class="story">
+<p><strong>The soup.</strong> Two cooks follow one recipe. One soup is fine; the chef’s silences the table. She turns the heat down at minute seven because “it sounded wrong,” and adds lemon because “now it’s awake.” Asked for her rule, she recites the recipe her hands just ignored. The difference was never written down, and she cannot say it.</p>
+<p><strong>The loan.</strong> A veteran underwriter approves the thin-file bakery the scorecard rejects and declines the tidy borrower it approves. She cites policy, but her record shows she overrides it, and is right more often than the score. The override is where the money is made, twice: the loan that performs and the loan never made. When she retires, the policy stays and the money-making part leaves.</p>
+<p class="moral">Both are illustrations, not case studies. Same lesson: the expert’s written method is not her real one, and AI trained on documents learns only the written one.</p>
+</div>
 <h3 id="what-we-deliver">What we deliver</h3>
 <p>A <strong>tacit knowledge assistant</strong>: a working model of one expert’s judgment, built by the expert in hours, owned by the expert, and consulted by your AI agents.</p>
 <ul>
