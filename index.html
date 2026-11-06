@@ -5,10 +5,22 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="robots" content="noindex, nofollow">
 <meta name="description" content="Tanvir Y. Goraya, Ph.D. — AI advisor, inventor and company co-founder. Building production AI since 1987 for the U.S. Air Force, NASA and the Fortune 500.">
-<meta property="og:title" content="Tanvir Goraya Advisory">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Tanvir Y. Goraya, Ph.D. · Mind Modelers">
+<meta property="og:title" content="Tanvir Y. Goraya, Ph.D. · Mind Modelers">
 <meta property="og:description" content="Tanvir Y. Goraya, Ph.D. — AI advisor, inventor and company co-founder. Building production AI since 1987 for the U.S. Air Force, NASA and the Fortune 500.">
+<meta property="og:url" content="https://tygme.github.io/">
+<meta property="og:image" content="https://tygme.github.io/img/og-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Bronze seal of Tanvir Y. Goraya, Ph.D.: Pioneer, Inventor, Founder, Advisor, Professor">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Tanvir Y. Goraya, Ph.D. · Mind Modelers">
+<meta name="twitter:description" content="Tanvir Y. Goraya, Ph.D. — AI advisor, inventor and company co-founder. Building production AI since 1987 for the U.S. Air Force, NASA and the Fortune 500.">
+<meta name="twitter:image" content="https://tygme.github.io/img/og-card.png">
 <link rel="icon" href="img/favicon.png">
-<title>Tanvir Goraya Advisory</title>
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<title>Tanvir Y. Goraya, Ph.D. · Mind Modelers</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Manrope:wght@500;600;700&display=swap">
@@ -42,7 +54,7 @@
   --rule: #34363b; --bronze: #b98d55; --accent: #e2c08a;
 }
 * { box-sizing: border-box; }
-body { margin: 0; background: var(--paper); color: var(--ink); font: 400 17px/1.65 var(--sans); }
+body { margin: 0; background: var(--paper); color: var(--ink); font: 400 17px/1.65 var(--sans); text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; font-feature-settings: "kern", "liga", "lnum"; }
 a { color: inherit; text-decoration-color: var(--accent); text-underline-offset: 3px; }
 a:hover { color: var(--accent); }
 :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
@@ -50,7 +62,7 @@ a:hover { color: var(--accent); }
   padding-left: max(24px, env(safe-area-inset-left, 0px)); padding-right: max(24px, env(safe-area-inset-right, 0px)); }
 @media (max-width: 520px) { .wrap { padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); } }
 h1, h2, h3 { font-family: var(--display); font-weight: 400; text-wrap: balance; margin: 0; }
-h2 { font-size: clamp(1.6rem, 3.2vw, 2.3rem); line-height: 1.18; }
+h2 { font-size: clamp(1.6rem, 3.2vw, 2.3rem); line-height: 1.18; font-weight: 700; letter-spacing: -0.012em; color: var(--deeper); }
 h3 { font: 700 1.12rem/1.3 var(--display); }
 p { margin: 0; }
 .label { font: 600 0.8rem/1.3 var(--sans); letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-2); }
@@ -68,7 +80,7 @@ p { margin: 0; }
 /* Opening band */
 .intro { background: radial-gradient(ellipse 60% 70% at 50% 30%, rgba(226,192,138,.14), transparent 70%), var(--paper); color: var(--ink); }
 .intro .wrap { padding-block: 56px 60px; display: grid; justify-items: center; gap: 26px; text-align: center; }
-.seal-slot { width: min(240px, 58vw); } .seal-slot img { width: 100%; height: auto; display: block; filter: drop-shadow(0 22px 40px rgba(5,10,20,.55)); }
+.seal-slot { width: min(380px, 76vw); } .seal-slot img { width: 100%; height: auto; display: block; filter: drop-shadow(0 22px 40px rgba(5,10,20,.55)); }
 @media (prefers-reduced-motion: no-preference) {
   .seal-slot { animation: strike 1.4s cubic-bezier(.2,.8,.2,1) both; }
 }
@@ -89,18 +101,18 @@ p { margin: 0; }
 body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 41; background: #fff; }
 .masthead { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 40; background: #fff; border-bottom: 1px solid var(--rule); }
 .masthead .wrap { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding-block: 16px; }
-.wordmark { display: flex; align-items: center; gap: 12px; text-decoration: none; min-width: 0; }
+.wordmark { display: flex; align-items: center; gap: 12px; text-decoration: none; flex: none; }
 .wordmark img { width: 50px; height: 50px; flex: none; filter: drop-shadow(0 2px 4px rgba(20,22,26,.25)); }
-.wordmark b { display: block; font: 700 1.1rem/1.1 var(--caps); letter-spacing: 0.08em; }
+.wordmark b { display: block; font: 700 1rem/1.1 var(--caps); letter-spacing: 0.07em; white-space: nowrap; }
 .wordmark span { display: block; font: 600 0.64rem/1.3 var(--sans); letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink-2); margin-top: 3px; }
-.nav { display: flex; gap: 22px; font-size: 0.88rem; white-space: nowrap; align-items: center; }
+.nav { display: flex; gap: 16px; font-size: 0.86rem; white-space: nowrap; align-items: center; }
 .nav a { text-decoration: none; padding-block: 4px; border-bottom: 1px solid transparent; }
 .nav a:hover { border-bottom-color: var(--accent); }
 .menu { display: none; position: relative; }
 .menu summary { list-style: none; cursor: pointer; font: 700 0.76rem/1 var(--sans); letter-spacing: 0.14em; text-transform: uppercase; padding: 10px 14px; border: 1px solid var(--rule); }
 .menu summary::-webkit-details-marker { display: none; }
 .menu[open] .nav { position: absolute; right: 0; top: calc(100% + 8px); display: grid; gap: 6px; min-width: 220px; padding: 14px 18px; background: #fff; border: 1px solid var(--rule); }
-@media (max-width: 1180px) { .nav.wide { display: none; } .menu { display: block; } }
+@media (max-width: 1360px) { .nav.wide { display: none; } .menu { display: block; } }
 @media (max-width: 520px) { .wordmark b { font-size: 0.95rem; } .wordmark span { font-size: 0.56rem; letter-spacing: 0.14em; } }
 
 /* Figures bar */
@@ -521,7 +533,7 @@ main > section.dark.story { background: radial-gradient(ellipse 60% 50% at 20% 2
 <main id="top">
   <section class="intro dark" aria-labelledby="name">
     <div class="wrap">
-      <div class="seal-slot"><img src="img/seal.webp" alt="Seal of Tanvir Y. Goraya, Ph.D.: Pioneer, Inventor, Founder, Advisor. Mens et Machina, since 1987." width="440" height="440"></div>
+      <div class="seal-slot"><img src="img/seal.webp" alt="Seal of Tanvir Y. Goraya, Ph.D.: Pioneer, Inventor, Founder, Advisor. Mens et Machina, since 1987." width="1200" height="1200"></div>
       <h1 id="name">Tanvir Y. Goraya, Ph.D.</h1>
       <div class="inscription"><span>Pioneer</span><i></i><span>Professor</span><i></i><span>Inventor</span><i></i><span>Founder</span><i></i><span>Advisor</span></div>
       <p class="lede">Machine learning, AI and robotics since 1985, on inventions of his own. Production AI for the U.S. Air Force, NASA and the Fortune 500 since 1987. Now building tacit knowledge assistants: AI that captures, and grows with, the judgment your best people cannot put into words.</p>
@@ -619,7 +631,7 @@ main > section.dark.story { background: radial-gradient(ellipse 60% 50% at 20% 2
           <p>At the Air Force, his team set out to replicate the manufacture of a B-52 brake pedal. The master craftsmen helped willingly, with their time, their manuals and their answers. What they could not hand over was the tacit knowledge that made their parts come out right. Without it, the work could not be reproduced.</p>
           <p>The software of the day failed the same way. He tried six expert-system shells, among them NASA's CLIPS, its fuzzy-logic extension and NEXPERT Object. Interviews, diaries and LISP programs captured little more than the rules already in the books. <q>Nothing has worked very well in capturing and computerizing the experts' skills,</q> his dissertation records.</p>
           <p>The question took him out of computer engineering and into philosophy, back to Plato's <i>Meno</i>, where Socrates draws geometry out of a boy who was never taught it, and confronts the riddle of how anyone can look for knowledge they do not know they have. At NASA, Laszlo Berke, Ph.D., chief scientist for structures, put the same riddle in engineering terms: <q>There are experts who can look at a mechanical structure or its design and pronounce whether it is an optimal design or not. How can we capture and replicate that expertise?</q></p>
-          <p>His answer became his Ph.D. at Case Western Reserve in 2001, under Professors Richard Boland, Yoh-Han Pao, Miles Kennedy and Fred Collopy. He filed for the patent the same year, on April 30, 2001; U.S. Patent 8,326,792, "Adaptive Dynamic Personal Modeling System and Method," was granted in 2012. Its first claim protects the move at the heart of the method: the expert sees the model’s answer, enters the answer it should have given, and the model rewrites its own cause-and-effect values to match.</p>
+          <p>His answer became his Ph.D. at Case Western Reserve in 2001, under Professors Richard Boland, Yoh-Han Pao, Miles Kennedy and Fred Collopy. He filed a provisional patent application the same year, on April 30, 2001. U.S. Patent 8,326,792, "Adaptive Dynamic Personal Modeling System and Method," was granted on December 4, 2012. Its first claim protects the move at the heart of the method: the expert sees the model’s answer, enters the answer it should have given, and the model rewrites its own cause-and-effect values to match.</p>
         </div>
         <aside class="origin-quotes">
           <figure><blockquote>We can know more than we can tell.</blockquote><figcaption>Michael Polanyi, 1966, quoted in the dissertation</figcaption></figure>
