@@ -54,12 +54,12 @@ body { margin: 0; background: var(--desk); color: var(--ink); font: 400 15px/1.5
 a { color: inherit; text-decoration-color: var(--bronze); text-underline-offset: 2px; }
 
 /* Nameplate */
-.head { display: grid; grid-template-columns: auto 1fr; gap: 20px; align-items: center; padding-bottom: 18px; border-bottom: 1px solid var(--ink); }
-.mono { width: 84px; height: 84px; display: block; filter: drop-shadow(0 3px 6px rgba(20,22,26,.25)); }
+.head { display: grid; grid-template-columns: auto 1fr; gap: 24px; align-items: center; padding-bottom: 18px; border-bottom: 1px solid var(--ink); }
+.mono { width: 124px; height: 124px; display: block; filter: drop-shadow(0 4px 8px rgba(20,22,26,.22)); }
 .head h1 { margin: 0; font: 700 clamp(1.5rem, 3.6vw, 2.05rem)/1.1 var(--caps); letter-spacing: 0.06em; text-wrap: balance; }
 .roles { margin-top: 6px; font: 700 0.72rem/1.4 var(--caps); letter-spacing: 0.22em; color: var(--bronze); text-transform: uppercase; }
 .contact { margin-top: 8px; font: 500 0.8rem/1.5 var(--sans); color: var(--ink-2); display: flex; flex-wrap: wrap; gap: 2px 14px; }
-@media (max-width: 520px) { .head { grid-template-columns: 1fr; } .mono { width: 64px; height: 64px; } }
+@media (max-width: 520px) { .head { grid-template-columns: 1fr; } .mono { width: 96px; height: 96px; } }
 
 .summary { margin: 18px 0 0; font: italic 400 1.02rem/1.6 var(--display); color: var(--ink); }
 
@@ -124,7 +124,7 @@ ul.plain b { color: var(--ink); font-weight: 600; }
   .head { border-top: 5px solid var(--navy); padding-top: 14px; }
   .role, .pubs li, .side section, ul.impact li, .block { break-inside: avoid; }
   h2 { break-after: avoid; }
-  .head h1 { font-size: 1.75rem; } .mono { width: 70px; height: 70px; }
+  .head h1 { font-size: 1.75rem; } .mono { width: 100px; height: 100px; }
   .summary { font-size: .95rem; margin-top: 12px; } .cols { margin-top: 14px; grid-template-columns: 1.9in minmax(0,1fr); }
   .side, .main { gap: 14px; } ul.impact { gap: 5px; } .role { padding-block: 4px; gap: 1px; } .role p { font-size: .86rem; line-height: 1.34; }
   .side p, .side li { font-size: .8rem; line-height: 1.34; } .side ul { gap: 4px; } h2 { margin-bottom: 6px; }
@@ -137,7 +137,7 @@ ul.plain b { color: var(--ink); font-weight: 600; }
 <!-- Page 1 -->
 <article class="sheet" aria-label="Résumé, page 1">
   <header class="head">
-    <img class="mono" src="img/seal-small.webp" alt="Seal of Tanvir Y. Goraya, Ph.D." width="84" height="84">
+    <img class="mono" src="img/seal-light.webp" alt="Seal of Tanvir Y. Goraya, Ph.D." width="600" height="600">
     <div>
       <h1>Tanvir Y. Goraya, Ph.D.</h1>
       <div class="roles">Pioneer · Professor · Inventor · Founder · AI Advisor</div>
