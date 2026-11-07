@@ -686,7 +686,7 @@ main > section.dark.story { background: radial-gradient(ellipse 60% 50% at 20% 2
 .vs td:nth-child(2) { color: var(--ink-2); }
 .vs td b { display: block; margin-top: 8px; font: 700 0.7rem/1.3 var(--sans); letter-spacing: .12em; text-transform: uppercase; }
 .vs .part { color: #6b6f2a; }
-.vs td:first-child { width: 30%; }
+.vs td:first-child { width: 22%; }
 .vs .miss { color: #8a5a2b; } .vs .opp { color: #a23b2a; }
 .vs .score { font: 700 1.05rem/1.4 var(--display); color: var(--deeper); margin: 0; }
 @media (max-width: 700px) { .vs table, .vs tbody, .vs tr, .vs td { display: block; } .vs thead { display: none; } .vs tr { border-top: 1px solid var(--rule); padding: 8px 0; } .vs td { border: 0; padding: 6px 16px; } .vs td:first-child { font-weight: 600; width: auto; } .vs td[data-ai]::before { content: attr(data-ai) " said: "; font: 700 0.7rem/1.3 var(--sans); letter-spacing: .12em; text-transform: uppercase; color: var(--accent); display: block; margin-bottom: 4px; } }
@@ -717,7 +717,7 @@ main > section.dark.story { background: radial-gradient(ellipse 60% 50% at 20% 2
       <p class="crumb"><a href="index.html">Home</a> / <a href="case-studies.html">Case studies</a> / The furnace model</p>
       <h1 id="ph">A retiring expert's judgment, as a working model</h1>
       <p class="lede">Move the controls and see how the 2002 MindModeler model of one furnace expert's judgment predicts NOx and CO. Then ask a chatbot the same question and compare.</p>
-      <nav class="subnav" aria-label="On this page"><a href="#expert">The expert</a><a href="#lab">Try the model</a><a href="#found">What it found</a><a href="#test">Test a chatbot</a><a href="#grok">What two AIs said</a></nav>
+      <nav class="subnav" aria-label="On this page"><a href="#expert">The expert</a><a href="#lab">Try the model</a><a href="#found">What it found</a><a href="#test">Test a chatbot</a><a href="#grok">What three AIs said</a></nav>
     </div>
   </section>
 
@@ -782,27 +782,31 @@ main > section.dark.story { background: radial-gradient(ellipse 60% 50% at 20% 2
         <li>Does it tell you to increase fired pellets to reduce NOx?</li>
       </ol>
       <div class="vs" id="grok">
-        <h3>We asked two AI assistants the same question</h3>
-        <p class="meta">Grok and DeepSeek, each in a fresh chat, with the question above and nothing else, no follow-ups. November 7, 2026.</p>
+        <h3>We asked three AI assistants the same question</h3>
+        <p class="meta">Grok, DeepSeek and ChatGPT, each in a fresh chat, with the question above and nothing else, no follow-ups. November 7, 2026.</p>
         <table>
-          <thead><tr><th>The expert's model found</th><th>Grok said</th><th>DeepSeek said</th></tr></thead>
+          <thead><tr><th>The expert's model found</th><th>Grok said</th><th>DeepSeek said</th><th>ChatGPT said</th></tr></thead>
           <tbody>
             <tr><td>CO: the share of heat replaced, not total heat input, is the culprit.</td>
               <td data-ai="Grok">CO "tracks combustion quality of the blend rather than the substitution percentage alone." <b class="miss">Miss</b></td>
-              <td data-ai="DeepSeek">"For CO, the most critical factor is the completeness of combustion"; a replacement ratio that is too high "may" worsen CO. <b class="part">Partly</b></td></tr>
+              <td data-ai="DeepSeek">"For CO, the most critical factor is the completeness of combustion"; a replacement ratio that is too high "may" worsen CO. <b class="part">Partly</b></td>
+              <td data-ai="ChatGPT">CO "can decrease" or "can increase" with alternative fuel, depending on how it burns; total heat input is rated as influential as the share replaced. <b class="miss">Miss</b></td></tr>
             <tr><td>CO: the amount of Eastern coal makes no difference.</td>
               <td data-ai="Grok">Eastern coal "can improve burnout (and thus lower CO)." <b class="miss">Miss</b></td>
-              <td data-ai="DeepSeek">Eastern coal's "combustion characteristics" determine "whether it is prone to incomplete combustion." <b class="miss">Miss</b></td></tr>
+              <td data-ai="DeepSeek">Eastern coal's "combustion characteristics" determine "whether it is prone to incomplete combustion." <b class="miss">Miss</b></td>
+              <td data-ai="ChatGPT">"For CO, combustion quality and oxygen availability are more important than coal quantity alone." <b class="part">Partly</b></td></tr>
             <tr><td>NOx: increase fired pellets to reduce it.</td>
               <td data-ai="Grok">With more pellet tonnage, "absolute NOx and CO rise." <b class="opp">Opposite</b></td>
-              <td data-ai="DeepSeek">Higher tonnage means "higher total NOx and CO emissions." <b class="opp">Opposite</b></td></tr>
+              <td data-ai="DeepSeek">Higher tonnage means "higher total NOx and CO emissions." <b class="opp">Opposite</b></td>
+              <td data-ai="ChatGPT">More heat for more pellets "normally means more fuel consumption and higher total NOx emissions." <b class="opp">Opposite</b></td></tr>
             <tr><td>Both: lower the share of heat replaced; don't worry about total heat input.</td>
               <td data-ai="Grok">Total heat input "is usually the largest lever." <b class="opp">Opposite</b></td>
-              <td data-ai="DeepSeek">Total heat input "is the most fundamental driving factor." <b class="opp">Opposite</b></td></tr>
+              <td data-ai="DeepSeek">Total heat input "is the most fundamental driving factor." <b class="opp">Opposite</b></td>
+              <td data-ai="ChatGPT">Alternative fuel is "potentially one of the strongest levers for reducing NOx"; it advises increasing it. <b class="opp">Opposite</b></td></tr>
           </tbody>
         </table>
-        <p class="score">Neither found any of the four in full; DeepSeek came partway on one. Both said the opposite on two. Neither mentioned primary air temperature, which the model found to be the most important control.</p>
-        <p class="mnote">To be fair to both, their answers are sound textbook advice for pellet furnaces in general: manage excess air, stage combustion, use low-NOx burners. That is the point. They know what has been published about furnaces like this one. The engineer knew how this one behaved, and that was never written down. The model's findings are his judgment, built and checked with him, not laboratory measurements. Two answers are an illustration, not proof; try it yourself with the question above.</p>
+        <p class="score">None of the three found any of the four in full; DeepSeek and ChatGPT each came partway on one. All three said the opposite on the same two. None mentioned primary air temperature, which the model found to be the most important control.</p>
+        <p class="mnote">To be fair to all three, their answers are sound textbook advice for pellet furnaces in general: manage excess air, stage combustion, use low-NOx burners. That is the point. They know what has been published about furnaces like this one. ChatGPT said as much itself: its rankings were "engineering assessments, not statistically established rankings for your particular furnace," and it asked for the furnace's operating data. The engineer knew how this one behaved, and that was never written down. The model's findings are his judgment, built and checked with him, not laboratory measurements. Three answers are an illustration, not proof; try it yourself with the question above.</p>
       </div>
       <p class="mnote">A general AI learns from what people have written. This furnace's behavior was never written down. It lived in one engineer's judgment until the model captured it. <a href="sprint.html">That is what the four-week sprint does</a>.</p>
     </div>
