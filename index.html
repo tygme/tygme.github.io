@@ -117,7 +117,7 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 .menu summary { list-style: none; cursor: pointer; font: 700 0.76rem/1 var(--sans); letter-spacing: 0.14em; text-transform: uppercase; padding: 10px 14px; border: 1px solid var(--rule); }
 .menu summary::-webkit-details-marker { display: none; }
 .menu[open] .nav { position: absolute; right: 0; top: calc(100% + 8px); display: grid; gap: 6px; min-width: 220px; padding: 14px 18px; background: #fff; border: 1px solid var(--rule); }
-@media (max-width: 1000px) { .nav.wide { display: none; } .menu { display: block; } }
+@media (max-width: 1140px) { .nav.wide { display: none; } .menu { display: block; } }
 @media (max-width: 520px) { .wordmark b { font-size: 0.95rem; } .wordmark span { font-size: 0.56rem; letter-spacing: 0.14em; } }
 
 /* Figures bar */
@@ -626,6 +626,24 @@ main > section.dark.story { background: radial-gradient(ellipse 60% 50% at 20% 2
 .exh figcaption p:not(.tag) { font-family: var(--serif); font-size: 0.98rem; line-height: 1.55; color: var(--ink-2); margin: 0; }
 .exh figcaption small { font: 400 0.8rem/1.45 var(--sans); color: var(--ink-2); }
 @media (max-width: 900px) { .exh-grid { grid-template-columns: 1fr; } .exh .mat { height: auto; min-height: 220px; } .exh .mat img { max-height: 420px; } }
+
+/* Sprint page */
+.proof-grid.three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.practices.four { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 32px; }
+.fit { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 26px; margin-top: 34px; }
+.fit > div { padding: 26px 28px; background: var(--paper); border: 1px solid var(--rule); border-top: 3px solid var(--bronze); display: grid; gap: 14px; align-content: start; }
+.fit .no { border-top-color: var(--ink-2); background: #f6f5f2; }
+.fit h3 { font: 700 1.15rem/1.3 var(--display); }
+.fit ul { margin: 0; padding-left: 1.1em; display: grid; gap: 10px; font-family: var(--serif); font-size: 1.04rem; color: var(--ink-2); }
+.faq { margin-top: 30px; max-width: 50rem; border-top: 1px solid var(--rule); }
+.faq details { border-bottom: 1px solid var(--rule); }
+.faq summary { cursor: pointer; list-style: none; padding: 18px 36px 18px 0; position: relative; font: 700 1.1rem/1.35 var(--display); color: var(--ink); }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: "+"; position: absolute; right: 4px; top: 14px; font: 400 1.5rem/1 var(--sans); color: var(--accent); }
+.faq details[open] summary::after { content: "\2212"; }
+.faq details p { margin: 0 0 20px; font-family: var(--serif); font-size: 1.05rem; color: var(--ink-2); max-width: 44rem; }
+@media (max-width: 1000px) { .practices.four { grid-template-columns: repeat(2, minmax(0, 1fr)); } .proof-grid.three { grid-template-columns: 1fr; } }
+@media (max-width: 760px) { .fit, .practices.four { grid-template-columns: 1fr; } }
 </style>
 <div class="progress" aria-hidden="true"><i></i></div>
 <div class="draft"><div class="wrap"><span><b>Preview</b> Not yet public. Every fact is drawn from the master CV.</span><a href="seal.html">Seal studies</a></div></div>
@@ -637,10 +655,10 @@ main > section.dark.story { background: radial-gradient(ellipse 60% 50% at 20% 2
       <span><b>Tanvir Y. Goraya, Ph.D.</b><span>Mind Modelers · AI Advisory</span></span>
     </a>
     <nav class="nav wide" aria-label="Main">
-      <a href="method.html" data-p="method">Method</a><a href="record.html" data-p="record">Record</a><a href="case-studies.html" data-p="case-studies">Case studies</a><a href="story.html" data-p="story">About</a><a href="tacit-knowledge-assistants.html">White paper</a><a href="resume.html">Résumé</a><a class="btn" href="index.html#contact">Start a conversation</a>
+      <a href="sprint.html" data-p="sprint">The Sprint</a><a href="method.html" data-p="method">Method</a><a href="record.html" data-p="record">Record</a><a href="case-studies.html" data-p="case-studies">Case studies</a><a href="story.html" data-p="story">About</a><a href="tacit-knowledge-assistants.html">White paper</a><a href="resume.html">Résumé</a><a class="btn" href="index.html#contact">Start a conversation</a>
     </nav>
     <details class="menu"><summary>Menu</summary>
-      <nav class="nav" aria-label="Main, compact"><a href="method.html">Method</a><a href="record.html">Record</a><a href="case-studies.html">Case studies</a><a href="story.html">About</a><a href="sources.html">Sources</a><a href="tacit-knowledge-assistants.html">White paper</a><a href="resume.html">Résumé</a><a class="btn" href="index.html#contact">Start a conversation</a></nav>
+      <nav class="nav" aria-label="Main, compact"><a href="sprint.html">The Sprint</a><a href="method.html">Method</a><a href="record.html">Record</a><a href="case-studies.html">Case studies</a><a href="story.html">About</a><a href="sources.html">Sources</a><a href="tacit-knowledge-assistants.html">White paper</a><a href="resume.html">Résumé</a><a class="btn" href="index.html#contact">Start a conversation</a></nav>
     </details>
   </div>
 </header>
@@ -655,7 +673,7 @@ main > section.dark.story { background: radial-gradient(ellipse 60% 50% at 20% 2
       <p class="promise">Model what your experts can't articulate, before they leave.</p>
       <p class="slogan">Tacit knowledge: never written down, never learned by AI. Until MindModeler.</p>
       <p class="lede">Machine learning, AI and robotics since 1985, on inventions of his own. Production AI for the U.S. Air Force, NASA and the Fortune 500 since 1987. Now building tacit knowledge assistants: AI that captures, and grows with, the judgment your best people cannot put into words.</p>
-      <div class="actions"><a class="btn solid" href="#contact">Start a conversation</a><a class="btn" href="resume.html">Read the résumé</a></div>
+      <div class="actions"><a class="btn solid" href="#contact">Start a conversation</a><a class="btn" href="sprint.html">See the four-week sprint</a></div>
     </div>
   </section>
 
@@ -786,6 +804,7 @@ main > section.dark.story { background: radial-gradient(ellipse 60% 50% at 20% 2
           <p class="label">A defined engagement</p>
           <h3>Expert Knowledge Capture, in four weeks</h3>
           <p>Today's AI agents are fluent, but they know nothing of your senior people's judgment. A model of an expert's causes, effects and real episodes is the structured expertise an agent can be grounded on, and it stays with the organization when the expert retires. This is the patented MindModeler method, delivered as a fixed four-week proof of concept.</p>
+          <a class="more-link" href="sprint.html">See the sprint: deliverables, fit and questions</a>
         </div>
         <ol class="weeks">
           <li><b>Week 1</b><span>Interview the expert. Build the semantic model: what they control, what they cannot, and how each factor moves the others.</span></li>
@@ -818,7 +837,7 @@ main > section.dark.story { background: radial-gradient(ellipse 60% 50% at 20% 2
     <div class="wrap">
       <div class="section-head">
         <p class="label">Clients</p>
-        <h2 id="clients-h">Who relied on the work</h2>
+        <h2 id="clients-h">Organizations that deployed his earlier systems</h2>
         <p>A partial list of organizations that used systems he invented or led, with distributors in Japan, Korea, India, the United Kingdom, France, Italy, the Netherlands and Canada.</p>
       </div>
       <div class="client-cols">
