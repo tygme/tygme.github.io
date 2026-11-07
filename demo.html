@@ -677,19 +677,34 @@ main > section.dark.story { background: radial-gradient(ellipse 60% 50% at 20% 2
 .prompt button { justify-self: start; font: 700 0.74rem/1 var(--sans); letter-spacing: .14em; text-transform: uppercase; background: #e2c08a; color: var(--deeper); border: 0; padding: 12px 18px; cursor: pointer; }
 .checks { margin-top: 22px; display: grid; gap: 12px; max-width: 52rem; padding-left: 1.2em; font-family: var(--serif); font-size: 1.05rem; color: var(--ink-2); }
 .mnote { font: 400 0.86rem/1.55 var(--sans); color: var(--ink-2); max-width: 52rem; margin-top: 26px; padding-top: 16px; border-top: 1px solid var(--rule); }
-.vs { margin-top: 34px; max-width: 60rem; display: grid; gap: 16px; }
-.vs h3 { font: 700 1.3rem/1.3 var(--display); }
-.vs .meta { font: 400 0.9rem/1.5 var(--sans); color: var(--ink-2); margin: 0; }
-.vs table { width: 100%; border-collapse: collapse; background: var(--paper); border: 1px solid var(--rule); font-family: var(--serif); font-size: 1rem; }
-.vs th { text-align: left; font: 700 0.7rem/1.3 var(--sans); letter-spacing: .14em; text-transform: uppercase; color: var(--accent); padding: 14px 16px; border-bottom: 2px solid var(--bronze); }
-.vs td { padding: 14px 16px; border-top: 1px solid var(--rule); vertical-align: top; color: var(--ink); }
-.vs td:nth-child(2) { color: var(--ink-2); }
-.vs td b { display: block; margin-top: 8px; font: 700 0.7rem/1.3 var(--sans); letter-spacing: .12em; text-transform: uppercase; }
-.vs .part { color: #6b6f2a; }
-.vs td:first-child { width: 22%; }
-.vs .miss { color: #8a5a2b; } .vs .opp { color: #a23b2a; }
-.vs .score { font: 700 1.05rem/1.4 var(--display); color: var(--deeper); margin: 0; }
-@media (max-width: 700px) { .vs table, .vs tbody, .vs tr, .vs td { display: block; } .vs thead { display: none; } .vs tr { border-top: 1px solid var(--rule); padding: 8px 0; } .vs td { border: 0; padding: 6px 16px; } .vs td:first-child { font-weight: 600; width: auto; } .vs td[data-ai]::before { content: attr(data-ai) " said: "; font: 700 0.7rem/1.3 var(--sans); letter-spacing: .12em; text-transform: uppercase; color: var(--accent); display: block; margin-bottom: 4px; } }
+.vs { margin-top: 40px; max-width: 72rem; display: grid; gap: 22px; }
+.vs h3 { font: 700 clamp(1.4rem, 2.6vw, 1.85rem)/1.25 var(--display); color: var(--deeper); }
+.vs .meta { font: 400 0.92rem/1.5 var(--sans); color: var(--ink-2); margin: -8px 0 0; }
+.scores { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+.sc { background: var(--paper); border: 1px solid var(--rule); border-top: 3px solid var(--deeper); padding: 18px 20px; display: grid; gap: 10px; }
+.sc h4 { font: 700 0.74rem/1.3 var(--sans); letter-spacing: .16em; text-transform: uppercase; color: var(--ink-2); margin: 0; }
+.sc .n { font: 700 2.2rem/1 var(--display); color: var(--deeper); font-variant-numeric: tabular-nums; }
+.sc .n small { font: 600 0.8rem/1 var(--sans); letter-spacing: .08em; color: var(--ink-2); margin-left: 6px; text-transform: uppercase; }
+.dots { display: flex; gap: 6px; }
+.dots i { width: 14px; height: 14px; border-radius: 50%; display: block; }
+.dots .m { background: #d9c7a6; } .dots .p { background: #b9b46a; } .dots .o { background: #a23b2a; }
+.sc p { font: 400 0.86rem/1.4 var(--sans); color: var(--ink-2); margin: 0; }
+.legend { display: flex; flex-wrap: wrap; gap: 18px; font: 500 0.82rem/1 var(--sans); color: var(--ink-2); }
+.legend span { display: inline-flex; align-items: center; gap: 8px; }
+.legend i { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+.vs table { width: 100%; border-collapse: separate; border-spacing: 0; background: var(--paper); border: 1px solid var(--rule); font-family: var(--serif); font-size: 0.98rem; box-shadow: 0 14px 34px rgba(15,26,45,.07); }
+.vs th { text-align: left; font: 700 0.7rem/1.3 var(--sans); letter-spacing: .14em; text-transform: uppercase; color: #e8e2d6; background: var(--deeper); padding: 14px 18px; }
+.vs th:first-child { color: #e2c08a; }
+.vs td { padding: 16px 18px; border-top: 1px solid var(--rule); vertical-align: top; color: var(--ink-2); line-height: 1.55; }
+.vs tbody tr:first-child td { border-top: 0; }
+.vs td:first-child { width: 22%; color: var(--ink); font-weight: 600; background: #f7f1e6; border-right: 2px solid var(--bronze); }
+.vs td b { display: inline-block; margin-top: 10px; padding: 4px 10px; border-radius: 999px; font: 700 0.66rem/1.2 var(--sans); letter-spacing: .12em; text-transform: uppercase; }
+.vs .miss { background: #f1e6d3; color: #7a5424; }
+.vs .part { background: #eeeccf; color: #5d5f1d; }
+.vs .opp { background: #f5dcd6; color: #8f2f20; }
+.vs .score { margin: 0; padding: 22px 26px; background: var(--deeper); color: #f3efe7; font: 700 clamp(1.05rem, 2vw, 1.25rem)/1.5 var(--display); border-left: 4px solid #e2c08a; }
+@media (max-width: 760px) { .scores { grid-template-columns: 1fr; } }
+@media (max-width: 700px) { .vs table, .vs tbody, .vs tr, .vs td { display: block; } .vs thead { display: none; } .vs tr { border-top: 1px solid var(--rule); padding: 8px 0; } .vs td { border: 0; padding: 6px 16px; } .vs td:first-child { width: auto; border-right: 0; border-bottom: 2px solid var(--bronze); } .vs td[data-ai]::before { content: attr(data-ai) " said: "; font: 700 0.7rem/1.3 var(--sans); letter-spacing: .12em; text-transform: uppercase; color: var(--accent); display: block; margin-bottom: 4px; } }
 @media (max-width: 900px) { .lab, .findings { grid-template-columns: 1fr; } }
 </style>
 <div class="progress" aria-hidden="true"><i></i></div>
@@ -784,6 +799,12 @@ main > section.dark.story { background: radial-gradient(ellipse 60% 50% at 20% 2
       <div class="vs" id="grok">
         <h3>We asked three AI assistants the same question</h3>
         <p class="meta">Grok, DeepSeek and ChatGPT, each in a fresh chat, with the question above and nothing else, no follow-ups. November 7, 2026.</p>
+        <div class="scores" aria-label="Scores">
+          <div class="sc"><h4>Grok</h4><div class="n">0<small>of 4 found</small></div><div class="dots" aria-hidden="true"><i class="m"></i><i class="m"></i><i class="o"></i><i class="o"></i></div><p>Two misses, two opposite</p></div>
+          <div class="sc"><h4>DeepSeek</h4><div class="n">0<small>of 4 found</small></div><div class="dots" aria-hidden="true"><i class="p"></i><i class="m"></i><i class="o"></i><i class="o"></i></div><p>One partly, one miss, two opposite</p></div>
+          <div class="sc"><h4>ChatGPT</h4><div class="n">0<small>of 4 found</small></div><div class="dots" aria-hidden="true"><i class="m"></i><i class="p"></i><i class="o"></i><i class="o"></i></div><p>One miss, one partly, two opposite</p></div>
+        </div>
+        <div class="legend" aria-hidden="true"><span><i style="background:#d9c7a6"></i>Miss</span><span><i style="background:#b9b46a"></i>Partly</span><span><i style="background:#a23b2a"></i>Opposite of the expert</span></div>
         <table>
           <thead><tr><th>The expert's model found</th><th>Grok said</th><th>DeepSeek said</th><th>ChatGPT said</th></tr></thead>
           <tbody>
