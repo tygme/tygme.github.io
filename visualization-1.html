@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Visualization 1 · Mind Modelers</title>
+
+  <!-- External CDNs for Interactive Data Visualizations -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.js"></script>
+  <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
+
+  <style>
+    :root {
+      --bg-base: #090d16;
+      --bg-surface: #111827;
+      --bg-header: #131c2e;
+      --border-color: #1f2937;
+      --border-accent: #334155;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --accent-cyan: #38bdf8;
+      --accent-emerald: #10b981;
+      --accent-rose: #f43f5e;
+      --accent-indigo: #818cf8;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-base);
+      color: var(--text-main);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      padding: 24px;
+      line-height: 1.5;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+
+    /* Top Dashboard Header */
+    header.dashboard-header {
+      background: var(--bg-header);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 20px 24px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    .dashboard-header h1 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text-main);
+      letter-spacing: -0.02em;
+    }
+
+    .dashboard-header p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(16, 185, 129, 0.15);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      color: #6ee7b7;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 6px 14px;
+      border-radius: 999px;
+      letter-spacing: 0.05em;
+    }
+
+    .status-dot {
+      width: 7px;
+      height: 7px;
+      background: var(--accent-emerald);
+      border-radius: 50%;
+      box-shadow: 0 0 8px var(--accent-emerald);
+    }
+
+    /* Card Panels */
+    .card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 24px;
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+    }
+
+    .card-title {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-main);
+      margin-bottom: 4px;
+    }
+
+    .card-subtitle {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+    }
+
+    /* Grid Layouts */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+
+    @media (min-width: 900px) {
+      .grid-2 {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .svg-wrapper {
+      width: 100%;
+      overflow-x: auto;
+    }
+
+    .chart-container-fixed {
+      position: relative;
+      height: 380px;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <!-- Top Bar -->
+    <header class="dashboard-header">
+      <div>
+        <h1>Cognitive Divergence &amp; Expert Systems</h1>
+        <p>Stated Beliefs vs. Operative Heuristics • ADPME &amp; Episodic Educer Architecture</p>
+      </div>
+      <div class="status-badge">
+        <span class="status-dot"></span>
+        ADPME ACTIVE LOOP
+      </div>
+    </header>
+
+    <p style="background:#1c1917;border:1px solid #78350f;color:#fde68a;border-radius:10px;padding:12px 16px;font-size:.85rem;margin-bottom:24px">
+      Concept visualization. The charts on this page use illustrative values to explain the ideas; they are not measured results.
+      <a href="index.html" style="color:#fcd34d;margin-left:8px">Back to Mind Modelers</a>
+    </p>
+    <!-- 1. System Architecture Diagram (Vector SVG) -->
+    <section class="card">
+      <div class="card-title">1. Closed-Loop Dual-Model Engine (S-Model vs. E-Model)</div>
+      <div class="card-subtitle">Decoupled cognitive proxy calibrations anchored to an adaptive empirical learning loop.</div>
+      <div class="svg-wrapper">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 440" width="100%" height="auto" style="min-width: 760px; font-family: inherit;">
+          <defs>
+            <linearGradient id="cardGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#1E293B"/>
+              <stop offset="100%" stop-color="#0F172A"/>
+            </linearGradient>
+            <marker id="arrowIndigo" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+              <path d="M 0 1 L 10 5 L 0 9 z" fill="#818CF8"/>
+            </marker>
+            <marker id="arrowEmerald" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+              <path d="M 0 1 L 10 5 L 0 9 z" fill="#34D399"/>
+            </marker>
+            <marker id="arrowAmber" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+              <path d="M 0 1 L 10 5 L 0 9 z" fill="#F59E0B"/>
+            </marker>
+          </defs>
+
+          <!-- Bounds -->
+          <rect x="10" y="10" width="900" height="420" rx="14" fill="none" stroke="#334155" stroke-dasharray="6 4"/>
+
+          <!-- Top Tier: Human Cognitive Loop -->
+          <rect x="35" y="35" width="850" height="150" rx="10" fill="#1E293B" fill-opacity="0.5" stroke="#334155"/>
+          <text x="55" y="62" fill="#A5B4FC" font-size="11" font-weight="700" letter-spacing="1">HUMAN COGNITIVE LOOP (SME JUDGMENT)</text>
+
+          <rect x="55" y="80" width="220" height="80" rx="8" fill="url(#cardGrad)" stroke="#6366F1" stroke-width="1.5"/>
+          <text x="75" y="115" fill="#F8FAFC" font-size="14" font-weight="600">Domain SME</text>
+          <text x="75" y="135" fill="#94A3B8" font-size="11">Operative Mental Heuristics</text>
+
+          <rect x="420" y="80" width="220" height="80" rx="8" fill="url(#cardGrad)" stroke="#818CF8" stroke-width="1.5"/>
+          <text x="440" y="115" fill="#F8FAFC" font-size="14" font-weight="600">S-Model (Judgmental)</text>
+          <text x="440" y="135" fill="#94A3B8" font-size="11">Explicit Parameter Weights</text>
+
+          <!-- Top Arrows -->
+          <path fill="none" d="M 275 110 L 406 110" stroke="#818CF8" stroke-width="2" marker-end="url(#arrowIndigo)"/>
+          <text x="345" y="100" fill="#C7D2FE" font-size="10" text-anchor="middle">Mental Vectors</text>
+
+          <path fill="none" d="M 420 135 L 289 135" stroke="#F59E0B" stroke-width="2" marker-end="url(#arrowAmber)"/>
+          <text x="345" y="152" fill="#FDE68A" font-size="10" text-anchor="middle">Visual Recalibration</text>
+
+          <!-- Bottom Tier: Machine Learning Loop -->
+          <rect x="35" y="215" width="850" height="190" rx="10" fill="#1E293B" fill-opacity="0.5" stroke="#334155"/>
+          <text x="55" y="242" fill="#6EE7B7" font-size="11" font-weight="700" letter-spacing="1">MACHINE LEARNING LOOP (ADAPTIVE SURFACE)</text>
+
+          <rect x="55" y="260" width="220" height="95" rx="8" fill="url(#cardGrad)" stroke="#10B981" stroke-width="1.5"/>
+          <text x="75" y="295" fill="#F8FAFC" font-size="14" font-weight="600">Dynamic Episode Space</text>
+          <text x="75" y="315" fill="#94A3B8" font-size="11">Topological Memory Clusters</text>
+          <text x="75" y="332" fill="#6EE7B7" font-size="10">Stimulus / Response Manifold</text>
+
+          <rect x="420" y="260" width="220" height="95" rx="8" fill="url(#cardGrad)" stroke="#34D399" stroke-width="1.5"/>
+          <text x="440" y="295" fill="#F8FAFC" font-size="14" font-weight="600">E-Model (Empirical)</text>
+          <text x="440" y="315" fill="#94A3B8" font-size="11">Adaptive Response Surfaces</text>
+          <text x="440" y="332" fill="#6EE7B7" font-size="10">Non-Linear Search Engine</text>
+
+          <rect x="710" y="180" width="150" height="130" rx="8" fill="#1E1B4B" stroke="#A78BFA" stroke-width="1.5"/>
+          <text x="785" y="235" fill="#DDD6FE" font-size="13" font-weight="700" text-anchor="middle">RUNTIME</text>
+          <text x="785" y="255" fill="#DDD6FE" font-size="13" font-weight="700" text-anchor="middle">DATABASE</text>
+          <text x="785" y="280" fill="#C4B5FD" font-size="10" text-anchor="middle">Production Workload</text>
+
+          <!-- Interlink Paths -->
+          <path fill="none" d="M 275 295 L 406 295" stroke="#34D399" stroke-width="2" marker-end="url(#arrowEmerald)"/>
+          <path fill="none" d="M 420 325 L 289 325" stroke="#F59E0B" stroke-width="2" marker-end="url(#arrowAmber)"/>
+
+          <path fill="none" d="M 530 160 L 530 246" stroke="#818CF8" stroke-width="2" stroke-dasharray="4 4" marker-end="url(#arrowIndigo)"/>
+          <rect x="475" y="195" width="110" height="20" rx="4" fill="#0B0F19"/>
+          <text x="530" y="209" fill="#A5B4FC" font-size="10" text-anchor="middle">Boundary Anchors</text>
+
+          <path fill="none" d="M 640 310 L 710 310" stroke="#34D399" stroke-width="2" marker-end="url(#arrowEmerald)"/>
+          <path fill="none" d="M 785 180 L 785 55 L 165 55 L 165 246" stroke="#F59E0B" stroke-width="1.5" stroke-dasharray="3 3" marker-end="url(#arrowAmber)"/>
+        </svg>
+      </div>
+    </section>
+
+    <!-- 2. Mid Section: Radar Chart & 2D Calibration Trend -->
+    <div class="grid-2">
+      <!-- Radar Chart (Chart.js) -->
+      <section class="card">
+        <div class="card-title">2. Capability Frontier Radar (Chart.js)</div>
+        <div class="card-subtitle">ADPME vs. Traditional Rule-Based System across 5 operational dimensions.</div>
+        <div class="chart-container-fixed">
+          <canvas id="capabilityRadar"></canvas>
+        </div>
+      </section>
+
+      <!-- 2D Trend Calibration (Plotly.js) -->
+      <section class="card">
+        <div class="card-title">3. Model Slope Concordance (Plotly.js)</div>
+        <div class="card-subtitle">Prescribed linear model (S) versus true empirical non-linear fit (E).</div>
+        <div class="chart-container-fixed" id="trendPlot"></div>
+      </section>
+    </div>
+
+    <!-- 3. Bottom Section: 3D Surface Manifold (Plotly.js WebGL) -->
+    <section class="card">
+      <div class="card-title">4. Non-Linear Objective Manifold (Plotly 3D WebGL)</div>
+      <div class="card-subtitle">Click and drag to rotate the parameter space • Lock Wait Duration × Memory Load → Latency.</div>
+      <div style="width: 100%; height: 460px;" id="surfacePlot"></div>
+    </section>
+  </div>
+
+  <script>
+    // -------------------------------------------------------------
+    // 1. INITIALIZE CHART.JS RADAR CHART
+    // -------------------------------------------------------------
+    const radarCtx = document.getElementById('capabilityRadar').getContext('2d');
+    new Chart(radarCtx, {
+      type: 'radar',
+      data: {
+        labels: [
+          'Operational Adaptability',
+          'SME Retained Ownership',
+          'Cross-Problem Learning',
+          'Non-Linear Interpolation',
+          'Modification Agility'
+        ],
+        datasets: [
+          {
+            label: 'ADPME / Episodic Educer',
+            data: [90, 85, 88, 95, 85],
+            fill: true,
+            backgroundColor: 'rgba(16, 185, 129, 0.25)',
+            borderColor: '#10b981',
+            pointBackgroundColor: '#34d399',
+            pointBorderColor: '#fff',
+            borderWidth: 2.5
+          },
+          {
+            label: 'Traditional Rule-Based',
+            data: [15, 25, 10, 10, 15],
+            fill: true,
+            backgroundColor: 'rgba(244, 63, 94, 0.2)',
+            borderColor: '#f43f5e',
+            pointBackgroundColor: '#f43f5e',
+            pointBorderColor: '#fff',
+            borderWidth: 2
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        scales: {
+          r: {
+            angleLines: { color: '#334155' },
+            grid: { color: '#1e293b' },
+            pointLabels: {
+              color: '#f1f5f9',
+              font: { size: 11, weight: '600' }
+            },
+            ticks: {
+              backdropColor: 'transparent',
+              color: '#64748b',
+              stepSize: 20,
+              callback: value => value + '%'
+            },
+            min: 0,
+            max: 100
+          }
+        },
+        plugins: {
+          legend: {
+            position: 'bottom',
+            labels: { color: '#cbd5e1', font: { size: 12 }, padding: 16 }
+          }
+        }
+      }
+    });
+
+    // -------------------------------------------------------------
+    // 2. INITIALIZE PLOTLY 2D TREND CONCORDANCE
+    // -------------------------------------------------------------
+    const scatterX = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    const scatterY = [14, 20, 27, 34, 49, 63, 81, 98, 122, 148];
+
+    const sModelX = [1, 10];
+    const sModelY = [20, 115];
+
+    const eModelX = Array.from({ length: 25 }, (_, i) => 1 + i * 0.375);
+    const eModelY = eModelX.map(v => 11 + 1.35 * Math.pow(v, 2.05));
+
+    const trendData = [
+      {
+        x: scatterX,
+        y: scatterY,
+        mode: 'markers',
+        name: 'Episodes (Empirical)',
+        marker: { color: '#38bdf8', size: 7, opacity: 0.8 }
+      },
+      {
+        x: sModelX,
+        y: sModelY,
+        mode: 'lines',
+        name: 'S-Model (Prescribed)',
+        line: { color: '#f59e0b', dash: 'dash', width: 2 }
+      },
+      {
+        x: eModelX,
+        y: eModelY,
+        mode: 'lines',
+        name: 'E-Model (Fitted Curve)',
+        line: { color: '#10b981', width: 3 }
+      }
+    ];
+
+    const trendLayout = {
+      autosize: true,
+      margin: { l: 45, r: 15, b: 40, t: 15 },
+      paper_bgcolor: 'transparent',
+      plot_bgcolor: 'transparent',
+      xaxis: { title: { text: 'Stimulus Delta', font: { color: '#94a3b8', size: 11 } }, color: '#94a3b8', gridcolor: '#1e293b' },
+      yaxis: { title: { text: 'Latency Response', font: { color: '#94a3b8', size: 11 } }, color: '#94a3b8', gridcolor: '#1e293b' },
+      legend: { orientation: 'h', y: -0.22, font: { color: '#cbd5e1', size: 10 } }
+    };
+
+    Plotly.newPlot('trendPlot', trendData, trendLayout, { responsive: true, displayModeBar: false });
+
+    // -------------------------------------------------------------
+    // 3. INITIALIZE PLOTLY 3D SURFACE MANIFOLD
+    // -------------------------------------------------------------
+    const gridSize = 28;
+    const surfX = [], surfY = [], surfZ = [];
+
+    for (let i = 0; i < gridSize; i++) {
+      surfX.push(i);
+      surfY.push(i);
+    }
+
+    for (let i = 0; i < gridSize; i++) {
+      const row = [];
+      for (let j = 0; j < gridSize; j++) {
+        const val = 1.6 * Math.sin(j * 0.22) + Math.exp(0.08 * i) + (0.02 * i * j);
+        row.push(val);
+      }
+      surfZ.push(row);
+    }
+
+    const surfaceData = [{
+      z: surfZ,
+      x: surfX,
+      y: surfY,
+      type: 'surface',
+      colorscale: 'Viridis',
+      contours: {
+        z: { show: true, usecolormap: true, highlightcolor: "#38bdf8", project: { z: true } }
+      }
+    }];
+
+    const surfaceLayout = {
+      autosize: true,
+      margin: { l: 0, r: 0, b: 0, t: 0 },
+      paper_bgcolor: 'transparent',
+      plot_bgcolor: 'transparent',
+      scene: {
+        xaxis: { title: 'Lock Wait Duration', color: '#94a3b8', gridcolor: '#1e293b' },
+        yaxis: { title: 'Working Set Memory', color: '#94a3b8', gridcolor: '#1e293b' },
+        zaxis: { title: 'Response Latency', color: '#94a3b8', gridcolor: '#1e293b' },
+        camera: { eye: { x: 1.4, y: -1.4, z: 0.95 } }
+      }
+    };
+
+    Plotly.newPlot('surfacePlot', surfaceData, surfaceLayout, { responsive: true, displayModeBar: false });
+  </script>
+</body>
+</html>
