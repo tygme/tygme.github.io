@@ -666,6 +666,36 @@ main > section.dark.story { background: radial-gradient(ellipse 60% 50% at 20% 2
 .film .tag { display: block; font: 700 0.68rem/1.3 var(--sans); letter-spacing: .16em; text-transform: uppercase; color: var(--accent); margin-bottom: 4px; }
 #film .film, #theorygarden .film { max-width: 60rem; margin-top: 30px; }
 @media (max-width: 860px) { .films { grid-template-columns: 1fr; } }
+
+/* Them vs. us comparison (home, the leak) */
+.vsx { margin-top: 34px; background: var(--paper); border: 1px solid var(--rule); box-shadow: 0 16px 36px rgba(15,26,45,.08); }
+.vsx-head, .vsx-row { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1fr) minmax(0, 1.15fr); }
+.vsx-head span { padding: 16px 22px; font: 700 0.78rem/1.3 var(--sans); letter-spacing: .16em; text-transform: uppercase; }
+.vsx-head .them { background: #e9e6df; color: #6b6f78; }
+.vsx-head .us { background: var(--deeper); color: #e2c08a; }
+.vsx-row > span { padding: 18px 22px; border-top: 1px solid var(--rule); display: flex; gap: 12px; align-items: flex-start; font-family: var(--serif); font-size: 1.05rem; line-height: 1.45; }
+.vsx-row .q { font: 700 1.02rem/1.4 var(--display); color: var(--ink); }
+.vsx-row .them { color: #6b6f78; background: #f6f4ef; }
+.vsx-row .us { color: var(--ink); background: #f7f1e6; border-left: 3px solid var(--bronze); font-weight: 600; }
+.vsx .ic { flex: none; width: 20px; height: 20px; margin-top: 2px; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.vsx .them .ic { stroke: #a23b2a; }
+.vsx .us .ic { stroke: #2f7a4a; }
+.vsx-note { margin: 0; padding: 16px 22px; border-top: 1px solid var(--rule); font: 400 0.88rem/1.5 var(--sans); color: var(--ink-2); }
+.vsx-row { opacity: 1; transform: none; transition: opacity .5s ease, transform .5s ease; }
+.vsx.pre .vsx-row { opacity: 0; transform: translateY(10px); }
+@media (max-width: 760px) {
+  .vsx-head { display: none; }
+  .vsx-row { grid-template-columns: 1fr; border-top: 1px solid var(--rule); }
+  .vsx-row > span { border-top: 0; padding: 10px 18px; }
+  .vsx-row .q { padding-top: 16px; }
+  .vsx-row .them::before { content: "Today’s AI"; }
+  .vsx-row .us::before { content: "MindModeler"; }
+  .vsx-row .them, .vsx-row .us { flex-wrap: wrap; }
+  .vsx-row .them::before, .vsx-row .us::before { flex-basis: 100%; font: 700 0.68rem/1.2 var(--sans); letter-spacing: .14em; text-transform: uppercase; color: var(--accent); }
+  .vsx-row .us { margin-bottom: 12px; }
+}
+@media (prefers-reduced-motion: reduce) { .vsx.pre .vsx-row { opacity: 1; transform: none; } }
+.vsx .t { flex: 1 1 0; min-width: 0; }
 </style>
 <div class="progress" aria-hidden="true"><i></i></div>
 <div class="draft"><div class="wrap"><span><b>Preview</b> Not yet public. Every fact is drawn from the master CV.</span><a href="seal.html">Seal studies</a></div></div>
@@ -727,12 +757,14 @@ main > section.dark.story { background: radial-gradient(ellipse 60% 50% at 20% 2
         <h2 id="leak-h">Why today's AI cannot plug the hole</h2>
         <p>Every mainstream AI approach learns from a record: documents, tickets, transcripts, past data. Your best people's judgment is exactly what the record leaves out, so it keeps leaking out through retirements while the AI spend goes up.</p>
       </div>
-      <div class="tiles">
-        <div><small>Chatbots &amp; language models</small><b>Fill the gaps</b><span>Whatever your experts never wrote gets replaced with plausible text.</span></div>
-        <div><small>Search over documents (RAG)</small><b>Retrieves, never knows</b><span>It finds what was written, never what was known.</span></div>
-        <div><small>Fine-tuning</small><b>A frozen snapshot</b><span>The expert keeps learning. The snapshot does not.</span></div>
-        <div><small>AI agents</small><b>Confident half-picture</b><span>They act on the same language models, plus tools, with the same blind spot.</span></div>
-        <div><small>Interviews &amp; rule systems</small><b>The textbook, recited</b><span>They capture what experts can say. Experts recite the textbook.</span></div>
+      <div class="vsx" role="table" aria-label="Today's AI compared with MindModeler">
+        <div class="vsx-head" role="row"><span role="columnheader"></span><span role="columnheader" class="them">Today’s AI</span><span role="columnheader" class="us">MindModeler</span></div>
+        <div class="vsx-row" role="row"><span class="q" role="rowheader">Where does it learn?</span><span class="them" role="cell"><svg class="ic" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="9"/><path d="M6.5 6.5l7 7M13.5 6.5l-7 7"/></svg><span class="t">Old documents and past records</span></span><span class="us" role="cell"><svg class="ic" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="9"/><path d="M5.8 10.4l2.8 2.8 5.6-6"/></svg><span class="t">Your expert’s judgment on real cases, live</span></span></div>
+        <div class="vsx-row" role="row"><span class="q" role="rowheader">What about what nobody wrote down?</span><span class="them" role="cell"><svg class="ic" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="9"/><path d="M6.5 6.5l7 7M13.5 6.5l-7 7"/></svg><span class="t">Fills the gap with plausible text</span></span><span class="us" role="cell"><svg class="ic" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="9"/><path d="M5.8 10.4l2.8 2.8 5.6-6"/></svg><span class="t">Captures it. That is what it is for</span></span></div>
+        <div class="vsx-row" role="row"><span class="q" role="rowheader">Does the expert have to explain?</span><span class="them" role="cell"><svg class="ic" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="9"/><path d="M6.5 6.5l7 7M13.5 6.5l-7 7"/></svg><span class="t">Yes, and experts recite the textbook</span></span><span class="us" role="cell"><svg class="ic" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="9"/><path d="M5.8 10.4l2.8 2.8 5.6-6"/></svg><span class="t">No. The expert reacts to cases; the model finds the pattern</span></span></div>
+        <div class="vsx-row" role="row"><span class="q" role="rowheader">When the expert keeps learning?</span><span class="them" role="cell"><svg class="ic" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="9"/><path d="M6.5 6.5l7 7M13.5 6.5l-7 7"/></svg><span class="t">A frozen snapshot</span></span><span class="us" role="cell"><svg class="ic" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="9"/><path d="M5.8 10.4l2.8 2.8 5.6-6"/></svg><span class="t">Grows with the expert</span></span></div>
+        <div class="vsx-row" role="row"><span class="q" role="rowheader">When the expert retires?</span><span class="them" role="cell"><svg class="ic" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="9"/><path d="M6.5 6.5l7 7M13.5 6.5l-7 7"/></svg><span class="t">The judgment walks out the door</span></span><span class="us" role="cell"><svg class="ic" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="9"/><path d="M5.8 10.4l2.8 2.8 5.6-6"/></svg><span class="t">The model stays with you</span></span></div>
+        <p class="vsx-note">“Today’s AI” here means chatbots and language models, search over documents (RAG), fine-tuning, AI agents, and interview-based rule systems. Each learns from a record, and your best people’s judgment is what the record leaves out.</p>
       </div>
       <div class="leak-grid">
         <article><p class="need">Why it is not an easy task</p><h3>Watch an expert, and the expert performs for you</h3><p>This is the Hawthorne effect, named for productivity studies at Western Electric's Hawthorne Plant in the 1920s and early 1930s: people change their behavior when they know they are being watched. Those original experiments have since been heavily criticized, and researchers now prefer the term "research participation effects," but the practical warning stands. Observation changes behavior, and interviews fare no better, because asked how they work, experts describe the textbook.</p></article>
@@ -949,6 +981,14 @@ main > section.dark.story { background: radial-gradient(ellipse 60% 50% at 20% 2
       });
     }, { threshold: 0.6 });
     nums.forEach(function (n) { io.observe(n); });
+  }
+  var vsx = document.querySelector('.vsx');
+  if (vsx && 'IntersectionObserver' in window && !(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches)) {
+    vsx.classList.add('pre');
+    var rows = vsx.querySelectorAll('.vsx-row');
+    rows.forEach(function (r, i) { r.style.transitionDelay = (i * 0.12) + 's'; });
+    var vo = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { vsx.classList.remove('pre'); vo.disconnect(); } }); }, { threshold: 0.2 });
+    vo.observe(vsx);
   }
 })();
 </script>
