@@ -644,6 +644,18 @@ main > section.dark.story { background: radial-gradient(ellipse 60% 50% at 20% 2
 .faq details p { margin: 0 0 20px; font-family: var(--serif); font-size: 1.05rem; color: var(--ink-2); max-width: 44rem; }
 @media (max-width: 1000px) { .practices.four { grid-template-columns: repeat(2, minmax(0, 1fr)); } .proof-grid.three { grid-template-columns: 1fr; } }
 @media (max-width: 760px) { .fit, .practices.four { grid-template-columns: 1fr; } }
+
+/* Berke block on the record page */
+.berke { margin-top: 40px; padding: 34px 38px; background: var(--deeper); color: #f3efe7; border-left: 4px solid #e2c08a; display: grid; gap: 16px; }
+.berke .label { color: #e2c08a; }
+.berke blockquote { margin: 0; font: italic 400 clamp(1.3rem, 2.6vw, 1.85rem)/1.45 var(--display); color: #fff; max-width: 46rem; }
+.berke .who { margin: 0; font: 500 0.9rem/1.5 var(--sans); color: #c4beb2; }
+.berke .who b { color: #e2c08a; }
+.berke .facts { margin-top: 8px; }
+.berke .facts li { color: #e8e2d6; border-color: rgba(255,255,255,.14); }
+.berke .facts b { color: #fff; }
+.berke a { color: #e2c08a; }
+@media (max-width: 600px) { .berke { padding: 24px 20px; } }
 </style>
 <div class="progress" aria-hidden="true"><i></i></div>
 <div class="draft"><div class="wrap"><span><b>Preview</b> Not yet public. Every fact is drawn from the master CV.</span><a href="seal.html">Seal studies</a></div></div>
@@ -748,6 +760,7 @@ main > section.dark.story { background: radial-gradient(ellipse 60% 50% at 20% 2
           <p>His answer became his Ph.D. at Case Western Reserve in 2001, under Professors Richard Boland, Yoh-Han Pao, Miles Kennedy and Fred Collopy. He filed a provisional patent application the same year, on April 30, 2001. U.S. Patent 8,326,792, "Adaptive Dynamic Personal Modeling System and Method," was granted on December 4, 2012. Its first claim protects the move at the heart of the method: the expert sees the model’s answer, enters the answer it should have given, and the model rewrites its own cause-and-effect values to match.</p>
         </div>
         <aside class="origin-quotes">
+          <figure><blockquote>There are experts who can look at a mechanical structure or its design and pronounce whether it is an optimal design or not. How can we capture and replicate that expertise?</blockquote><figcaption>Laszlo Berke, Ph.D., chief scientist for structures, NASA · <a href="record.html#berke">the full story</a></figcaption></figure>
           <figure><blockquote>We can know more than we can tell.</blockquote><figcaption>Michael Polanyi, 1966, quoted in the dissertation</figcaption></figure>
           <figure><blockquote>The decision-maker is not necessarily aware of how he arrives at a particular decision and of his own tacit knowledge.</blockquote><figcaption>Goraya, dissertation, 2001</figcaption></figure>
           <figure class="scene"><figcaption>From his early research proposal, "Knowledge Matrix"</figcaption><p>Its domain was rigging in aluminum sand casting, the Air Force craft. Its notes name the source: "Let the person be aware of their theories. They may not know what they know. E.g. Plato elicited geometric knowledge from a slave boy." It also planned for the tool to run "standalone, as an agent or as an embeddable component."</p><p class="scene-today">An agent grounded in an expert's judgment, proposed decades before agents were the word of the year.</p></figure>

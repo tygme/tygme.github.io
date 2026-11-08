@@ -644,6 +644,18 @@ main > section.dark.story { background: radial-gradient(ellipse 60% 50% at 20% 2
 .faq details p { margin: 0 0 20px; font-family: var(--serif); font-size: 1.05rem; color: var(--ink-2); max-width: 44rem; }
 @media (max-width: 1000px) { .practices.four { grid-template-columns: repeat(2, minmax(0, 1fr)); } .proof-grid.three { grid-template-columns: 1fr; } }
 @media (max-width: 760px) { .fit, .practices.four { grid-template-columns: 1fr; } }
+
+/* Berke block on the record page */
+.berke { margin-top: 40px; padding: 34px 38px; background: var(--deeper); color: #f3efe7; border-left: 4px solid #e2c08a; display: grid; gap: 16px; }
+.berke .label { color: #e2c08a; }
+.berke blockquote { margin: 0; font: italic 400 clamp(1.3rem, 2.6vw, 1.85rem)/1.45 var(--display); color: #fff; max-width: 46rem; }
+.berke .who { margin: 0; font: 500 0.9rem/1.5 var(--sans); color: #c4beb2; }
+.berke .who b { color: #e2c08a; }
+.berke .facts { margin-top: 8px; }
+.berke .facts li { color: #e8e2d6; border-color: rgba(255,255,255,.14); }
+.berke .facts b { color: #fff; }
+.berke a { color: #e2c08a; }
+@media (max-width: 600px) { .berke { padding: 24px 20px; } }
 </style>
 <div class="progress" aria-hidden="true"><i></i></div>
 <div class="draft"><div class="wrap"><span><b>Preview</b> Not yet public. Every fact is drawn from the master CV.</span><a href="seal.html">Seal studies</a></div></div>
@@ -728,6 +740,17 @@ main > section.dark.story { background: radial-gradient(ellipse 60% 50% at 20% 2
           <img src="img/cadchem-shot.webp" alt="CAD/Chem for Windows: a trained neural-network model shown as a contour plot and a 3D response surface" width="490" height="417">
           <figcaption>CAD/Chem for Windows, the product that carried the NASA-funded method to industry.</figcaption>
         </figure>
+      </div>
+      <div class="berke" id="berke">
+        <p class="label">The question that started it all</p>
+        <blockquote>There are experts who can look at a mechanical structure or its design and pronounce whether it is an optimal design or not. How can we capture and replicate that expertise?</blockquote>
+        <p class="who"><b>Laszlo Berke, Ph.D.</b>, chief scientist for structures, NASA Lewis (Glenn) Research Center, as recorded in Dr. Goraya's dissertation, 2001</p>
+        <ul class="facts">
+          <li><b>Speed was not the answer.</b> His neural-network methods, including the Hopfield network, had already cut classical benchmark problems from 8.6 × 10<sup>50</sup> years and 9.4 × 10<sup>98</sup> years of computing to 33 and 109 minutes, with near-optimal results. Yet that did not answer the chief scientist's question.</li>
+          <li><b>Learning the expert instead.</b> In 1989 at NASA Lewis he trained a neural network on a structures expert's judgment, which his dissertation records as the first use of parallel distributed processing for that purpose that his search could find. The expert was shown ten ten-bar structures, with their weight and other parameters, and gave the ten cross-sectional areas he judged optimal.</li>
+          <li><b>The result.</b> From those ten sparse examples, the model learned the surface that spans the space of optimal solutions. He later checked the expert's answers against analytical optimization, and extended the work to a hundred-bar box-wing structure judged by an expert.</li>
+          <li><b>Where it led.</b> The same question, how to capture what an expert sees at a glance, became his Ph.D. and U.S. Patent 8,326,792. <a href="method.html#core">How the method answers it</a>.</li>
+        </ul>
       </div>
       <p class="today-line"><b>Today:</b> letting a model pick the most informative next experiment is called active learning or Bayesian optimization, and it is the engine of today's self-driving laboratories.</p>
     </div>

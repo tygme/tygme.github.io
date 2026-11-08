@@ -644,6 +644,18 @@ main > section.dark.story { background: radial-gradient(ellipse 60% 50% at 20% 2
 .faq details p { margin: 0 0 20px; font-family: var(--serif); font-size: 1.05rem; color: var(--ink-2); max-width: 44rem; }
 @media (max-width: 1000px) { .practices.four { grid-template-columns: repeat(2, minmax(0, 1fr)); } .proof-grid.three { grid-template-columns: 1fr; } }
 @media (max-width: 760px) { .fit, .practices.four { grid-template-columns: 1fr; } }
+
+/* Berke block on the record page */
+.berke { margin-top: 40px; padding: 34px 38px; background: var(--deeper); color: #f3efe7; border-left: 4px solid #e2c08a; display: grid; gap: 16px; }
+.berke .label { color: #e2c08a; }
+.berke blockquote { margin: 0; font: italic 400 clamp(1.3rem, 2.6vw, 1.85rem)/1.45 var(--display); color: #fff; max-width: 46rem; }
+.berke .who { margin: 0; font: 500 0.9rem/1.5 var(--sans); color: #c4beb2; }
+.berke .who b { color: #e2c08a; }
+.berke .facts { margin-top: 8px; }
+.berke .facts li { color: #e8e2d6; border-color: rgba(255,255,255,.14); }
+.berke .facts b { color: #fff; }
+.berke a { color: #e2c08a; }
+@media (max-width: 600px) { .berke { padding: 24px 20px; } }
 </style>
 <style>
 .lab { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.6fr); gap: 34px; margin-top: 30px; align-items: start; }
