@@ -814,15 +814,27 @@ main section.payoff, section.payoff { background: var(--deeper) !important; colo
 .menu:not([open]) > .nav { display: none; }
 .xwho .xlogos img { height: 40px; width: auto; max-width: 42%; object-fit: contain; border: 0; box-shadow: none; }
 .xwho img.xseal { width: 84px; height: 84px; border: 0; box-shadow: none; }
+
+/* v67: link rows, svd heading, masthead sub-line */
+.link-row { display: flex; flex-wrap: wrap; gap: 0 36px; align-items: baseline; }
+.svd-head { font-family: var(--serif); font-size: 1.1rem; color: var(--ink-2); max-width: 46rem; }
+.wordmark span { letter-spacing: 0.1em; }
+.footer .cols { row-gap: 8px; }
+.wordmark { flex: 0 1 auto; min-width: 0; }
+.wordmark > span { min-width: 0; }
+.wordmark span span { white-space: normal; }
+@media (max-width: 520px) { .wordmark span span { max-width: 24ch; } }
+.wordmark .founder { font-style: normal; }
+@media (max-width: 640px) { .wordmark .founder { display: none; } }
 </style>
 <div class="progress" aria-hidden="true"><i></i></div>
 <div class="draft"><div class="wrap"><span><b>Preview</b> Not yet public. Every fact is drawn from the master CV.</span><a href="seal.html">Seal studies</a></div></div>
 
 <header class="masthead">
   <div class="wrap">
-    <a class="wordmark" href="index.html" aria-label="Tanvir Y. Goraya, Ph.D., home">
+    <a class="wordmark" href="index.html" aria-label="Mind Modelers, home">
       <img src="img/seal-small.webp" alt="" width="50" height="50">
-      <span><b>Tanvir Y. Goraya, Ph.D.</b><span>Mind Modelers · AI Advisory</span></span>
+      <span><b>Mind Modelers</b><span>AI Advisory<em class="founder"> · Founded by Tanvir Y. Goraya, Ph.D.</em></span></span>
     </a>
     <nav class="nav wide" aria-label="Main">
       <a href="executive-brief.html" data-p="executive-brief">Start here</a>
@@ -830,7 +842,7 @@ main section.payoff, section.payoff { background: var(--deeper) !important; colo
         <a href="sprint.html" data-p="sprint">The Sprint</a>
         <a href="demo.html" data-p="demo">Try the demo</a>
         <a href="method.html" data-p="method">The method</a>
-        <a href="method.html#theorygarden">Theory Garden</a>
+        <a href="theory-garden.html" data-p="theory-garden">Theory Garden</a>
         <a href="tacit-knowledge-assistants.html" data-p="tacit-knowledge-assistants">White paper</a>
       </div></details>
       <details class="dd"><summary>Proof</summary><div class="dd-list">
@@ -849,7 +861,7 @@ main section.payoff, section.payoff { background: var(--deeper) !important; colo
       <nav class="nav" aria-label="Main, compact">
         <a href="executive-brief.html"><b>Start here</b></a>
         <small>Work with us</small>
-        <a href="sprint.html">The Sprint</a><a href="demo.html">Try the demo</a><a href="method.html">The method</a><a href="method.html#theorygarden">Theory Garden</a><a href="tacit-knowledge-assistants.html">White paper</a>
+        <a href="sprint.html">The Sprint</a><a href="demo.html">Try the demo</a><a href="method.html">The method</a><a href="theory-garden.html" data-p="theory-garden">Theory Garden</a><a href="tacit-knowledge-assistants.html">White paper</a>
         <small>Proof</small>
         <a href="case-studies.html">Case studies</a><a href="record.html">The record</a><a href="sources.html">Sources</a>
         <small>About</small>
@@ -929,8 +941,14 @@ main section.payoff, section.payoff { background: var(--deeper) !important; colo
 <footer class="footer">
   <div class="wrap">
     <b>Mind Modelers</b>
-    <div class="cols"><span>Bratenahl, Ohio</span><a href="method.html">Method</a><a href="record.html">Record</a><a href="case-studies.html">Case studies</a><a href="story.html">About</a><a href="sources.html">Sources</a><a href="tacit-knowledge-assistants.html">White paper</a><a href="resume.html">Résumé</a><a href="https://www.linkedin.com/in/tanvirgorayaphd/">LinkedIn</a></div>
-    <span>© 2026 Tanvir Y. Goraya, Ph.D.</span>
+    <div class="cols">
+      <span>Bratenahl, Ohio</span>
+      <a href="executive-brief.html">Start here</a>
+      <a href="sprint.html">The Sprint</a><a href="demo.html">Try the demo</a><a href="method.html">Method</a><a href="theory-garden.html">Theory Garden</a><a href="tacit-knowledge-assistants.html">White paper</a>
+      <a href="case-studies.html">Case studies</a><a href="record.html">Record</a><a href="sources.html">Sources</a>
+      <a href="story.html">His story</a><a href="resume.html">Résumé</a><a href="https://www.linkedin.com/in/tanvirgorayaphd/">LinkedIn</a>
+    </div>
+    <span>© 2026 Tanvir Y. Goraya, Ph.D. · Mind Modelers</span>
   </div>
 </footer>
 <div class="stickycta" id="stickycta"><a href="index.html#contact">Start a conversation</a></div>
@@ -993,6 +1011,7 @@ main section.payoff, section.payoff { background: var(--deeper) !important; colo
     rows.forEach(function (r, i) { r.style.transitionDelay = (i * 0.12) + 's'; });
     var vo = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { vsx.classList.remove('pre'); vo.disconnect(); } }); }, { threshold: 0.2 });
     vo.observe(vsx);
+    setTimeout(function () { vsx.classList.remove('pre'); }, 2200);
   }
 })();
 </script>

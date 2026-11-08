@@ -814,15 +814,27 @@ main section.payoff, section.payoff { background: var(--deeper) !important; colo
 .menu:not([open]) > .nav { display: none; }
 .xwho .xlogos img { height: 40px; width: auto; max-width: 42%; object-fit: contain; border: 0; box-shadow: none; }
 .xwho img.xseal { width: 84px; height: 84px; border: 0; box-shadow: none; }
+
+/* v67: link rows, svd heading, masthead sub-line */
+.link-row { display: flex; flex-wrap: wrap; gap: 0 36px; align-items: baseline; }
+.svd-head { font-family: var(--serif); font-size: 1.1rem; color: var(--ink-2); max-width: 46rem; }
+.wordmark span { letter-spacing: 0.1em; }
+.footer .cols { row-gap: 8px; }
+.wordmark { flex: 0 1 auto; min-width: 0; }
+.wordmark > span { min-width: 0; }
+.wordmark span span { white-space: normal; }
+@media (max-width: 520px) { .wordmark span span { max-width: 24ch; } }
+.wordmark .founder { font-style: normal; }
+@media (max-width: 640px) { .wordmark .founder { display: none; } }
 </style>
 <div class="progress" aria-hidden="true"><i></i></div>
 <div class="draft"><div class="wrap"><span><b>Preview</b> Not yet public. Every fact is drawn from the master CV.</span><a href="seal.html">Seal studies</a></div></div>
 
 <header class="masthead">
   <div class="wrap">
-    <a class="wordmark" href="index.html" aria-label="Tanvir Y. Goraya, Ph.D., home">
+    <a class="wordmark" href="index.html" aria-label="Mind Modelers, home">
       <img src="img/seal-small.webp" alt="" width="50" height="50">
-      <span><b>Tanvir Y. Goraya, Ph.D.</b><span>Mind Modelers · AI Advisory</span></span>
+      <span><b>Mind Modelers</b><span>AI Advisory<em class="founder"> · Founded by Tanvir Y. Goraya, Ph.D.</em></span></span>
     </a>
     <nav class="nav wide" aria-label="Main">
       <a href="executive-brief.html" data-p="executive-brief">Start here</a>
@@ -830,7 +842,7 @@ main section.payoff, section.payoff { background: var(--deeper) !important; colo
         <a href="sprint.html" data-p="sprint">The Sprint</a>
         <a href="demo.html" data-p="demo">Try the demo</a>
         <a href="method.html" data-p="method">The method</a>
-        <a href="method.html#theorygarden">Theory Garden</a>
+        <a href="theory-garden.html" data-p="theory-garden">Theory Garden</a>
         <a href="tacit-knowledge-assistants.html" data-p="tacit-knowledge-assistants">White paper</a>
       </div></details>
       <details class="dd"><summary>Proof</summary><div class="dd-list">
@@ -849,7 +861,7 @@ main section.payoff, section.payoff { background: var(--deeper) !important; colo
       <nav class="nav" aria-label="Main, compact">
         <a href="executive-brief.html"><b>Start here</b></a>
         <small>Work with us</small>
-        <a href="sprint.html">The Sprint</a><a href="demo.html">Try the demo</a><a href="method.html">The method</a><a href="method.html#theorygarden">Theory Garden</a><a href="tacit-knowledge-assistants.html">White paper</a>
+        <a href="sprint.html">The Sprint</a><a href="demo.html">Try the demo</a><a href="method.html">The method</a><a href="theory-garden.html" data-p="theory-garden">Theory Garden</a><a href="tacit-knowledge-assistants.html">White paper</a>
         <small>Proof</small>
         <a href="case-studies.html">Case studies</a><a href="record.html">The record</a><a href="sources.html">Sources</a>
         <small>About</small>
@@ -870,7 +882,7 @@ main section.payoff, section.payoff { background: var(--deeper) !important; colo
       <p class="promise">Model what your experts can't articulate, before they leave.</p>
       <p class="slogan">Tacit knowledge: never written down, never learned by AI. Until MindModeler.</p>
       <p class="lede">Machine learning, AI and robotics since 1985, on inventions of his own. Production AI for the U.S. Air Force, NASA and the Fortune 500 since 1987. Now building tacit knowledge assistants: AI that captures, and grows with, the judgment your best people cannot put into words.</p>
-      <div class="actions"><a class="btn solid" href="#contact">Start a conversation</a><a class="btn" href="sprint.html">See the four-week sprint</a></div>
+      <div class="actions"><a class="btn solid" href="executive-brief.html">Watch the 2-minute brief</a><a class="btn" href="sprint.html">See the four-week sprint</a></div>
     </div>
   </section>
 
@@ -915,32 +927,10 @@ main section.payoff, section.payoff { background: var(--deeper) !important; colo
         <article><p class="need">Why it is not an easy task</p><h3>Watch an expert, and the expert performs for you</h3><p>This is the Hawthorne effect, named for productivity studies at Western Electric's Hawthorne Plant in the 1920s and early 1930s: people change their behavior when they know they are being watched. Those original experiments have since been heavily criticized, and researchers now prefer the term "research participation effects," but the practical warning stands. Observation changes behavior, and interviews fare no better, because asked how they work, experts describe the textbook.</p></article>
         <article><p class="need">An old problem</p><h3>Plato saw it 2,400 years ago</h3><p>In the <i>Meno</i>, a student asks how anyone can search for something they do not already know. Socrates answers by drawing geometry out of an untaught boy with questions alone. The puzzle has never gone away. His way through: do not ask the expert to explain. Put real cases in front of the expert, let the expert judge them, and learn from the corrections. His dissertation compared what experts said with what they did.</p></article>
       </div>
-      <a class="more-link" href="method.html#leak">See the full comparison and the evidence</a>
-      <a class="more-link" href="case-studies.html#hard-problems">Six problems today’s AI could not reach</a>
+      <div class="link-row"><a class="more-link" href="method.html#leak">See the full comparison and the evidence</a><a class="more-link" href="case-studies.html#hard-problems">Six problems today’s AI could not reach</a></div>
     </div>
   </section>
 
-  <section class="section bg-paper" id="core" aria-labelledby="core-h">
-    <div class="wrap">
-      <div class="section-head">
-        <p class="label">The core idea · Ph.D. research, 2001, and U.S. Patent 8,326,792</p>
-        <h2 id="core-h">What today's AI is missing: gut feel, know-how and judgment</h2>
-        <p>What experts say and what experts do are different, and the difference is the value. Two cases from his record:</p>
-      </div>
-      <div class="svd">
-        <div class="svd-case">
-          <p class="who">An award-winning database tuner</p>
-          <div class="svd-row"><div class="say"><small>What she said</small><p>"I fix the SQL code."</p></div><div class="arr" aria-hidden="true">&rarr;</div><div class="do"><small>What she did</small><p>She almost never did. Her own models showed it.</p></div></div>
-        </div>
-        <div class="svd-case">
-          <p class="who">A retiring Ferro scientist with 50 years' experience</p>
-          <div class="svd-row"><div class="say"><small>What he said</small><p>Rote answers from the book.</p></div><div class="arr" aria-hidden="true">&rarr;</div><div class="do"><small>What he did</small><p>Looked at a design and told what would work, what would not, and which sensitive settings to change.</p></div></div>
-        </div>
-      </div>
-      <p class="svd-learn">MindModeler learns from the right-hand column, not the left. The expert judges real cases and corrects the model, and the model updates itself. That is the method of U.S. Patent 8,326,792.</p>
-      <p><a class="more-link" href="method.html#core">How the method works</a> &nbsp; <a class="more-link" href="tacit-knowledge-assistants.html">Read the white paper</a></p>
-    </div>
-  </section>
 
   <section class="payoff dark" aria-labelledby="payoff-h">
     <div class="wrap">
@@ -1014,7 +1004,7 @@ main section.payoff, section.payoff { background: var(--deeper) !important; colo
       <div class="section-head">
         <p class="label">Advisory</p>
         <h2 id="advisory-h">Where decades of deployed AI meet this year's decisions</h2>
-        <p>Engagements run from a single strategy session to a seat on an advisory board. Each draws on systems that were built, shipped and paid for.</p>
+        <p>Engagements run from a single strategy session to a seat on an advisory board. Each draws on systems that were built, shipped and paid for. Behind every engagement stands his team: seasoned technologists who have worked with him for decades, and cutting-edge AI experts, for any software and AI development the work calls for.</p>
       </div>
       <p class="whofor"><b>Who it is for.</b> Organizations whose most valuable know-how lives in a few people's heads: process industries, engineering, science and specialized operations. If a retirement, a resignation or an AI rollout would expose that gap, this is for you.</p>
       <div class="practices">
@@ -1030,8 +1020,7 @@ main section.payoff, section.payoff { background: var(--deeper) !important; colo
           <p class="label">A defined engagement</p>
           <h3>Expert Knowledge Capture, in four weeks</h3>
           <p>Today's AI agents are fluent, but they know nothing of your senior people's judgment. A model of an expert's causes, effects and real episodes is the structured expertise an agent can be grounded on, and it stays with the organization when the expert retires. This is the patented MindModeler method, delivered as a fixed four-week proof of concept.</p>
-          <a class="more-link" href="sprint.html">See the sprint: deliverables, fit and questions</a>
-          <a class="more-link" href="demo.html">Try a working model of an expert</a>
+          <div class="link-row"><a class="more-link" href="sprint.html">See the sprint: deliverables, fit and questions</a><a class="more-link" href="demo.html">Try a working model of an expert</a></div>
         </div>
         <ol class="weeks">
           <li><b>Week 1</b><span>Interview the expert. Build the semantic model: what they control, what they cannot, and how each factor moves the others.</span></li>
@@ -1094,8 +1083,14 @@ main section.payoff, section.payoff { background: var(--deeper) !important; colo
 <footer class="footer">
   <div class="wrap">
     <b>Mind Modelers</b>
-    <div class="cols"><span>Bratenahl, Ohio</span><a href="method.html">Method</a><a href="record.html">Record</a><a href="case-studies.html">Case studies</a><a href="story.html">About</a><a href="sources.html">Sources</a><a href="tacit-knowledge-assistants.html">White paper</a><a href="resume.html">Résumé</a><a href="https://www.linkedin.com/in/tanvirgorayaphd/">LinkedIn</a></div>
-    <span>© 2026 Tanvir Y. Goraya, Ph.D.</span>
+    <div class="cols">
+      <span>Bratenahl, Ohio</span>
+      <a href="executive-brief.html">Start here</a>
+      <a href="sprint.html">The Sprint</a><a href="demo.html">Try the demo</a><a href="method.html">Method</a><a href="theory-garden.html">Theory Garden</a><a href="tacit-knowledge-assistants.html">White paper</a>
+      <a href="case-studies.html">Case studies</a><a href="record.html">Record</a><a href="sources.html">Sources</a>
+      <a href="story.html">His story</a><a href="resume.html">Résumé</a><a href="https://www.linkedin.com/in/tanvirgorayaphd/">LinkedIn</a>
+    </div>
+    <span>© 2026 Tanvir Y. Goraya, Ph.D. · Mind Modelers</span>
   </div>
 </footer>
 <div class="stickycta" id="stickycta"><a href="index.html#contact">Start a conversation</a></div>
@@ -1158,6 +1153,7 @@ main section.payoff, section.payoff { background: var(--deeper) !important; colo
     rows.forEach(function (r, i) { r.style.transitionDelay = (i * 0.12) + 's'; });
     var vo = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { vsx.classList.remove('pre'); vo.disconnect(); } }); }, { threshold: 0.2 });
     vo.observe(vsx);
+    setTimeout(function () { vsx.classList.remove('pre'); }, 2200);
   }
 })();
 </script>
