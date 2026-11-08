@@ -901,6 +901,20 @@ figcaption, th, .stickycta, .wordmark span { font-family: var(--sans); }
 h2 { letter-spacing: -0.005em; }
 h3 { letter-spacing: 0; }
 .nav.wide > a, .nav .dd summary { font: 500 0.88rem/1 var(--sans); letter-spacing: 0.02em; color: var(--ink); }
+
+/* v72: founder portrait */
+.portrait img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; border: 1px solid var(--rule); box-shadow: 0 18px 40px rgba(15, 26, 45, 0.14); }
+.portrait figcaption { font-family: var(--sans); }
+.adv-top { display: grid; grid-template-columns: minmax(0, 1fr) 220px; gap: 56px; align-items: start; }
+.founder-card { margin: 0; display: grid; gap: 12px; }
+.founder-card img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; border: 1px solid var(--rule); border-top: 3px solid var(--bronze); box-shadow: 0 18px 40px rgba(15, 26, 45, 0.14); }
+.founder-card figcaption { display: grid; gap: 3px; }
+.founder-card b { font: 700 1rem/1.3 var(--display); color: var(--deeper); }
+.founder-card span { font: 500 0.74rem/1.3 var(--sans); letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); }
+@media (max-width: 820px) {
+  .adv-top { grid-template-columns: 1fr; gap: 28px; }
+  .founder-card { grid-template-columns: 96px minmax(0, 1fr); align-items: center; gap: 16px; }
+}
 </style>
 <div class="progress" aria-hidden="true"><i></i></div>
 <div class="draft"><div class="wrap"><span><b>Preview</b> Not yet public. Every fact is drawn from the master CV.</span><a href="seal.html">Seal studies</a></div></div>
@@ -1076,10 +1090,13 @@ h3 { letter-spacing: 0; }
 
   <section class="section" id="advisory" aria-labelledby="advisory-h">
     <div class="wrap">
+      <div class="adv-top">
       <div class="section-head">
         <p class="label">Advisory</p>
         <h2 id="advisory-h">Where decades of deployed AI meet this year's decisions</h2>
         <p>Engagements run from a single strategy session to a seat on an advisory board. Each draws on systems that were built, shipped and paid for. Behind every engagement stands his team: seasoned technologists who have worked with him for decades, and cutting-edge AI experts, for any software and AI development the work calls for.</p>
+      </div>
+      <figure class="founder-card"><img src="img/tyg-portrait.webp" srcset="img/tyg-portrait.webp 1x, img/tyg-portrait@2x.webp 2x" width="480" height="600" alt="Tanvir Y. Goraya, Ph.D." loading="lazy"><figcaption><b>Tanvir Y. Goraya, Ph.D.</b><span>Founder · leads every engagement</span></figcaption></figure>
       </div>
       <p class="whofor"><b>Who it is for.</b> Organizations whose most valuable know-how lives in a few people's heads: process industries, engineering, science and specialized operations. If a retirement, a resignation or an AI rollout would expose that gap, this is for you.</p>
       <div class="practices">
