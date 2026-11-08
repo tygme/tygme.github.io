@@ -656,6 +656,16 @@ main > section.dark.story { background: radial-gradient(ellipse 60% 50% at 20% 2
 .berke .facts b { color: #fff; }
 .berke a { color: #e2c08a; }
 @media (max-width: 600px) { .berke { padding: 24px 20px; } }
+
+/* Films */
+.films { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px; margin-top: 30px; }
+.film { margin: 0; display: grid; gap: 12px; }
+.film video { width: 100%; height: auto; aspect-ratio: 16 / 9; display: block; background: var(--deeper); border: 1px solid var(--rule); box-shadow: 0 16px 36px rgba(15,26,45,.18); }
+.film figcaption { font-family: var(--serif); font-size: 1rem; line-height: 1.55; color: var(--ink-2); }
+.film figcaption b { color: var(--ink); font-family: var(--display); }
+.film .tag { display: block; font: 700 0.68rem/1.3 var(--sans); letter-spacing: .16em; text-transform: uppercase; color: var(--accent); margin-bottom: 4px; }
+#film .film, #theorygarden .film { max-width: 60rem; margin-top: 30px; }
+@media (max-width: 860px) { .films { grid-template-columns: 1fr; } }
 </style>
 <style>
 .lab { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.6fr); gap: 34px; margin-top: 30px; align-items: start; }
@@ -744,7 +754,18 @@ main > section.dark.story { background: radial-gradient(ellipse 60% 50% at 20% 2
       <p class="crumb"><a href="index.html">Home</a> / <a href="case-studies.html">Case studies</a> / The furnace model</p>
       <h1 id="ph">A retiring expert's judgment, as a working model</h1>
       <p class="lede">Move the controls and see how the 2002 MindModeler model of one furnace expert's judgment predicts NOx and CO. Then ask a chatbot the same question and compare.</p>
-      <nav class="subnav" aria-label="On this page"><a href="#expert">The expert</a><a href="#lab">Try the model</a><a href="#found">What it found</a><a href="#test">Test a chatbot</a><a href="#grok">What three AIs said</a></nav>
+      <nav class="subnav" aria-label="On this page"><a href="#film">Watch</a><a href="#expert">The expert</a><a href="#lab">Try the model</a><a href="#found">What it found</a><a href="#test">Test a chatbot</a><a href="#grok">What three AIs said</a></nav>
+    </div>
+  </section>
+
+  <section class="section" id="film" aria-labelledby="film-h">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="label">Watch first</p>
+        <h2 id="film-h">The 2002 model, in two minutes</h2>
+      </div>
+      <figure class="film"><video controls preload="none" playsinline poster="img/poster-mindmodeler.webp" width="1920" height="1080"><source src="docs/mindmodeler-2002-narrated.mp4" type="video/mp4"></video>
+          <figcaption><span class="tag">Film · 2 min</span><b>MindModeler, 2002.</b> A retiring engineer's furnace judgment, captured as a working model. Narrated.</figcaption></figure>
     </div>
   </section>
 

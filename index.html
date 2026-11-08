@@ -656,6 +656,16 @@ main > section.dark.story { background: radial-gradient(ellipse 60% 50% at 20% 2
 .berke .facts b { color: #fff; }
 .berke a { color: #e2c08a; }
 @media (max-width: 600px) { .berke { padding: 24px 20px; } }
+
+/* Films */
+.films { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px; margin-top: 30px; }
+.film { margin: 0; display: grid; gap: 12px; }
+.film video { width: 100%; height: auto; aspect-ratio: 16 / 9; display: block; background: var(--deeper); border: 1px solid var(--rule); box-shadow: 0 16px 36px rgba(15,26,45,.18); }
+.film figcaption { font-family: var(--serif); font-size: 1rem; line-height: 1.55; color: var(--ink-2); }
+.film figcaption b { color: var(--ink); font-family: var(--display); }
+.film .tag { display: block; font: 700 0.68rem/1.3 var(--sans); letter-spacing: .16em; text-transform: uppercase; color: var(--accent); margin-bottom: 4px; }
+#film .film, #theorygarden .film { max-width: 60rem; margin-top: 30px; }
+@media (max-width: 860px) { .films { grid-template-columns: 1fr; } }
 </style>
 <div class="progress" aria-hidden="true"><i></i></div>
 <div class="draft"><div class="wrap"><span><b>Preview</b> Not yet public. Every fact is drawn from the master CV.</span><a href="seal.html">Seal studies</a></div></div>
@@ -772,6 +782,22 @@ main > section.dark.story { background: radial-gradient(ellipse 60% 50% at 20% 2
           <div class="pb"><p class="src">AI WARE · Computer Associates</p><h3>500+ installations, then Neugents</h3><p>Products at 130+ named organizations. Computer Associates, which called itself “the world’s leading business software company,” acquired AI WARE and relaunched the technology worldwide as Neugents, IndustryWeek Technology of the Year, 1998.</p><span class="go">Read the full story</span></div></a>
       </div>
       <a class="more-link" href="record.html">See the full record</a>
+    </div>
+  </section>
+
+  <section class="section bg-paper" id="watch" aria-labelledby="watch-h">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="label">Watch</p>
+        <h2 id="watch-h">See the work in motion</h2>
+        <p>Two short films, made from the original software and presentations.</p>
+      </div>
+      <div class="films">
+        <figure class="film"><video controls preload="none" playsinline poster="img/poster-mindmodeler.webp" width="1920" height="1080"><source src="docs/mindmodeler-2002-narrated.mp4" type="video/mp4"></video>
+          <figcaption><span class="tag">Film · 2 min</span><b>MindModeler, 2002.</b> A retiring engineer's furnace judgment, captured as a working model. Narrated.</figcaption></figure>
+        <figure class="film"><video controls preload="none" playsinline poster="img/poster-theory-garden.webp" width="1920" height="1080"><source src="docs/theory-garden-narrated.mp4" type="video/mp4"></video>
+          <figcaption><span class="tag">Film · 2½ min</span><b>Theory Garden on the TG-Engine.</b> Complex systems simulated with AI: find the virtuous and vicious cycles, no maths needed. Narrated.</figcaption></figure>
+      </div>
     </div>
   </section>
 
