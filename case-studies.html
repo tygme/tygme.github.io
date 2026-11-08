@@ -696,6 +696,24 @@ main > section.dark.story { background: radial-gradient(ellipse 60% 50% at 20% 2
 }
 @media (prefers-reduced-motion: reduce) { .vsx.pre .vsx-row { opacity: 1; transform: none; } }
 .vsx .t { flex: 1 1 0; min-width: 0; }
+
+/* Hard problems */
+.hp-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; margin-top: 30px; }
+.hp { background: var(--paper); border: 1px solid var(--rule); border-top: 3px solid var(--bronze); padding: 22px 24px; display: grid; gap: 8px; align-content: start; }
+.hp .tag { margin: 0; font: 700 0.66rem/1.3 var(--sans); letter-spacing: .16em; text-transform: uppercase; color: var(--accent); }
+.hp h3 { font: 700 1.2rem/1.3 var(--display); }
+.hp dl { margin: 6px 0 0; display: grid; gap: 4px; }
+.hp dt { font: 700 0.7rem/1.3 var(--sans); letter-spacing: .12em; text-transform: uppercase; color: var(--ink-2); margin-top: 8px; }
+.hp dd { margin: 0; font-family: var(--serif); font-size: 0.98rem; line-height: 1.55; color: var(--ink-2); }
+.hp dt.why { color: #8f2f20; }
+.hp dd.why { color: var(--ink); background: #f7f1e6; border-left: 3px solid var(--bronze); padding: 8px 12px; }
+.hp a { color: var(--accent); }
+.hp-sum { margin-top: 30px; background: var(--deeper); color: #f3efe7; padding: 28px 32px; border-left: 4px solid #e2c08a; }
+.hp-sum h3 { font: 700 1.3rem/1.3 var(--display); color: #fff; margin-bottom: 12px; }
+.hp-sum ol { margin: 0; padding-left: 1.2em; display: grid; gap: 10px; font-family: var(--serif); font-size: 1.05rem; line-height: 1.55; color: #e8e2d6; }
+.hp-sum b { color: #e2c08a; }
+@media (max-width: 1000px) { .hp-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 680px) { .hp-grid { grid-template-columns: 1fr; } .hp-sum { padding: 22px 20px; } }
 </style>
 <div class="progress" aria-hidden="true"><i></i></div>
 <div class="draft"><div class="wrap"><span><b>Preview</b> Not yet public. Every fact is drawn from the master CV.</span><a href="seal.html">Seal studies</a></div></div>
@@ -720,9 +738,41 @@ main > section.dark.story { background: radial-gradient(ellipse 60% 50% at 20% 2
   <section class="pagehero dark" aria-labelledby="ph">
     <div class="wrap">
       <p class="crumb"><a href="index.html">Home</a> / Case Studies</p>
-      <h1 id="ph">Thirty years of furnace judgment, made explicit</h1>
-      <p class="lede">How MindModeler captured the tacit judgment of experts in mining and in database tuning.</p>
-      <nav class="subnav" aria-label="On this page"><a href="#case">Mining furnace and database tuners</a><a href="demo.html">Try the furnace model</a></nav>
+      <h1 id="ph">Where expert judgment was the only way through</h1>
+      <p class="lede">Six problems that turned on judgment no one had written down, and how MindModeler captured it where today’s AI could not.</p>
+      <nav class="subnav" aria-label="On this page"><a href="#hard-problems">Six hard problems</a><a href="#case">Mining furnace and database tuners</a><a href="demo.html">Try the furnace model</a></nav>
+    </div>
+  </section>
+
+  <section class="section bg-stone" id="hard-problems" aria-labelledby="hp-h">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="label">Hard problems</p>
+        <h2 id="hp-h">Six problems today’s AI could not reach</h2>
+        <p>Each one turned on judgment that was never written down. MindModeler, the expert-modeling tool in his TG-Engine collection of AI tools, captured it as a working model. The cases come from his work and from his 2001 dissertation, where the tool is called the ADPME. It was also tried with an internist.</p>
+      </div>
+      <div class="hp-grid">
+        <article class="hp"><p class="tag">NASA Lewis Research Center · 1989</p><h3>The structures expert</h3>
+          <dl><dt>The problem</dt><dd>"There are experts who can look at a mechanical structure or its design and pronounce whether it is an optimal design or not. How can we capture and replicate that expertise?" asked the chief scientist for structures. Supercomputers had run for weeks in search of optimal designs.</dd><dt>What MindModeler did</dt><dd>A neural network learned one expert's judgment from just ten ten-bar trusses: the surface that spans the space of optimal solutions. His answers checked out against analytical optimization, and the work extended to a hundred-bar box wing.</dd><dt class="why">Why today’s AI could not</dt><dd class="why">No document holds one expert's sense of what is optimal, and ten examples are far too few for today's models to learn from.</dd></dl></article>
+        <article class="hp"><p class="tag">A Fortune 50 consulting firm · dissertation, 2001</p><h3>Three award-winning database tuners</h3>
+          <dl><dt>The problem</dt><dd>Asked how he tunes, one expert sat for two hours with a blank page, an hour doodling and another hour drawing a cause map. Tuning a production database is exponential: no amount of hardware solves it. The key is the human expert.</dd><dt>What MindModeler did</dt><dd>Each tuner's knowledge was captured in under an hour. In production: 6 hours cut to 32 minutes; 8 hours to 2 minutes 16 seconds; a 31-minute process to under 3½ minutes; an interactive query from 90 seconds to 1. Of 74 database professionals shown the models, 70 said no existing tool could help them and four were unsure; all 74 said this one would.</dd><dt class="why">Why today’s AI could not</dt><dd class="why">Ask a chatbot and it recites the textbook: start with the SQL. One tuner's own model showed she rarely did, a working style she had never recognized in herself.</dd></dl></article>
+        <article class="hp"><p class="tag">A Fortune 500 corporation</p><h3>The retiring formulation scientist</h3>
+          <dl><dt>The problem</dt><dd>A Ph.D. with more than 35 years of specialty formulations was leaving. Three person-years built a rule-based expert system that could not produce acceptable formulations. A purchased repository could not create new ones. His lab notebooks were digitized.</dd><dt>What MindModeler did</dt><dd>MindModeler mapped a formulation scientist’s judgment as a working model of causes and effects: the kind of knowledge the notebooks and the rules had missed.</dd><dt class="why">Why today’s AI could not</dt><dd class="why">Digitizing the notebooks is exactly what today's document search (RAG) does. It made them faster to search. It did not make a single new formulation.</dd></dl></article>
+        <article class="hp"><p class="tag">U.S. Air Force · Wright Laboratory</p><h3>The master artisans</h3>
+          <dl><dt>The problem</dt><dd>Craftsmen with decades on the job. Programs in LISP and CLOS captured little more than the rules in books and manuals. Interviews, narratives and diaries said little about how they made their decisions. "Nothing has worked very well," the dissertation records.</dd><dt>What MindModeler did</dt><dd>Memory-driven design that the Air Force published as a Success Story: casting-pattern design cut from two weeks to under two days. The artisans' design judgment was mapped, from energy losses to rate of flow.</dd><dt class="why">Why today’s AI could not</dt><dd class="why">The skill was never written down. Rules, interviews and transcripts, the raw material of today's AI, return only the manual.</dd></dl></article>
+        <article class="hp"><p class="tag">Fortune 100 and multinational executives</p><h3>The executive who could not explain</h3>
+          <dl><dt>The problem</dt><dd>A senior executive reached a firm conclusion but could not show how: not with premises, not with cause maps, not with the help of like-minded colleagues. Another needed the best mix of presentation styles and content for each negotiation, under time limits.</dd><dt>What MindModeler did</dt><dd>MindModeler built the executive's own model of negotiation, from knowledge and understanding to action, feedback and response.</dd><dt class="why">Why today’s AI could not</dt><dd class="why">A chatbot can give general negotiation advice. It cannot know how this executive weighs his own objectives.</dd></dl></article>
+        <article class="hp"><p class="tag">A large mining company · 2002</p><h3>The retiring furnace engineer</h3>
+          <dl><dt>The problem</dt><dd>More than 30 years balancing NOx, CO and SO₂ at a furnace that was "an art form to operate," with the option to retire.</dd><dt>What MindModeler did</dt><dd>His model surfaced a relationship he had never put into words. His note: "Ah-ha: never gave this info."</dd><dt class="why">Why today’s AI could not</dt><dd class="why">We asked Grok, DeepSeek and ChatGPT the same question. None found any of the model's four findings in full, and all three said the opposite on two. <a href="demo.html#grok">See the test</a>.</dd></dl></article>
+      </div>
+      <div class="hp-sum">
+        <h3>Why these stay out of reach for today’s AI</h3>
+        <ol>
+          <li><b>It was never written down.</b> Chatbots and document search learn from the record. This knowledge was not in it.</li>
+          <li><b>There are only a few examples.</b> Ten trusses, ten to twenty episodes. Today’s models need thousands, or billions of words.</li>
+          <li><b>The expert cannot explain it.</b> Ask, and experts recite the textbook. MindModeler learns from how they react to real cases, then shows them what they know.</li>
+        </ol>
+      </div>
     </div>
   </section>
 
