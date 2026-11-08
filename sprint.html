@@ -732,6 +732,36 @@ main > section.dark.story { background: radial-gradient(ellipse 60% 50% at 20% 2
 @media (max-width: 760px) { .aitest table, .aitest tbody, .aitest tr, .aitest td { display: block; } .aitest thead { display: none; } .aitest tr { border-top: 1px solid var(--rule); }
   .aitest td { border: 0; padding: 8px 16px; } .aitest td:first-child { width: auto; border-right: 0; border-bottom: 2px solid var(--bronze); }
   .aitest td[data-ai]::before { content: attr(data-ai); display: block; font: 700 0.68rem/1.3 var(--sans); letter-spacing: .12em; text-transform: uppercase; color: var(--accent); margin-bottom: 2px; } }
+
+/* Payoff lines, home payoff strip, cost calculator */
+.hp dt.pay { color: #245a37; }
+.hp dd.pay { color: var(--ink); background: #e9f3ec; border-left: 3px solid #2f7a4a; padding: 8px 12px; font-weight: 600; }
+main section.payoff, section.payoff { background: var(--deeper) !important; color: #f3efe7; }
+.payoff .wrap { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0; padding-block: 34px 40px; }
+.payoff-h { grid-column: 1 / -1; font: 700 0.8rem/1.3 var(--sans); letter-spacing: .18em; text-transform: uppercase; color: #e2c08a; margin-bottom: 18px; }
+.payoff a { display: grid; gap: 8px; align-content: start; padding: 4px 22px; border-left: 1px solid rgba(255,255,255,.16); color: inherit; text-decoration: none; }
+.payoff a:first-of-type { border-left: 0; padding-left: 0; }
+.payoff strong { font: 700 clamp(1.25rem, 2vw, 1.65rem)/1.15 var(--display); color: #fff; white-space: nowrap; }
+.payoff span { font: 400 0.92rem/1.45 var(--sans); color: #c4beb2; }
+.payoff a:hover strong { color: #e2c08a; }
+@media (max-width: 900px) { .payoff .wrap { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 24px; } .payoff a:nth-of-type(3) { border-left: 0; padding-left: 0; } }
+@media (max-width: 520px) { .payoff .wrap { grid-template-columns: 1fr; } .payoff a { border-left: 0; padding-left: 0; } }
+.calc { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 28px; margin-top: 30px; align-items: start; }
+.calc-in { display: grid; gap: 18px; background: var(--paper); border: 1px solid var(--rule); border-top: 3px solid var(--bronze); padding: 24px 26px; }
+.calc-in label { display: grid; gap: 6px; }
+.calc-in span { font: 600 0.92rem/1.35 var(--sans); color: var(--ink); }
+.calc-in input { font: 500 1.05rem/1.2 var(--sans); padding: 10px 12px; border: 1px solid var(--rule); background: #fff; color: var(--ink); width: 100%; box-sizing: border-box; }
+.calc-in input:focus { outline: 2px solid var(--bronze); outline-offset: 1px; }
+.calc-in small { font: 400 0.8rem/1.4 var(--sans); color: var(--ink-2); }
+.calc-out { background: var(--deeper); color: #f3efe7; padding: 24px 26px; display: grid; gap: 16px; }
+.calc-out > div { display: grid; gap: 2px; padding-bottom: 14px; border-bottom: 1px solid rgba(255,255,255,.14); }
+.calc-out span { font: 600 0.8rem/1.3 var(--sans); letter-spacing: .08em; text-transform: uppercase; color: #c4beb2; }
+.calc-out b { font: 700 clamp(1.5rem, 3vw, 2rem)/1.2 var(--display); color: #fff; font-variant-numeric: tabular-nums; }
+.calc-out small { font: 400 0.8rem/1.4 var(--sans); color: #a8a296; }
+.calc-out .total b { color: #e2c08a; font-size: clamp(1.9rem, 3.6vw, 2.6rem); }
+.calc-out p { margin: 0; font-family: var(--serif); font-size: 1rem; line-height: 1.55; color: #e8e2d6; }
+.calc-out a { color: #e2c08a; }
+@media (max-width: 800px) { .calc { grid-template-columns: 1fr; } }
 </style>
 <div class="progress" aria-hidden="true"><i></i></div>
 <div class="draft"><div class="wrap"><span><b>Preview</b> Not yet public. Every fact is drawn from the master CV.</span><a href="seal.html">Seal studies</a></div></div>
@@ -758,7 +788,7 @@ main > section.dark.story { background: radial-gradient(ellipse 60% 50% at 20% 2
       <p class="crumb"><a href="index.html">Home</a> / The Sprint</p>
       <h1 id="ph">One expert. Four weeks. Their judgment, kept.</h1>
       <p class="lede">The Tacit Knowledge Sprint turns what your most valuable expert knows but cannot put into words into working models that stay with your organization.</p>
-      <nav class="subnav" aria-label="On this page"><a href="#fit">Is it right for you</a><a href="#deliver">What you get</a><a href="#weeks">The four weeks</a><a href="#proof">It has worked before</a><a href="#faq">Questions</a></nav>
+      <nav class="subnav" aria-label="On this page"><a href="#fit">Is it right for you</a><a href="#deliver">What you get</a><a href="#weeks">The four weeks</a><a href="#proof">It has worked before</a><a href="#cost">What is at stake</a><a href="#faq">Questions</a></nav>
     </div>
   </section>
 
@@ -835,6 +865,47 @@ main > section.dark.story { background: radial-gradient(ellipse 60% 50% at 20% 2
       <a class="more-link" href="demo.html">Try the furnace model yourself, then ask a chatbot</a>
     </div>
   </section>
+
+  <section class="section bg-stone" id="cost" aria-labelledby="cost-h">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="label">What is at stake</p>
+        <h2 id="cost-h">What does losing your expert cost?</h2>
+        <p>Use your own numbers. Nothing here is sent anywhere; the arithmetic happens on this page.</p>
+      </div>
+      <div class="calc">
+        <form class="calc-in" id="calc" onsubmit="return false">
+          <label><span>Expert’s yearly cost (salary and benefits)</span><input type="number" min="0" step="1000" id="c-pay" placeholder="e.g. 180000" inputmode="decimal"></label>
+          <label><span>Years for a successor to reach the same judgment</span><input type="number" min="0" step="0.5" id="c-yrs" value="5" inputmode="decimal"><small>Pre-filled with five years, the figure one utility gave for growing an expert operator in 2002.</small></label>
+          <label><span>Costly mistakes per year without the expert</span><input type="number" min="0" step="1" id="c-n" placeholder="e.g. 2" inputmode="decimal"></label>
+          <label><span>Average cost of one such mistake</span><input type="number" min="0" step="1000" id="c-cost" placeholder="e.g. 250000" inputmode="decimal"><small>Downtime, scrap, rework, a missed specification, an emissions exceedance.</small></label>
+        </form>
+        <div class="calc-out" aria-live="polite">
+          <div><span>Cost of the learning years</span><b id="o-learn">—</b><small>yearly cost × years to reach the same judgment</small></div>
+          <div><span>Cost of mistakes while learning</span><b id="o-err">—</b><small>mistakes per year × cost per mistake × years</small></div>
+          <div class="total"><span>Your exposure from one departure</span><b id="o-tot">—</b></div>
+          <p>A four-week sprint captures the expert’s judgment before they leave, so a successor learns from it instead of from scratch. <a href="#contact">Book a scoping call</a> to put a fixed price beside your number.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+<script>
+(function () {
+  var ids = ['c-pay', 'c-yrs', 'c-n', 'c-cost'];
+  var fmt = function (v) { return '$' + Math.round(v).toLocaleString('en-US'); };
+  function val(id) { var v = parseFloat(document.getElementById(id).value); return isNaN(v) || v < 0 ? null : v; }
+  function run() {
+    var pay = val('c-pay'), yrs = val('c-yrs'), n = val('c-n'), cost = val('c-cost');
+    var learn = (pay !== null && yrs !== null) ? pay * yrs : null;
+    var err = (n !== null && cost !== null && yrs !== null) ? n * cost * yrs : null;
+    document.getElementById('o-learn').textContent = learn === null ? '—' : fmt(learn);
+    document.getElementById('o-err').textContent = err === null ? '—' : fmt(err);
+    document.getElementById('o-tot').textContent = (learn === null && err === null) ? '—' : fmt((learn || 0) + (err || 0));
+  }
+  ids.forEach(function (id) { document.getElementById(id).addEventListener('input', run); });
+  run();
+})();
+</script>
 
   <section class="section" id="faq" aria-labelledby="faq-h">
     <div class="wrap">
