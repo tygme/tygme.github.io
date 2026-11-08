@@ -841,6 +841,55 @@ main section.payoff, section.payoff { background: var(--deeper) !important; colo
 .tx summary span { font: 500 0.8rem/1.3 var(--sans); color: var(--ink-2); }
 .tx .tx-note { margin: 0; padding: 12px 18px; background: #f7f1e6; border-top: 1px solid var(--rule); border-left: 3px solid var(--bronze); font-family: var(--serif); font-size: 0.95rem; line-height: 1.55; color: var(--ink); }
 .tx pre { margin: 0; padding: 16px 18px; border-top: 1px solid var(--rule); white-space: pre-wrap; overflow-wrap: break-word; font: 400 0.84rem/1.6 var(--sans); color: var(--ink-2); max-height: 460px; overflow-y: auto; background: #fbfaf7; }
+
+/* ── v70: finish pass — depth, motion, and the grouped footer ── */
+@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+main [id] { scroll-margin-top: 100px; }
+::selection { background: #152238; color: #e2c08a; }
+p, li { text-wrap: pretty; }
+
+.masthead { transition: box-shadow 0.3s ease; }
+.masthead.scrolled { box-shadow: 0 12px 30px rgba(15, 26, 45, 0.09); }
+
+.btn { transition: background 0.22s, border-color 0.22s, color 0.22s, transform 0.22s, box-shadow 0.22s; }
+.btn:hover { transform: translateY(-1px); box-shadow: 0 8px 20px rgba(15, 26, 45, 0.16); }
+.btn:active { transform: translateY(0); box-shadow: none; }
+
+.more-link::after { content: "\2009\2192"; display: inline-block; transition: transform 0.25s cubic-bezier(.2,.7,.2,1); }
+.more-link:hover::after { transform: translateX(5px); }
+.pcard .go::after { content: "\2009\2192"; display: inline-block; transition: transform 0.25s cubic-bezier(.2,.7,.2,1); }
+.pcard:hover .go::after { transform: translateX(5px); }
+.pcard { transition: box-shadow 0.3s cubic-bezier(.2,.7,.2,1), transform 0.3s cubic-bezier(.2,.7,.2,1); }
+
+.practice { position: relative; }
+.practice::before { content: ""; position: absolute; top: -3px; left: 0; width: 0; height: 3px; background: var(--bronze); transition: width 0.4s cubic-bezier(.2,.7,.2,1); }
+.practice:hover::before { width: 100%; }
+
+.then-now::-webkit-scrollbar, .tx pre::-webkit-scrollbar { height: 8px; width: 8px; }
+.then-now::-webkit-scrollbar-thumb, .tx pre::-webkit-scrollbar-thumb { background: var(--rule); border-radius: 4px; }
+.then-now::-webkit-scrollbar-track, .tx pre::-webkit-scrollbar-track { background: transparent; }
+
+/* Reveal on scroll: hidden only when JS confirms IO + motion (html.rvon) */
+html.rvon .rv { opacity: 0; transform: translateY(16px); transition: opacity 0.7s cubic-bezier(.2,.7,.2,1), transform 0.7s cubic-bezier(.2,.7,.2,1); }
+html.rvon .rv.rv-in { opacity: 1; transform: none; }
+
+/* Grouped footer */
+.footer.f2 .wrap { padding-block: 54px 26px; gap: 36px; }
+.fgrid { display: grid; grid-template-columns: minmax(0, 1.5fr) repeat(3, minmax(0, 1fr)); gap: 32px 44px; }
+.fbrand { display: grid; gap: 13px; align-content: start; }
+.fmark { display: flex; align-items: center; gap: 12px; text-decoration: none; width: fit-content; }
+.fmark img { width: 44px; height: 44px; flex: none; filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.45)); }
+.fmark b { font: 700 1rem/1.2 var(--caps); letter-spacing: 0.08em; color: #f3efe7; }
+.fbrand p { font-family: var(--serif); font-size: 0.92rem; line-height: 1.6; color: #c4beb2; max-width: 34ch; }
+.fbrand .floc { font: 600 0.72rem/1.4 var(--sans); letter-spacing: 0.16em; text-transform: uppercase; color: #8d8779; }
+.fgrid nav { display: grid; gap: 9px; align-content: start; justify-items: start; }
+.fgrid h4 { margin: 0 0 5px; font: 700 0.7rem/1.3 var(--sans); letter-spacing: 0.18em; text-transform: uppercase; color: #b98d55; }
+.fgrid nav a { text-decoration: none; font-size: 0.9rem; color: #c4beb2; border-bottom: 1px solid transparent; transition: color 0.2s, border-color 0.2s; }
+.fgrid nav a:hover { color: #f3efe7; border-bottom-color: #b98d55; }
+.fbar { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px; padding-top: 22px; border-top: 1px solid rgba(255, 255, 255, 0.12); font-size: 0.78rem; color: #8d8779; }
+@media (max-width: 880px) { .fgrid { grid-template-columns: repeat(2, minmax(0, 1fr)); } .fbrand { grid-column: 1 / -1; } }
+@media (max-width: 440px) { .fgrid { grid-template-columns: 1fr; gap: 26px; } }
+@media print { html.rvon .rv { opacity: 1 !important; transform: none !important; transition: none !important; } }
 </style>
 <div class="progress" aria-hidden="true"><i></i></div>
 <div class="draft"><div class="wrap"><span><b>Preview</b> Not yet public. Every fact is drawn from the master CV.</span><a href="seal.html">Seal studies</a></div></div>
@@ -1213,17 +1262,41 @@ main section.payoff, section.payoff { background: var(--deeper) !important; colo
   </section>
 </main>
 
-<footer class="footer">
+<footer class="footer f2">
   <div class="wrap">
-    <b>Mind Modelers</b>
-    <div class="cols">
-      <span>Bratenahl, Ohio</span>
-      <a href="executive-brief.html">Start here</a>
-      <a href="sprint.html">The Sprint</a><a href="demo.html">Try the demo</a><a href="method.html">Method</a><a href="theory-garden.html">Theory Garden</a><a href="tacit-knowledge-assistants.html">White paper</a>
-      <a href="case-studies.html">Case studies</a><a href="record.html">Record</a><a href="sources.html">Sources</a>
-      <a href="story.html">His story</a><a href="resume.html">Résumé</a><a href="https://www.linkedin.com/in/tanvirgorayaphd/">LinkedIn</a>
+    <div class="fgrid">
+      <div class="fbrand">
+        <a class="fmark" href="index.html"><img src="img/seal-small.webp" alt="" width="44" height="44"><b>Mind Modelers</b></a>
+        <p>AI Advisory · Founded by Tanvir Y. Goraya, Ph.D.<br>Models of what your experts know but cannot articulate.</p>
+        <p class="floc">Bratenahl, Ohio</p>
+      </div>
+      <nav aria-label="Work with us">
+        <h4>Work with us</h4>
+        <a href="executive-brief.html">Start here</a>
+        <a href="sprint.html">The Sprint</a>
+        <a href="demo.html">Try the demo</a>
+        <a href="method.html">The method</a>
+        <a href="theory-garden.html">Theory Garden</a>
+        <a href="tacit-knowledge-assistants.html">White paper</a>
+      </nav>
+      <nav aria-label="Proof">
+        <h4>Proof</h4>
+        <a href="case-studies.html">Case studies</a>
+        <a href="record.html">The record</a>
+        <a href="sources.html">Sources</a>
+      </nav>
+      <nav aria-label="About">
+        <h4>About</h4>
+        <a href="story.html">His story</a>
+        <a href="resume.html">Résumé</a>
+        <a href="seal.html">The seal</a>
+        <a href="https://www.linkedin.com/in/tanvirgorayaphd/">LinkedIn</a>
+      </nav>
     </div>
-    <span>© 2026 Tanvir Y. Goraya, Ph.D. · Mind Modelers</span>
+    <div class="fbar">
+      <span>© 2026 Tanvir Y. Goraya, Ph.D. · Mind Modelers</span>
+      <span>MindModeler · U.S. Patent 8,326,792</span>
+    </div>
   </div>
 </footer>
 <div class="stickycta" id="stickycta"><a href="index.html#contact">Start a conversation</a></div>
@@ -1254,11 +1327,12 @@ main section.payoff, section.payoff { background: var(--deeper) !important; colo
   document.addEventListener('click', function (e) {
     document.querySelectorAll('.nav.wide .dd[open]').forEach(function (o) { if (!o.contains(e.target)) o.open = false; });
   });
-  var bar = document.querySelector('.progress i'), cta = document.getElementById('stickycta'), tick = false;
+  var bar = document.querySelector('.progress i'), cta = document.getElementById('stickycta'), mast = document.querySelector('.masthead'), tick = false;
   function onScroll() {
     var h = document.documentElement, max = h.scrollHeight - h.clientHeight;
     if (bar && max > 0) bar.style.transform = 'scaleX(' + Math.min(1, h.scrollTop / max) + ')';
     if (cta) cta.classList.toggle('on', h.scrollTop > 700 && !document.querySelector('#contact:target'));
+    if (mast) mast.classList.toggle('scrolled', h.scrollTop > 6);
     tick = false;
   }
   window.addEventListener('scroll', function () { if (!tick) { tick = true; requestAnimationFrame(onScroll); } }, { passive: true });
@@ -1287,6 +1361,24 @@ main section.payoff, section.payoff { background: var(--deeper) !important; colo
     var vo = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { vsx.classList.remove('pre'); vo.disconnect(); } }); }, { threshold: 0.2 });
     vo.observe(vsx);
     setTimeout(function () { vsx.classList.remove('pre'); }, 2200);
+  }
+  if (!reduce && 'IntersectionObserver' in window) {
+    var rsel = '.section-head, .practice, .pcard, .leak-grid article, .offer, .note, .fit > div, .faq details, .calc, .film, .hp, .sc, .case-grid > div, .xb';
+    var rels = Array.prototype.slice.call(document.querySelectorAll(rsel));
+    if (rels.length) {
+      document.documentElement.classList.add('rvon');
+      rels.forEach(function (el) {
+        el.classList.add('rv');
+        var p = el.parentElement, i = 0;
+        if (p) { for (var k = 0; k < p.children.length; k++) { if (p.children[k] === el) { i = k; break; } } }
+        el.style.transitionDelay = ((i % 4) * 0.08) + 's';
+      });
+      var ro = new IntersectionObserver(function (es) {
+        es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('rv-in'); ro.unobserve(e.target); } });
+      }, { threshold: 0.1, rootMargin: '0px 0px -6% 0px' });
+      rels.forEach(function (el) { ro.observe(el); });
+      setTimeout(function () { rels.forEach(function (el) { el.classList.add('rv-in'); }); }, 2600);
+    }
   }
 })();
 </script>
