@@ -826,6 +826,21 @@ main section.payoff, section.payoff { background: var(--deeper) !important; colo
 @media (max-width: 520px) { .wordmark span span { max-width: 24ch; } }
 .wordmark .founder { font-style: normal; }
 @media (max-width: 640px) { .wordmark .founder { display: none; } }
+.wordmark img { width: 54px; height: 54px; filter: drop-shadow(0 2px 5px rgba(20,22,26,.35)); }
+
+/* Full AI transcripts */
+.txwrap { margin-top: 26px; display: grid; gap: 12px; max-width: 72rem; }
+.txwrap h3 { font: 700 1.2rem/1.3 var(--display); color: var(--deeper); }
+.txwrap .meta { margin: -4px 0 4px; font: 400 0.88rem/1.5 var(--sans); color: var(--ink-2); }
+.tx { border: 1px solid var(--rule); background: var(--paper); }
+.tx summary { list-style: none; cursor: pointer; display: flex; gap: 14px; align-items: baseline; padding: 14px 18px; }
+.tx summary::-webkit-details-marker { display: none; }
+.tx summary::after { content: "+"; margin-left: auto; font: 400 1.3rem/1 var(--sans); color: var(--accent); }
+.tx[open] summary::after { content: "\2212"; }
+.tx summary b { font: 700 0.95rem/1.3 var(--sans); color: var(--ink); }
+.tx summary span { font: 500 0.8rem/1.3 var(--sans); color: var(--ink-2); }
+.tx .tx-note { margin: 0; padding: 12px 18px; background: #f7f1e6; border-top: 1px solid var(--rule); border-left: 3px solid var(--bronze); font-family: var(--serif); font-size: 0.95rem; line-height: 1.55; color: var(--ink); }
+.tx pre { margin: 0; padding: 16px 18px; border-top: 1px solid var(--rule); white-space: pre-wrap; overflow-wrap: break-word; font: 400 0.84rem/1.6 var(--sans); color: var(--ink-2); max-height: 460px; overflow-y: auto; background: #fbfaf7; }
 </style>
 <style>
 .lab { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.6fr); gap: 34px; margin-top: 30px; align-items: start; }
@@ -895,7 +910,7 @@ main section.payoff, section.payoff { background: var(--deeper) !important; colo
 <header class="masthead">
   <div class="wrap">
     <a class="wordmark" href="index.html" aria-label="Mind Modelers, home">
-      <img src="img/seal-small.webp" alt="" width="50" height="50">
+      <img src="img/seal-small.webp" alt="" width="54" height="54">
       <span><b>Mind Modelers</b><span>AI Advisory<em class="founder"> · Founded by Tanvir Y. Goraya, Ph.D.</em></span></span>
     </a>
     <nav class="nav wide" aria-label="Main">
@@ -1048,6 +1063,377 @@ main section.payoff, section.payoff { background: var(--deeper) !important; colo
         </table>
         <p class="score">None of the three found any of the four in full; DeepSeek and ChatGPT each came partway on one. All three said the opposite on the same two. None mentioned primary air temperature, which the model found to be the most important control.</p>
         <p class="mnote">To be fair to all three, their answers are sound textbook advice for pellet furnaces in general: manage excess air, stage combustion, use low-NOx burners. That is the point. They know what has been published about furnaces like this one. ChatGPT said as much itself: its rankings were "engineering assessments, not statistically established rankings for your particular furnace," and it asked for the furnace's operating data. The engineer knew how this one behaved, and that was never written down. The model's findings are his judgment, built and checked with him, not laboratory measurements. Three answers are an illustration, not proof; try it yourself with the question above.</p>
+      <div class="txwrap">
+        <h3>Read the full, unedited answers</h3>
+        <p class="meta">Copied verbatim from each assistant’s reply, with our commentary above each one.</p>
+        <details class="tx"><summary><b>Grok</b><span>furnace question · fresh chat · November 7, 2026</span></summary>
+          <p class="tx-note">Our commentary: it reads the fired pellets as fuel, so it answers about biomass co-firing in boilers, a different machine, and recommends raising the pellet share to cut NOx, the opposite of the expert’s model. The boiler advice itself is sound; it just isn’t about this furnace.</p>
+          <pre>**Total heat input (BTU/fuel fired) is the dominant driver of NOx (and influences CO); the other factors matter less or act indirectly. Reducing excess air while improving combustion efficiency and shifting heat toward lower-N or lower-temperature sources is the practical way to cut both.**
+
+In iron-ore pellet induration (hardening) furnaces—typically grate-kiln or straight-grate systems that can run at near-atmospheric or slightly negative (“low”) pressure—the process needs high temperatures (~1200–1350 °C / ~2200–2450 °F) plus large excess air to oxidize magnetite to hematite and sinter the pellets. NOx forms mainly as fuel-NOx (from nitrogen in coal) plus some thermal NOx (from high flame temperatures and oxygen); CO forms from incomplete combustion.
+
+### Effects of the listed factors
+- **Total heat input**: Strongly increases absolute NOx. Prior Bureau of Mines / CMRL work showed NOx scales directly with BTU input and fuel type. More fuel raises both the nitrogen throughput and peak temperatures/oxygen availability in the flame zone. CO response is secondary: higher firing rates can raise CO if mixing or residence time is inadequate, or lower it if combustion completeness improves. This is usually the largest lever.
+
+- **Percentage of heat replaced by alternative fuel**: Depends on what replaces what. Natural-gas flames often produce *more* thermal NOx than coal in these high-excess-air, high-temperature conditions (hotter peaks, less fuel-N reduction opportunity). Replacing part of the external flame heat with coal mixed into the green/pre-fired pellets (e.g., ~0.6 %) has been shown to cut NOx ~10 % under normal high-excess-air cycles, because it lowers the external burner duty and changes the temperature/oxygen profile. Biomass or other low-N alternatives can cut NOx more (sometimes dramatically in modeling), but ash, slagging, and flame characteristics must be managed. CO usually tracks combustion quality of the blend rather than the substitution percentage alone.
+
+- **Tonnage of fired pellets**: Indirect. Higher throughput normally demands higher total heat input, so absolute NOx and CO rise. On a per-ton basis the effect is smaller if specific energy use stays constant. In pot-grate tests most heat goes into the apparatus itself; in continuous plants the relationship is tighter. Higher production can also change bed permeability and gas flow, affecting local excess air and therefore both pollutants.
+
+- **Amount of Eastern coal**: Eastern (high-rank bituminous) coal is valued for high ash-fusion temperature, which reduces kiln ringing compared with lower-fusion Western or lignite coals. It contributes fuel nitrogen, so more of it raises fuel-NOx. It can improve burnout (and thus lower CO) relative to poorer fuels, but the NOx penalty from its nitrogen content is the main effect. High excess air in these furnaces converts a large fraction of char-N to NO, limiting the benefit of any in-flame reduction.
+
+**Which matters most?** Total heat input (and the excess-air level that accompanies it). Fuel type and nitrogen content are next; simple substitution percentage or pellet tonnage are secondary once heat input and air are fixed.
+
+### How to reduce both NOx and CO
+1. **Cut excess air toward the minimum that still gives acceptable oxidation and low CO** — The largest documented win. Normal cycles often use ~300 % excess air; dropping to 25–75 % excess cut NOx ~75 % in pot-grate work while coal addition added another ~10 %. Too little air raises CO and can hurt pellet quality, so the operating window is narrow and needs good control.
+
+2. **Improve burner design and mixing** — Low-NOx burners (high-velocity dilution, staged air, better primary/secondary balance) lower peak flame temperature and improve CO burnout. Commercial Ferroflame-type or similar designs have achieved large NOx reductions on traveling-grate plants.
+
+3. **Shift heat source** — Add a controlled amount of coal (or low-N alternative) into the pellets to reduce external burner duty; or cofire low-nitrogen biomass/biochar where ash fusion and slagging allow. Pure hydrogen raises thermal NOx; modest H₂ co-firing can be neutral or beneficial depending on injection velocity and mixing.
+
+4. **Secondary measures if needed** — SNCR (ammonia or urea in the right temperature window, often the preheat section) can give additional 20–60 % NOx reduction; SCR is more effective but costlier given the large gas volumes.
+
+5. **Operational controls** — Stabilize firing rate and air/fuel ratio, avoid rich pockets that produce CO, and keep peak temperatures no higher than required for pellet strength. Monitor O₂, CO, and NOx continuously so the excess-air set-point can be optimized in real time.
+
+In short, minimize the external high-temperature, high-excess-air flame duty (lower total heat input per ton, better burners, some internal heat from coal in the bed) while keeping enough oxygen and mixing for complete combustion. Excess-air reduction plus combustion optimization is the highest-leverage combination for cutting both pollutants without sacrificing pellet quality.</pre>
+        </details>
+        <details class="tx"><summary><b>DeepSeek</b><span>furnace question · fresh chat · November 7, 2026</span></summary>
+          <p class="tx-note">Our commentary: it identifies the right kind of furnace, but still names total heat input the most fundamental driver, ties CO to combustion quality rather than the share of heat replaced, and never mentions primary air temperature, which the model found most important.</p>
+          <pre>In a low-pressure coal-fired iron ore pellet induration furnace, the four factors affect NOx and CO emissions through different mechanisms, and their importance varies by furnace type and operating conditions. **Overall, total heat input (i.e., fuel combustion amount) is the most fundamental driving factor, but the &quot;combustion environment&quot; determined by burner configuration and air distribution often has a more direct regulatory effect on NOx generation.** For simultaneous reduction of NOx and CO, the core lies in optimizing combustion staging and avoiding &quot;excessive suppression&quot; of NOx that leads to incomplete combustion.
+
+### Effect of Each Factor on NOx and CO
+
+**Total Heat Input**
+This is the most direct source of emissions. NOx generation is positively correlated with combustion intensity and flame temperature; higher heat input generally means more NOx. For CO, if combustion is well organized and excess air is sufficient (which is common in pellet induration furnaces, with air-fuel equivalence ratio λ often as high as 4–6), CO can be controlled at low levels; but when heat input increases and local oxygen is insufficient or temperature is too low, CO emissions rise.
+
+**Alternative Fuel Replacement Ratio**
+This depends on the type of alternative fuel. If the alternative fuel is **biomass** (with lower fuel-N), replacing coal can reduce NOx, because NOx in grate-kiln processes is significantly influenced by fuel nitrogen conversion. However, some biomass alternatives may increase NOx emissions due to changes in combustion characteristics—for example, one study showed that using rice husk instead of coke powder increased NOx by approximately 4%–16%. For CO, alternative fuels with high volatile content are generally more prone to complete combustion, but if the replacement ratio is too high and combustion is unstable, CO may deteriorate.
+
+**Fired Pellet Tonnage**
+This is a &quot;scale&quot; factor. Higher tonnage means longer furnace operation time, more fuel combustion, and higher total NOx and CO emissions. However, the effect on **emission concentration** (per unit product) is indirect, depending on whether the heat balance and air distribution per unit product can remain stable. If increasing production causes local oxygen deficiency or shortened residence time, both NOx and CO may deteriorate simultaneously.
+
+**Eastern Coal Amount**
+Eastern bituminous coal typically has higher fuel nitrogen content and higher calorific value than western subbituminous coal. Higher fuel-N directly increases the fuel NOx generation pathway. In actual cases, facilities originally designed for eastern bituminous coal, if forced to switch to low-sulfur western coal, may require increased coal input to achieve the same heat output due to the latter&#x27;s lower calorific value, potentially offsetting part of the emission reduction benefits. For CO, eastern coal&#x27;s combustion characteristics (volatile release, char reactivity) determine whether it is prone to incomplete combustion; its high calorific value is not necessarily directly correlated with CO.
+
+### Which Matters Most
+
+**For NOx, the most critical factor is often not the total amount of fuel, but the combustion environment in which the fuel is burned.** Evidence: preheating burners in the same facility produce NOx at only 0.1–0.3 lb/MMBtu, far lower than the large burners at the kiln discharge end, precisely because the preheating zone has a more favorable combustion environment for NOx reduction. This indicates that **burner configuration and air staging** can make NOx vary by several times or even an order of magnitude at the same total heat input. Total heat input is the &quot;base amount,&quot; but it is the combustion organization that determines the &quot;multiple.&quot;
+
+**For CO, the most critical factor is the completeness of combustion.** Excess air, mixing degree, and flame stability directly determine CO. In pellet induration furnaces, the large excess air required for magnetite oxidation generally helps CO burn out, but if low-NOx measures (such as staged combustion) suppress local oxygen too severely, CO will rise sharply.
+
+### Strategies to Simultaneously Reduce NOx and CO
+
+The key is to **establish strongly staged combustion while ensuring the final burnout zone has sufficient oxygen and residence time**:
+
+1.  **Adopt air staging / low-NOx burners, but reserve burnout air**: In the main combustion zone, create a fuel-rich, oxygen-deficient reduction atmosphere to suppress NOx generation; then introduce burnout air downstream of the flame to complete CO combustion. The challenge is that in grate-kiln processes, high excess air and high-temperature preheated secondary air make conventional staging difficult, requiring specially designed burner air distribution.
+2.  **Use low fuel-N fuels or co-firing**: Replacing part of the eastern coal with low-nitrogen fuels (such as specific biomass or natural gas) can directly reduce fuel NOx. Note, however, that some biomass may increase NOx, so pilot testing is required.
+3.  **Optimize burner layout and load distribution**: Transfer part of the heat load from the high-temperature zone at the kiln discharge end to preheating burners with better NOx reduction environments. This has been proven to significantly reduce combined NOx emission rates.
+4.  **Ensure the final combustion zone has sufficient oxygen and temperature**: This is the bottom line for controlling CO. In NOx reduction measures (such as flue gas recirculation or staged combustion), it must be verified that CO can be completely burned out in the final stage. The reaction temperature window for SNCR is 1800–2000°F, which also needs to be considered in coordination.
+5.  **Use ported kilns (for magnetite pellets)**: Injecting air into the kiln promotes oxidation of magnetite, releases heat, and reduces fuel demand, thereby indirectly reducing NOx, while improving pellet quality. This is an &quot;indirect emission reduction&quot; approach.
+
+In summary, there is no single measure that can perfectly reduce both pollutants simultaneously; the core lies in **precisely controlling the &quot;reduction intensity&quot; of NOx**—reducing it to the extent possible while leaving sufficient burnout margin for CO.</pre>
+        </details>
+        <details class="tx"><summary><b>ChatGPT</b><span>furnace question · fresh chat · November 7, 2026</span></summary>
+          <p class="tx-note">Our commentary: the most careful of the three. It labels its rankings “engineering assessments, not statistically established rankings for your particular furnace” and asks for the furnace’s operating data, conceding the point: the particular furnace cannot be known from the literature. The bracketed image lines are citation icons from the chat interface, kept as captured.</p>
+          <pre>In a low-pressure coal-burning furnace used to harden iron ore pellets (a pellet induration furnace), NOx and CO are influenced by fuel chemistry, combustion temperature, oxygen availability, residence time, and furnace operating load.
+
+The important distinction is that NOx and CO do not necessarily move in the same direction:
+
+- NOx generally increases with higher combustion temperatures, greater oxygen availability in high-temperature zones, and fuel-bound nitrogen.
+- CO generally increases when combustion is incomplete, particularly with insufficient oxygen, poor fuel distribution, inadequate mixing, or insufficient residence time.
+
+Consequently, reducing NOx without controlling combustion can increase CO. The objective should be to improve combustion efficiency while controlling peak flame temperatures and fuel nitrogen.
+
+## 1. Effect of the four operating variables
+
+### A. Total heat input
+
+Total heat input is the amount of thermal energy supplied to the furnace, regardless of fuel type.
+
+Effect on NOx
+
+- Increasing heat input generally increases total NOx emissions because more fuel is burned.
+- Higher firing rates can increase peak flame temperatures and NOx formation.
+- However, the relationship is not necessarily linear. Burner configuration, excess oxygen, combustion-zone temperature, and fuel nitrogen matter.
+- In coal-fired grate-kiln pellet furnaces, fuel-bound nitrogen can be more important than thermal NOx formation.&amp;#x20;
+
+  [image](https://www.google.com/s2/favicons?domain=https://research.chalmers.se\&amp;sz=32)
+
+  research.chalmers.se+1
+
+
+
+Effect on CO
+
+- Increasing heat input can increase CO if the combustion system cannot supply sufficient oxygen or mixing capacity.
+- If combustion remains efficient, CO may remain stable or even decrease relative to heat input.
+- Poor coal pulverization, uneven fuel distribution, and inadequate burnout can cause CO spikes.
+
+My interpretation: Total heat input is a major driver of total emissions, but it is not necessarily the strongest driver of emissions per ton of pellets.
+
+### B. Percentage of heat replaced by alternative fuel
+
+This variable is particularly important because it changes the composition of the fuel supplying the furnace.
+
+Assuming alternative fuel replaces Eastern coal on an equal-energy basis:
+
+Effect on NOx
+
+- If the alternative fuel has less nitrogen than Eastern coal, NOx should generally decrease.
+- Biomass fuels, for example, often have lower nitrogen content than coal.
+- The reduction depends on fuel nitrogen, volatile matter, char formation, combustion characteristics, and nitrogen conversion efficiency.
+- Some alternative fuels can actually increase NOx. Hydrogen and certain pyrolysis oils, for example, have shown higher NOx under experimental iron-ore induration conditions.&amp;#x20;
+
+  [image](https://www.google.com/s2/favicons?domain=https://pubs.acs.org\&amp;sz=32)
+
+  American Chemical Society Publications+1
+
+
+
+Effect on CO
+
+- CO can decrease if the alternative fuel burns more completely and improves combustion.
+- CO can increase if the alternative fuel has high moisture, poor ignition characteristics, inadequate residence time, or insufficient oxygen.
+- A high substitution percentage can change flame shape and temperature distribution, affecting burnout.
+
+My interpretation: Alternative fuel percentage is potentially one of the strongest levers for reducing NOx, provided the alternative fuel has lower fuel-bound nitrogen and maintains good combustion.
+
+### C. Tonnage of fired pellets
+
+This is primarily a production-rate variable.
+
+Effect on NOx
+
+- Higher pellet production generally requires more heat.
+- More heat normally means more fuel consumption and higher total NOx emissions.
+- However, NOx emissions per ton of pellets may remain constant if furnace efficiency and operating conditions remain stable.
+- If production increases faster than heat input, thermal efficiency may improve, potentially lowering emissions per ton.
+
+Effect on CO
+
+- Higher production increases the demand for heat and oxygen.
+- If the furnace is overloaded, combustion efficiency can deteriorate and CO may rise.
+- If the furnace operates efficiently at higher throughput, CO per ton may remain unchanged or decrease.
+
+My interpretation: Fired pellet tonnage is often a strong predictor of total emissions, but it is not necessarily a direct cause of higher emissions intensity.
+
+### D. Amount of Eastern coal consumed
+
+This is probably the most important fuel-specific variable in your analysis.
+
+Assuming Eastern coal is the primary coal source:
+
+Effect on NOx
+
+- More Eastern coal means more fuel-bound nitrogen entering the furnace.
+- A larger proportion of coal-derived heat generally increases the potential for fuel-N conversion to NOx.
+- The actual effect depends on the coal&#x27;s nitrogen content and the fraction converted to NOx.
+- Coal rank, volatile matter, particle size, and char burnout also matter.
+
+Research specifically examining pulverized-coal combustion in iron ore rotary kilns found that fuel-bound nitrogen, particularly char-bound nitrogen, was a major contributor to NOx formation.&amp;#x20;
+
+[image](https://www.google.com/s2/favicons?domain=https://pubs.acs.org\&amp;sz=32)
+
+American Chemical Society Publications+1
+
+
+
+Effect on CO
+
+- More coal can increase CO if the combustion system cannot completely burn the additional coal.
+- Higher coal feed rates can create locally fuel-rich regions.
+- Coal particle size, moisture, ash, volatile matter, and oxygen distribution affect CO formation.
+
+My interpretation: Eastern coal consumption is a particularly important variable for NOx because of its fuel-nitrogen contribution. For CO, combustion quality and oxygen availability are more important than coal quantity alone.
+
+## 2. Which variables matter most?
+
+I would distinguish between total emissions and emissions intensity (emissions per ton of fired pellets).
+
+| Variable                    | NOx influence       | CO influence   |
+| --------------------------- | ------------------- | -------------- |
+| Total heat input            | High                | Medium–high    |
+| Alternative fuel percentage | High                | Medium–high    |
+| Fired pellet tonnage        | Medium–high         | Medium         |
+| Eastern coal consumption    | Very high potential | High potential |
+
+These are engineering assessments, not statistically established rankings for your particular furnace.
+
+The most important distinction is:
+
+- NOx: Fuel nitrogen, coal consumption, fuel substitution, and combustion conditions.
+- CO: Oxygen availability, fuel-air mixing, combustion temperature, residence time, and coal burnout.
+- Total emissions: Overall fuel consumption and production throughput.
+
+A particularly important finding from the iron-ore pelletizing research is that simply lowering flame temperature may not substantially reduce NOx in coal-fired rotary kilns, because fuel-nitrogen conversion can dominate thermal NOx formation.&amp;#x20;
+
+[image](https://www.google.com/s2/favicons?domain=https://research.chalmers.se\&amp;sz=32)
+
+research.chalmers.se+1
+
+
+
+## 3. How I would reduce both NOx and CO
+
+I would approach this as a coordinated fuel-management and combustion-optimization project rather than simply reducing coal consumption.
+
+### Priority 1: Optimize Eastern coal consumption
+
+- Establish the minimum coal requirement per ton of fired pellets.
+- Monitor coal consumption in kg/ton of fired pellets.
+- Test coal for nitrogen, moisture, volatile matter, ash, and heating value.
+- Avoid unnecessary coal firing beyond the heat required for pellet hardening.
+- Evaluate coal blends with lower fuel-bound nitrogen.
+
+This can reduce the amount of nitrogen entering the furnace and improve combustion consistency.
+
+### Priority 2: Increase alternative fuel substitution intelligently
+
+- Identify alternative fuels with lower nitrogen content than Eastern coal.
+- Replace coal on an equal-energy basis, not an equal-weight basis.
+- Increase substitution gradually while monitoring NOx, CO, oxygen, temperature, and pellet quality.
+- Evaluate alternative-fuel moisture, particle size, ash content, and burnout characteristics.
+
+Do not assume that increasing alternative fuel percentage automatically reduces both emissions. Fuel chemistry matters.
+
+### Priority 3: Optimize combustion air
+
+This is particularly important for CO.
+
+- Optimize excess air rather than simply increasing it.
+- Improve primary and secondary air distribution.
+- Avoid locally oxygen-deficient combustion zones.
+- Improve fuel-air mixing.
+- Maintain sufficient residence time for complete coal burnout.
+- Consider staged combustion or low-NOx burner modifications, subject to pellet oxidation requirements.
+
+Important: Excess air has a trade-off. Too much oxygen can promote fuel-nitrogen conversion to NOx, while too little oxygen can increase CO. The objective is the optimum oxygen distribution, not minimum oxygen concentration.
+
+### Priority 4: Optimize heat input per ton
+
+Track:
+
+\\[ \text{Specific heat consumption} = \frac{\text{Total heat input}}{\text{Fired pellet tonnage}} \\]
+
+Reducing unnecessary heat consumption can reduce total fuel consumption and emissions without sacrificing production.
+
+Look for:
+
+- Heat losses through furnace walls.
+- Inefficient heat recovery.
+- Excessive firing temperatures.
+- Variations in green pellet moisture.
+- Unnecessary temperature fluctuations.
+- Inefficient use of recovered cooling air.
+
+EPA documentation identifies the high-temperature, oxygen-rich conditions of pellet induration as important factors in NOx formation.&amp;#x20;
+
+[image](https://www.google.com/s2/favicons?domain=https://www.epa.gov\&amp;sz=32)
+
+US EPA+1
+
+
+
+### Priority 5: Consider additional NOx control
+
+If combustion optimization is insufficient, evaluate:
+
+- Low-NOx burners.
+- Internal flue gas recirculation, where compatible with furnace design.
+- Selective non-catalytic reduction (SNCR).
+- Selective catalytic reduction (SCR), if exhaust temperature and gas-cleaning requirements permit.
+
+These options need a furnace-specific engineering assessment.
+
+## 4. The analysis I would perform using your operating data
+
+I would not rely exclusively on correlations between the four variables and emissions. Several variables are interconnected.
+
+For example:
+
+- Higher pellet tonnage requires more heat.
+- More alternative fuel usually means less Eastern coal.
+- More Eastern coal changes the fuel-nitrogen input.
+- Higher heat input may change furnace temperature and oxygen requirements.
+
+I would construct two statistical models.
+
+Model 1: NOx emissions
+
+\\[ NO_x = f(H,A,P,C) \\]
+
+Model 2: CO emissions
+
+\\[ CO = f(H,A,P,C) \\]
+
+Where:
+
+- \\(H\\) = Total heat input
+- \\(A\\) = Alternative fuel percentage of heat input
+- \\(P\\) = Fired pellet tonnage
+- \\(C\\) = Eastern coal consumption
+
+I would also include furnace temperature, excess oxygen, and coal nitrogen content if available.
+
+### The most important additional calculations
+
+Rather than examining only emissions concentrations, calculate:
+
+| Performance indicator         | Calculation                         |
+| ----------------------------- | ----------------------------------- |
+| NOx intensity                 | kg NOx / ton fired pellets          |
+| CO intensity                  | kg CO / ton fired pellets           |
+| Heat intensity                | GJ / ton fired pellets              |
+| Coal intensity                | kg Eastern coal / ton fired pellets |
+| Alternative fuel contribution | % of total heat input               |
+| Fuel nitrogen input           | kg nitrogen / GJ of heat input      |
+
+Make sure NOx and CO measurements are corrected to a consistent oxygen reference and converted to mass emissions where possible. Otherwise, changes in dilution air can make concentrations misleading.
+
+## 5. My overall recommendation
+
+## Recommended priorities
+
+1
+
+Reduce fuel-bound nitrogen input
+
+Optimize Eastern coal consumption and investigate lower-nitrogen alternative fuels.
+
+2
+
+Improve combustion efficiency
+
+Optimize oxygen distribution, mixing, and coal burnout to reduce CO without unnecessarily increasing NOx.
+
+3
+
+Reduce specific heat consumption
+
+Minimize GJ per ton of fired pellets while preserving pellet strength and metallurgical quality.
+
+4
+
+Optimize alternative fuel substitution
+
+Determine the substitution level that minimizes combined NOx and CO emissions.
+
+## 6. One important question about your furnace
+
+I would like to distinguish between two situations because the recommendations and the relative importance of your four variables could change substantially.
+
+Are you operating a grate-kiln furnace, a straight-grate furnace, or a vertical-shaft furnace?
+
+Also, if you have historical operating data containing the four variables and measured NOx and CO, I can help develop a quantitative analysis that identifies:
+
+1. Which variable has the greatest influence on NOx.
+2. Which variable has the greatest influence on CO.
+3. Whether alternative fuel substitution actually reduces both pollutants.
+4. The optimum operating combination for minimizing both emissions without reducing fired pellet production.
+
+That would allow us to move from general combustion engineering principles to a defensible, data-based operating strategy.</pre>
+        </details>
+      </div>
+
       </div>
       <p class="mnote">A general AI learns from what people have written. This furnace's behavior was never written down. It lived in one engineer's judgment until the model captured it. <a href="sprint.html">That is what the four-week sprint does</a>.</p>
     </div>

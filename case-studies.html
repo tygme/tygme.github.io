@@ -826,6 +826,21 @@ main section.payoff, section.payoff { background: var(--deeper) !important; colo
 @media (max-width: 520px) { .wordmark span span { max-width: 24ch; } }
 .wordmark .founder { font-style: normal; }
 @media (max-width: 640px) { .wordmark .founder { display: none; } }
+.wordmark img { width: 54px; height: 54px; filter: drop-shadow(0 2px 5px rgba(20,22,26,.35)); }
+
+/* Full AI transcripts */
+.txwrap { margin-top: 26px; display: grid; gap: 12px; max-width: 72rem; }
+.txwrap h3 { font: 700 1.2rem/1.3 var(--display); color: var(--deeper); }
+.txwrap .meta { margin: -4px 0 4px; font: 400 0.88rem/1.5 var(--sans); color: var(--ink-2); }
+.tx { border: 1px solid var(--rule); background: var(--paper); }
+.tx summary { list-style: none; cursor: pointer; display: flex; gap: 14px; align-items: baseline; padding: 14px 18px; }
+.tx summary::-webkit-details-marker { display: none; }
+.tx summary::after { content: "+"; margin-left: auto; font: 400 1.3rem/1 var(--sans); color: var(--accent); }
+.tx[open] summary::after { content: "\2212"; }
+.tx summary b { font: 700 0.95rem/1.3 var(--sans); color: var(--ink); }
+.tx summary span { font: 500 0.8rem/1.3 var(--sans); color: var(--ink-2); }
+.tx .tx-note { margin: 0; padding: 12px 18px; background: #f7f1e6; border-top: 1px solid var(--rule); border-left: 3px solid var(--bronze); font-family: var(--serif); font-size: 0.95rem; line-height: 1.55; color: var(--ink); }
+.tx pre { margin: 0; padding: 16px 18px; border-top: 1px solid var(--rule); white-space: pre-wrap; overflow-wrap: break-word; font: 400 0.84rem/1.6 var(--sans); color: var(--ink-2); max-height: 460px; overflow-y: auto; background: #fbfaf7; }
 </style>
 <div class="progress" aria-hidden="true"><i></i></div>
 <div class="draft"><div class="wrap"><span><b>Preview</b> Not yet public. Every fact is drawn from the master CV.</span><a href="seal.html">Seal studies</a></div></div>
@@ -833,7 +848,7 @@ main section.payoff, section.payoff { background: var(--deeper) !important; colo
 <header class="masthead">
   <div class="wrap">
     <a class="wordmark" href="index.html" aria-label="Mind Modelers, home">
-      <img src="img/seal-small.webp" alt="" width="50" height="50">
+      <img src="img/seal-small.webp" alt="" width="54" height="54">
       <span><b>Mind Modelers</b><span>AI Advisory<em class="founder"> · Founded by Tanvir Y. Goraya, Ph.D.</em></span></span>
     </a>
     <nav class="nav wide" aria-label="Main">
@@ -988,6 +1003,131 @@ main section.payoff, section.payoff { background: var(--deeper) !important; colo
         </table></div>
         <p class="score">All three recited the textbook order. None could say what these experts did to turn 8 hours into 2 minutes 16 seconds. All three did match the workload trade-off, and we say so.</p>
         <p class="aitest-note">To be fair to all three: these cases date from about 2000, and Oracle has since retired rule-based optimization, as each of them notes. Their advice is sound for today’s systems. The point is not the era. The textbook, and AI trained on it, describes what experts say should work; only a model of what the experts did shows how they got results on that system.</p>
+      <div class="txwrap">
+        <h3>Read the full, unedited answers</h3>
+        <p class="meta">Copied verbatim from each assistant’s reply, with our commentary above each one. ChatGPT’s answer is not shown because its session had already seen the others.</p>
+        <details class="tx"><summary><b>Grok</b><span>database question · fresh chat · November 7, 2026</span></summary>
+          <p class="tx-note">Our commentary: the textbook hierarchy stated plainly: rewrite the SQL first, avoid rule-based hints. It does match the workload trade-off the tuners’ models found.</p>
+          <pre>Rewrite the SQL first (after analyzing the statements and their execution plans). This is the highest-leverage, most targeted step in the classic Oracle performance methodology and the right starting point among the listed options.Recommended order and rationaleOracle’s long-standing performance method (still reflected in modern guidance) prioritizes application/SQL changes before instance or physical changes, because they usually deliver the largest gains with the least systemic side effects:
+Rewrite the SQL — Examine the batch SQL (via trace, AWR/ASH, SQL Tuning Advisor, execution plans, and statistics). Fix common problems such as missing join predicates, functions on columns that prevent index use, unnecessary sorts/joins, Cartesian products, poor driving tables, or statements that can be simplified/broken up. This addresses the root cause directly.
+Add or change indexes (only after the SQL is understood) — Create or modify indexes for the critical access paths the rewritten (or original) SQL needs. Prefer invisible indexes for testing when possible.
+Change memory settings (sort/hash area sizes or PGA) — Apply mainly at the session level for the batch jobs if plans show large sorts or hash joins spilling to temp. Prefer automatic PGA management with session overrides over system-wide changes.
+Reorganize tables — Only if diagnostics show clear problems (excessive migrated/chained rows, severe fragmentation affecting full scans or range scans). This is lower priority and often temporary.
+Hints to force rule-based optimization (RBO) — Avoid. The RULE hint is unsupported, ignores statistics, does not understand modern features, and produces non-adaptive plans. Oracle has long recommended against it.
+Impact on the DBA’s workload over time
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ApproachOne-time effortOngoing DBA workloadNotesRewrite SQLMedium–high (analysis, testing, possible developer coordination)LowOnce stable, little further admin. Best long-term option when code is changeable.Add/change indexesMediumMedium–highStorage, statistics, monitoring for usefulness/fragmentation, impact on DML. Indexes can become liabilities if not reviewed.Memory settings (sort/hash/PGA)LowLow–mediumSession-level changes for batch are low-maintenance. System-wide settings need ongoing monitoring to avoid starving other sessions or causing OS memory pressure.Reorganize tablesHigh (downtime or online redefinition, index rebuilds afterward)High/recurringFragmentation and migrated rows return as data changes. Frequent reorgs increase workload without lasting benefit if root causes (SQL, design, PCTFREE) remain.Hints forcing RBOLow initiallyHighPlans do not adapt to data growth or distribution changes. Requires repeated re-tuning; unsupported and fragile.Trade-offs an expert should weigh
+Scope and risk: Prefer statement- or session-level changes over system-wide ones. A memory or index change that helps the batch can hurt concurrent OLTP. SQL rewrites and carefully chosen indexes are more targeted.
+Adaptivity vs. stability: Cost-based optimization with good statistics adapts as data changes. Hard-coded RBO or aggressive hints do not; they create future work. Modern alternatives (SQL Plan Management, profiles, baselines) are preferable to raw hints when plan control is needed.
+DML vs. query benefit: Extra indexes speed the batch reads but slow inserts/updates/deletes and increase storage/maintenance. Quantify the trade-off.
+Temporary vs. lasting relief: Table reorganizations often give only temporary improvement. Memory increases help only if the plan is doing large sorts/hashes; they do not fix a fundamentally bad access path.
+Code ownership and testing: If the batch is packaged/vendor code, rewriting may be limited or impossible—fall back to indexes, statistics, and carefully scoped memory/session settings. Always validate changes (plans, elapsed time, resource use) in a non-production environment that resembles production.
+Modern context: RBO is obsolete. Prefer automatic PGA management, accurate optimizer statistics, SQL Tuning Advisor / SQL Access Advisor recommendations, and plan stability features over manual area-size tweaks or RBO hints. For pure batch throughput, the optimizer goal is typically ALL_ROWS.
+In short: start with the SQL (analysis then rewrite), add indexes only where the plans justify them, use session-level memory adjustments if sorts/hashes are spilling, treat table reorganizations as a last resort, and do not force RBO. This sequence minimizes long-term DBA workload while maximizing the chance of durable improvement.</pre>
+        </details>
+        <details class="tx"><summary><b>DeepSeek</b><span>database question · fresh chat · November 7, 2026</span></summary>
+          <p class="tx-note">Our commentary: it calls SQL-first “the consensus among Oracle performance experts.” That is exactly the consensus the award-winning tuners departed from to get their results.</p>
+          <pre>When two batch processes are stretching from 6 and 8 hours, the instinct to reach for a quick technical lever—a new index, a memory bump, or a hint—is strong. However, in an Oracle production environment, the **order in which you apply these changes determines whether you solve the problem or simply move the bottleneck while creating long-term maintenance debt for the DBA team.**
+
+The consensus among Oracle performance experts is clear: **start with the SQL and the data access paths. Leave hints and physical reorganization as last resorts.** Here is the recommended priority, the long-term workload implications for the DBA, and the trade-offs an expert must weigh.
+
+### 🥇 1. First: SQL Rewrite (and Query Optimization)
+This should almost always be the first step. Batch processes often suffer from fundamental design issues: row-by-row processing (RBAR), Cartesian joins causing row explosion, or literal-heavy SQL that prevents cursor reuse.
+
+- **Impact on DBA Workload Over Time:** **High initial effort, low ongoing maintenance.** A DBA or developer must invest significant time profiling the workload, reading execution plans, and refactoring the code. However, once the SQL is efficient, it stays efficient. It reduces the need for emergency interventions and makes execution plans more stable, freeing the DBA from constant firefighting.
+- **Key Trade-off:** **Time-to-value vs. Durability.** It is the most time-consuming option upfront and requires deep application knowledge, but it addresses the root cause. It is far more durable than any parameter or hint because it improves the logic itself, not just the environment it runs in.
+
+### 🥈 2. Second: Add or Change Indexes
+Indexing should be tightly coupled with the SQL rewrite. The goal is not to index every column, but to **redesign indexes around the actual access patterns** revealed by the SQL&#x27;s `WHERE`, `JOIN`, and `ORDER BY` clauses. A common mistake is adding indexes blindly without considering how the SQL will use them.
+
+- **Impact on DBA Workload Over Time:** **Moderate.** Creating an index is quick, but it introduces ongoing responsibilities: monitoring index usage, rebuilding or coalescing fragmented indexes, and ensuring statistics are fresh. Every new index adds overhead to DML operations (inserts/updates/deletes), which can degrade other parts of the system if not chosen carefully.
+- **Key Trade-off:** **Read performance vs. Write performance and Storage.** Indexes dramatically speed up data retrieval for batch reports, but they slow down data modification and consume additional disk space. The DBA must monitor for **unnecessary or unused indexes** that only add overhead.
+
+### 🥉 3. Third: Memory Settings (Sort/Hash Area Sizes)
+Tuning PGA memory (e.g., `PGA_AGGREGATE_TARGET`) or manual work area sizes can provide a quick performance boost for operations that are spilling to disk (multi-pass executions). However, this should be done **after** the SQL and indexes are sane; otherwise, you are just giving more memory to inefficient operations.
+
+- **Impact on DBA Workload Over Time:** **Low, if using automatic management.** Modern Oracle versions use automatic PGA management, which dynamically adjusts work areas based on workload, greatly simplifying the DBA&#x27;s job. Manual tuning (e.g., setting `SORT_AREA_SIZE`) is difficult and error-prone because the optimal size changes with the workload. If automatic management is used, the ongoing workload is minimal.
+- **Key Trade-off:** **Immediate speed vs. Resource Consumption.** Bigger work areas significantly improve the performance of a specific sort or hash join, but at the cost of higher memory consumption. Over-allocating memory can starve other processes or lead to swapping. The goal is to have most operations run in **optimal** or **one-pass** size, avoiding multi-pass executions which are exponentially slower.
+
+### 🚫 4. Last Resort: Hints (Especially Rule-Based Optimization)
+Using hints, particularly forcing **Rule-Based Optimization (RBO)** , is generally discouraged. The RBO has been deprecated since Oracle 10g/11g and does not support modern features like partitioning. Even for cost-based hints, Oracle&#x27;s own documentation warns that **hints introduce extra code to manage, check, and control**, and changes in the database or host environment can make them obsolete or even harmful.
+
+- **Impact on DBA Workload Over Time:** **High and Fragile.** Every hint is a hard-coded directive that must be revisited with every database upgrade, statistics change, or data volume shift. Hints can become &quot;stale&quot; and cause the optimizer to make terrible choices later. They create a hidden maintenance burden that accumulates over time.
+- **Key Trade-off:** **Immediate control vs. Long-term instability.** A hint can force a specific plan today, but it masks the underlying problem (often bad statistics or poorly written SQL) and creates a fragile system that is hard to adapt. **Use hints only as a temporary stop-gap or when a specific, well-understood edge case requires them, not as a primary tuning strategy.**
+
+### ⏸️ 5. Rarely First: Reorganize Tables
+Table reorganization (e.g., `ALTER TABLE MOVE`, `SHRINK SPACE`, or online redefinition) is often performed unnecessarily. It is only helpful for performance if you have **proven, significant fragmentation** (e.g., extensive row chaining/migration) that is causing full table scans to read far more blocks than necessary.
+
+- **Impact on DBA Workload Over Time:** **High initial effort and risk.** Reorganization can generate massive redo/archive logs, cause locking, and require downtime or complex online redefinition procedures. It is a heavy operational task that does not address the root cause of slow SQL; the table will simply fragment again over time.
+- **Key Trade-off:** **Potential I/O improvement vs. Operational Risk.** The gain is usually marginal unless fragmentation is extreme. The risk of application impact, log generation, and the sheer DBA time required make it one of the **last** things to try. DBAs should **verify fragmentation is truly impacting performance** before rebuilding.
+
+### 💎 Summary: The Expert&#x27;s Decision Framework
+An expert DBA does not treat these as interchangeable levers. They follow a diagnostic hierarchy:
+
+1.  **Measure first.** Use AWR/ASH to identify the actual top SQL by elapsed time and wait events—do not guess.
+2.  **Fix the SQL logic.** Rewrite the most expensive statements to be set-based and efficient.
+3.  **Align indexes.** Create or adjust indexes to match the new access patterns.
+4.  **Right-size memory.** Ensure PGA is adequate (ideally via automatic management) to support the new plans without spilling to disk.
+5.  **Avoid hints.** Use SQL Plan Baselines or profiles instead of hints to stabilize plans if necessary, as they are more manageable.
+6.  **Reorganize only on evidence.** Do it only if metrics prove fragmentation is the cause of excessive I/O.
+
+This sequence delivers the largest, most durable performance gain (often 90%+ reductions in runtime) while **minimizing the DBA&#x27;s long-term maintenance burden** and avoiding the creation of a fragile, hint-dependent system.</pre>
+        </details>
+        <details class="tx"><summary><b>Gemini</b><span>database question · fresh chat · November 7, 2026</span></summary>
+          <p class="tx-note">Our commentary: the most absolute of the three: rewriting the SQL “must always come first,” and rule-based hints are a “strict anti-pattern.” The tuners’ biggest documented wins came from the moves it rules out.</p>
+          <pre>Rewriting the SQL must always come first when tuning long-running batch processes.
+The most effective way to reduce a 6- or 8-hour execution time is to eliminate unnecessary work at the source. Badly written SQL forces the database engine into massive logical I/O, Cartesian joins, or unnecessary row-by-row processing (cursor loops) that no amount of memory or indexing can fully fix. By addressing the SQL first, you attack the root cause rather than masking the symptoms with infrastructure changes.
+Once the code is verified to be asking the database for the right data in the most efficient way, you can evaluate the physical and architectural levers.
+Workload and Trade-Off Analysis
+Each tuning method carries a distinct cost for the Database Administrator (DBA) over time and requires weighing competing system resources.
+Tuning Approach	Long-Term DBA Workload	Expert Trade-Offs
+Rewrite SQL	Lowest. Once deployed into production, fundamentally efficient SQL adapts well to data growth and requires virtually no ongoing DBA babysitting.	Requires development time, code changes, and rigorous QA testing. It has the highest upfront friction but yields the largest and most sustainable performance gains.
+Add or Change Indexes	Moderate to High. The DBA must monitor index usage, rebuild fragmented indexes, and manage the additional storage overhead.	Speeds up data retrieval (reads) but exacts a strict penalty on DML operations (inserts, updates, deletes). An index added to speed up the night batch might severely degrade daytime OLTP performance.
+Change Memory Settings	Low. Altering session-level memory for batch jobs (e.g., workarea_size_policy or sort_area_size) is easy to script and maintain.	Allocating massive hash or sort areas speeds up batch aggregations and joins by keeping them in memory rather than spilling to Temp. However, it starves other concurrent processes and risks OS paging if overallocated.
+Reorganize Tables	High. Table fragmentation and row chaining will inevitably return, requiring the DBA to schedule recurring maintenance windows and table locks.	Shrinking the High Water Mark (HWM) speeds up Full Table Scans and reclaims space. However, it is a temporary band-aid that masks bad execution plans and provides diminishing returns over time.
+Hints (Rule-Based)	Highest. The execution plan is permanently frozen. The DBA assumes total responsibility for the query&#x27;s path forever, constantly adjusting hints as data changes.	Strict Anti-pattern. Rule-Based Optimization (RBO) was deprecated in Oracle 10g. Forcing RBO or using heavy hints blinds the Cost-Based Optimizer (CBO) to data skew and volume growth, guaranteeing a catastrophic performance cliff as the tables grow.</pre>
+        </details>
+      </div>
+
       </div>
       </div>
     </div>
