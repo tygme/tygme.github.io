@@ -117,7 +117,7 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 .menu summary { list-style: none; cursor: pointer; font: 700 0.76rem/1 var(--sans); letter-spacing: 0.14em; text-transform: uppercase; padding: 10px 14px; border: 1px solid var(--rule); }
 .menu summary::-webkit-details-marker { display: none; }
 .menu[open] .nav { position: absolute; right: 0; top: calc(100% + 8px); display: grid; gap: 6px; min-width: 220px; padding: 14px 18px; background: #fff; border: 1px solid var(--rule); }
-@media (max-width: 1140px) { .nav.wide { display: none; } .menu { display: block; } }
+@media (max-width: 1020px) { .nav.wide, .nav-cta { display: none; } .menu { display: block; } }
 @media (max-width: 520px) { .wordmark b { font-size: 0.95rem; } .wordmark span { font-size: 0.56rem; letter-spacing: 0.14em; } }
 
 /* Figures bar */
@@ -762,6 +762,58 @@ main section.payoff, section.payoff { background: var(--deeper) !important; colo
 .calc-out p { margin: 0; font-family: var(--serif); font-size: 1rem; line-height: 1.55; color: #e8e2d6; }
 .calc-out a { color: #e2c08a; }
 @media (max-width: 800px) { .calc { grid-template-columns: 1fr; } }
+
+/* Grouped nav */
+.nav-cta { flex: none; padding: 12px 18px; border: 2px solid var(--deep); background: var(--deep); color: #fff; font: 700 0.72rem/1 var(--sans); letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; }
+.nav-cta:hover { background: var(--bronze); border-color: var(--bronze); color: #fff; }
+.nav .dd { position: relative; }
+.nav .dd summary { list-style: none; cursor: pointer; display: inline-flex; align-items: center; gap: 7px; font: 600 0.95rem/1 var(--sans); color: var(--ink); padding: 10px 2px; }
+.nav .dd summary::-webkit-details-marker { display: none; }
+.nav .dd summary::after { content: ""; width: 7px; height: 7px; border-right: 1.6px solid var(--ink-2); border-bottom: 1.6px solid var(--ink-2); transform: rotate(45deg) translateY(-2px); transition: transform .2s; }
+.nav .dd[open] summary::after { transform: rotate(-135deg) translateY(-2px); }
+.nav .dd summary:hover, .nav .dd summary.here { color: var(--bronze); }
+.nav .dd summary.here { box-shadow: inset 0 -2px 0 var(--bronze); }
+.nav .dd .dd-list { position: absolute; left: 50%; transform: translateX(-50%); top: calc(100% + 10px); min-width: 230px; display: grid; background: #fff; border: 1px solid var(--rule); border-top: 3px solid var(--bronze); box-shadow: 0 18px 40px rgba(15,26,45,.14); padding: 8px 0; z-index: 60; }
+.nav .dd .dd-list::before { content: ""; position: absolute; top: -13px; left: 0; right: 0; height: 13px; }
+.nav .dd .dd-list a { padding: 10px 20px; font: 600 0.92rem/1.3 var(--sans); color: var(--ink); text-decoration: none; }
+.nav .dd .dd-list a:hover, .nav .dd .dd-list a.here { background: #f7f1e6; color: var(--bronze); }
+.menu .nav small { font: 700 0.64rem/1 var(--sans); letter-spacing: .16em; text-transform: uppercase; color: var(--accent); margin: 10px 0 2px; }
+.menu .nav a.cta { margin-top: 10px; background: var(--deep); color: #fff; padding: 10px 14px; text-align: center; font: 700 0.74rem/1 var(--sans); letter-spacing: .12em; text-transform: uppercase; }
+
+/* Executive brief */
+.film.onebrief { max-width: 62rem; margin: 0 auto; }
+.xb .wrap { padding-block: 56px; }
+.xb-grid { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: 44px; align-items: center; }
+.xb:nth-of-type(odd) .xb-grid .xb-visual { order: -1; }
+.xb-text { display: grid; gap: 14px; }
+.xb-text .label { color: var(--accent); display: flex; align-items: center; gap: 14px; }
+.xb-text .label::before { content: ""; width: 32px; height: 1px; background: var(--bronze); }
+.xb-text h2 { font: 700 clamp(1.4rem, 2.6vw, 1.9rem)/1.3 var(--display); }
+.xb-text p { font-family: var(--serif); font-size: 1.08rem; line-height: 1.6; color: var(--ink-2); }
+.xb-text q { font-style: italic; color: var(--ink); }
+.xb-links { font-family: var(--sans) !important; font-size: 0.85rem !important; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+.xb-links a { color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--bronze); }
+.xb-visual img { width: 100%; height: auto; display: block; border: 1px solid var(--rule); box-shadow: 0 16px 36px rgba(15,26,45,.16); }
+.xbars { display: grid; gap: 18px; }
+.xbars > div { display: grid; gap: 8px; }
+.xbars i { display: block; height: 40px; background: linear-gradient(90deg, #c9b48a, var(--bronze)); }
+.xbars > div:first-child i { background: #e2c08a; }
+.xbars span { font: 500 0.9rem/1.4 var(--sans); color: var(--ink-2); }
+.xcards { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.xcards > div { background: var(--paper); border: 1px solid var(--rule); border-top: 3px solid #a23b2a; padding: 16px 18px; display: grid; gap: 6px; }
+.xcards b { font: 700 0.76rem/1.3 var(--sans); letter-spacing: .14em; text-transform: uppercase; color: var(--ink); }
+.xcards span { font-family: var(--serif); font-size: 0.92rem; color: #8f2f20; }
+.xwho { display: grid; gap: 16px; justify-items: center; background: var(--deeper); padding: 34px 28px; }
+.xwho .xlogos { display: flex; gap: 26px; align-items: center; background: #fff; padding: 12px 22px; }
+.xwho p { margin: 0; font: 600 0.8rem/1.4 var(--sans); letter-spacing: .08em; color: #e2c08a; text-transform: uppercase; }
+.xpay { display: grid; gap: 14px; }
+.xpay > div { background: var(--deeper); color: #f3efe7; padding: 16px 20px; display: grid; gap: 4px; border-left: 3px solid #e2c08a; }
+.xpay b { font: 700 1.5rem/1.1 var(--display); color: #fff; }
+.xpay span { font: 400 0.88rem/1.4 var(--sans); color: #c4beb2; }
+@media (max-width: 860px) { .xb-grid { grid-template-columns: 1fr; gap: 26px; } .xb:nth-of-type(odd) .xb-grid .xb-visual { order: 0; } }
+.menu:not([open]) > .nav { display: none; }
+.xwho .xlogos img { height: 40px; width: auto; max-width: 42%; object-fit: contain; border: 0; box-shadow: none; }
+.xwho img.xseal { width: 84px; height: 84px; border: 0; box-shadow: none; }
 </style>
 <style>
 .lab { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.6fr); gap: 34px; margin-top: 30px; align-items: start; }
@@ -835,10 +887,37 @@ main section.payoff, section.payoff { background: var(--deeper) !important; colo
       <span><b>Tanvir Y. Goraya, Ph.D.</b><span>Mind Modelers · AI Advisory</span></span>
     </a>
     <nav class="nav wide" aria-label="Main">
-      <a href="sprint.html" data-p="sprint">The Sprint</a><a href="method.html" data-p="method">Method</a><a href="record.html" data-p="record">Record</a><a href="case-studies.html" data-p="case-studies">Case studies</a><a href="story.html" data-p="story">About</a><a href="tacit-knowledge-assistants.html">White paper</a><a href="resume.html">Résumé</a><a class="btn" href="index.html#contact">Start a conversation</a>
+      <a href="executive-brief.html" data-p="executive-brief">Start here</a>
+      <details class="dd"><summary>Work with us</summary><div class="dd-list">
+        <a href="sprint.html" data-p="sprint">The Sprint</a>
+        <a href="demo.html" data-p="demo">Try the demo</a>
+        <a href="method.html" data-p="method">The method</a>
+        <a href="method.html#theorygarden">Theory Garden</a>
+        <a href="tacit-knowledge-assistants.html" data-p="tacit-knowledge-assistants">White paper</a>
+      </div></details>
+      <details class="dd"><summary>Proof</summary><div class="dd-list">
+        <a href="case-studies.html" data-p="case-studies">Case studies</a>
+        <a href="record.html" data-p="record">The record</a>
+        <a href="sources.html" data-p="sources">Sources</a>
+      </div></details>
+      <details class="dd"><summary>About</summary><div class="dd-list">
+        <a href="story.html" data-p="story">His story</a>
+        <a href="resume.html" data-p="resume">Résumé</a>
+        <a href="seal.html" data-p="seal">Seal studies</a>
+      </div></details>
     </nav>
+    <a class="btn solid nav-cta" href="index.html#contact">Start a conversation</a>
     <details class="menu"><summary>Menu</summary>
-      <nav class="nav" aria-label="Main, compact"><a href="sprint.html">The Sprint</a><a href="method.html">Method</a><a href="record.html">Record</a><a href="case-studies.html">Case studies</a><a href="story.html">About</a><a href="sources.html">Sources</a><a href="tacit-knowledge-assistants.html">White paper</a><a href="resume.html">Résumé</a><a class="btn" href="index.html#contact">Start a conversation</a></nav>
+      <nav class="nav" aria-label="Main, compact">
+        <a href="executive-brief.html"><b>Start here</b></a>
+        <small>Work with us</small>
+        <a href="sprint.html">The Sprint</a><a href="demo.html">Try the demo</a><a href="method.html">The method</a><a href="method.html#theorygarden">Theory Garden</a><a href="tacit-knowledge-assistants.html">White paper</a>
+        <small>Proof</small>
+        <a href="case-studies.html">Case studies</a><a href="record.html">The record</a><a href="sources.html">Sources</a>
+        <small>About</small>
+        <a href="story.html">His story</a><a href="resume.html">Résumé</a><a href="seal.html">Seal studies</a>
+        <a class="cta" href="index.html#contact">Start a conversation</a>
+      </nav>
     </details>
   </div>
 </header>
@@ -1072,6 +1151,19 @@ main section.payoff, section.payoff { background: var(--deeper) !important; colo
   document.querySelectorAll('.menu .nav a').forEach(function (a) { a.addEventListener('click', function () { a.closest('details').open = false; }); });
   var here = (location.pathname.split('/').pop() || 'index.html').replace('.html', '');
   document.querySelectorAll('.nav.wide a[data-p]').forEach(function (a) { if (a.getAttribute('data-p') === here) a.classList.add('here'); });
+  document.querySelectorAll('.nav.wide .dd').forEach(function (d) {
+    var hit = false;
+    d.querySelectorAll('a[data-p]').forEach(function (a) { if (a.getAttribute('data-p') === here) { a.classList.add('here'); hit = true; } });
+    if (hit) d.querySelector('summary').classList.add('here');
+    d.addEventListener('toggle', function () {
+      if (d.open) document.querySelectorAll('.nav.wide .dd[open]').forEach(function (o) { if (o !== d) o.open = false; });
+    });
+    d.addEventListener('mouseenter', function () { d.open = true; });
+    d.addEventListener('mouseleave', function () { d.open = false; });
+  });
+  document.addEventListener('click', function (e) {
+    document.querySelectorAll('.nav.wide .dd[open]').forEach(function (o) { if (!o.contains(e.target)) o.open = false; });
+  });
   var bar = document.querySelector('.progress i'), cta = document.getElementById('stickycta'), tick = false;
   function onScroll() {
     var h = document.documentElement, max = h.scrollHeight - h.clientHeight;
