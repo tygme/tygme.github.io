@@ -714,6 +714,24 @@ main > section.dark.story { background: radial-gradient(ellipse 60% 50% at 20% 2
 .hp-sum b { color: #e2c08a; }
 @media (max-width: 1000px) { .hp-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 680px) { .hp-grid { grid-template-columns: 1fr; } .hp-sum { padding: 22px 20px; } }
+
+/* AI test on the database case */
+.aitest { margin-top: 40px; display: grid; gap: 16px; }
+.aitest h3 { font: 700 clamp(1.3rem, 2.4vw, 1.7rem)/1.25 var(--display); color: var(--deeper); }
+.aitest .meta { margin: -6px 0 0; font: 400 0.9rem/1.5 var(--sans); color: var(--ink-2); }
+.aitest table { width: 100%; border-collapse: separate; border-spacing: 0; background: var(--paper); border: 1px solid var(--rule); font-family: var(--serif); font-size: 0.97rem; box-shadow: 0 14px 34px rgba(15,26,45,.07); }
+.aitest th { text-align: left; font: 700 0.7rem/1.3 var(--sans); letter-spacing: .14em; text-transform: uppercase; color: #e8e2d6; background: var(--deeper); padding: 14px 16px; }
+.aitest th:first-child { color: #e2c08a; }
+.aitest td { padding: 14px 16px; border-top: 1px solid var(--rule); vertical-align: top; color: var(--ink-2); line-height: 1.5; }
+.aitest tbody tr:first-child td { border-top: 0; }
+.aitest td:first-child { width: 25%; color: var(--ink); font-weight: 600; background: #f7f1e6; border-right: 2px solid var(--bronze); }
+.aitest td b { display: inline-block; margin-top: 8px; padding: 4px 10px; border-radius: 999px; font: 700 0.64rem/1.2 var(--sans); letter-spacing: .1em; text-transform: uppercase; }
+.aitest .opp { background: #f5dcd6; color: #8f2f20; } .aitest .miss { background: #f1e6d3; color: #7a5424; } .aitest .ok { background: #dcefe2; color: #245a37; }
+.aitest .score { margin: 0; padding: 20px 24px; background: var(--deeper); color: #f3efe7; font: 700 clamp(1.02rem, 1.9vw, 1.2rem)/1.5 var(--display); border-left: 4px solid #e2c08a; }
+.aitest-note { margin: 0; font: 400 0.88rem/1.55 var(--sans); color: var(--ink-2); max-width: 60rem; }
+@media (max-width: 760px) { .aitest table, .aitest tbody, .aitest tr, .aitest td { display: block; } .aitest thead { display: none; } .aitest tr { border-top: 1px solid var(--rule); }
+  .aitest td { border: 0; padding: 8px 16px; } .aitest td:first-child { width: auto; border-right: 0; border-bottom: 2px solid var(--bronze); }
+  .aitest td[data-ai]::before { content: attr(data-ai); display: block; font: 700 0.68rem/1.3 var(--sans); letter-spacing: .12em; text-transform: uppercase; color: var(--accent); margin-bottom: 2px; } }
 </style>
 <div class="progress" aria-hidden="true"><i></i></div>
 <div class="draft"><div class="wrap"><span><b>Preview</b> Not yet public. Every fact is drawn from the master CV.</span><a href="seal.html">Seal studies</a></div></div>
