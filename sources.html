@@ -23,7 +23,7 @@
 <title>Sources and Evidence · Tanvir Y. Goraya, Ph.D.</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Manrope:wght@500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Libre+Franklin:wght@400;500;600;700&display=swap">
 </head>
 <body>
 <style>
@@ -44,7 +44,7 @@
   --display: "Libre Baskerville", Baskerville, Georgia, serif;
   --serif: "Source Serif 4", "Source Serif Pro", Georgia, serif;
   --caps: "Cinzel", "Trajan Pro", "Libre Baskerville", Georgia, serif;
-  --sans: "Manrope", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --sans: "Libre Franklin", "Franklin Gothic", system-ui, -apple-system, "Segoe UI", sans-serif;
   --measure: 66ch;
   --wrap: 1120px;
   color-scheme: light;
@@ -92,7 +92,7 @@ p { margin: 0; }
 .inscription span { font: 700 clamp(0.9rem, 1.6vw, 1.15rem)/1.3 var(--caps); letter-spacing: 0.2em; color: var(--accent); }
 .inscription i { width: 5px; height: 5px; border-radius: 50%; background: var(--bronze); display: block; }
 .intro .promise { font: 700 clamp(1.35rem, 3.2vw, 2.1rem)/1.25 var(--caps); letter-spacing: .03em; max-width: 26ch; color: var(--ink); }
-.intro .slogan { font: 600 .82rem/1.6 var(--sans, Manrope, sans-serif); letter-spacing: .14em; text-transform: uppercase; color: var(--gold, #e2c08a); max-width: 52ch; }
+.intro .slogan { font: 600 .82rem/1.6 var(--sans); letter-spacing: .14em; text-transform: uppercase; color: var(--gold, #e2c08a); max-width: 52ch; }
 .whofor { max-width: 62ch; margin: 0 auto 28px; text-align: center; font: 400 1.05rem/1.6 var(--display); }
 .whofor b { color: var(--bronze); }
 .intro .lede { font: italic 400 clamp(1.1rem, 2.2vw, 1.4rem)/1.55 var(--display); max-width: 40ch; color: var(--ink); }
@@ -890,6 +890,17 @@ html.rvon .rv.rv-in { opacity: 1; transform: none; }
 @media (max-width: 880px) { .fgrid { grid-template-columns: repeat(2, minmax(0, 1fr)); } .fbrand { grid-column: 1 / -1; } }
 @media (max-width: 440px) { .fgrid { grid-template-columns: 1fr; gap: 26px; } }
 @media print { html.rvon .rv { opacity: 1 !important; transform: none !important; transition: none !important; } }
+
+/* v71: authoritative, staid type — serif for reading, Franklin Gothic for the small working labels */
+body { font: 400 18px/1.62 var(--serif); font-feature-settings: "kern", "liga", "onum" 0, "lnum"; }
+.nav, .menu, .nav-cta, .btn, button, input, select, .label, .crumb, .subnav, .draft, .fbar, .fgrid nav a,
+figcaption, th, .stickycta, .wordmark span { font-family: var(--sans); }
+.nav { font-size: 0.84rem; letter-spacing: 0.02em; }
+.btn, .more-link, .pcard .go { letter-spacing: 0.12em; }
+.label, .section-head .label { letter-spacing: 0.14em; }
+h2 { letter-spacing: -0.005em; }
+h3 { letter-spacing: 0; }
+.nav.wide > a, .nav .dd summary { font: 500 0.88rem/1 var(--sans); letter-spacing: 0.02em; color: var(--ink); }
 </style>
 <div class="progress" aria-hidden="true"><i></i></div>
 <div class="draft"><div class="wrap"><span><b>Preview</b> Not yet public. Every fact is drawn from the master CV.</span><a href="seal.html">Seal studies</a></div></div>
