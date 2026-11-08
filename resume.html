@@ -23,7 +23,7 @@
 <title>Tanvir Y. Goraya Résumé</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Libre+Franklin:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Libre+Franklin:wght@400;500;600;700&display=swap">
 </head>
 <body>
 <style>
@@ -40,7 +40,7 @@
   --bronze: #8a6634;
   --display: "Libre Baskerville", Baskerville, Georgia, serif;
   --serif: "Source Serif 4", "Source Serif Pro", Georgia, serif;
-  --caps: "Cinzel", "Trajan Pro", Georgia, serif;
+  --caps: "Libre Baskerville", Georgia, serif;
   --sans: "Libre Franklin", "Franklin Gothic", system-ui, -apple-system, "Segoe UI", sans-serif;
   color-scheme: light;
 }
@@ -56,8 +56,8 @@ a { color: inherit; text-decoration-color: var(--bronze); text-underline-offset:
 /* Nameplate */
 .head { display: grid; grid-template-columns: auto 1fr; gap: 24px; align-items: center; padding-bottom: 18px; border-bottom: 1px solid var(--ink); }
 .mono { width: 124px; height: 124px; display: block; filter: drop-shadow(0 4px 8px rgba(20,22,26,.22)); }
-.head h1 { margin: 0; font: 700 clamp(1.5rem, 3.6vw, 2.05rem)/1.1 var(--caps); letter-spacing: 0.06em; text-wrap: balance; }
-.roles { margin-top: 6px; font: 700 0.72rem/1.4 var(--caps); letter-spacing: 0.22em; color: var(--bronze); text-transform: uppercase; }
+.head h1 { margin: 0; font: 700 clamp(1.5rem, 3.6vw, 2.05rem)/1.1 var(--caps); letter-spacing: 0.005em; text-wrap: balance; }
+.roles { margin-top: 6px; font: 400 0.7rem/1.4 var(--caps); letter-spacing: 0.2em; color: var(--bronze); text-transform: uppercase; }
 .contact { margin-top: 8px; font: 500 0.8rem/1.5 var(--sans); color: var(--ink-2); display: flex; flex-wrap: wrap; gap: 2px 14px; }
 @media (max-width: 520px) { .head { grid-template-columns: 1fr; } .mono { width: 96px; height: 96px; } }
 
@@ -116,7 +116,7 @@ ul.plain b { color: var(--ink); font-weight: 600; }
 @media print { .back { display: none; } }
 @page { size: letter; margin: 0.45in 0.5in; }
 @media print {
-  html { font-size: 13.4px; } body { background: #fff; font-size: 11.4px; line-height: 1.4; }
+  html { font-size: 12.6px; } body { background: #fff; font-size: 10.9px; line-height: 1.36; }
   .desk { padding: 0; gap: 0; display: block; }
   .sheet { box-shadow: none; max-width: none; width: auto; padding: 0; border-top: 0; break-after: auto; }
   .sheet + .sheet { margin-top: 18px; }
@@ -129,6 +129,9 @@ ul.plain b { color: var(--ink); font-weight: 600; }
   .side, .main { gap: 14px; } ul.impact { gap: 5px; } .role { padding-block: 4px; gap: 1px; } .role p { font-size: .86rem; line-height: 1.34; }
   .side p, .side li { font-size: .8rem; line-height: 1.34; } .side ul { gap: 4px; } h2 { margin-bottom: 6px; }
   .foot { display: none; }
+  .summary { font-family: var(--serif); font-size: 1rem; line-height: 1.42; }
+  .role-title { font-family: var(--serif); font-size: 1rem; }
+  .num { font-family: var(--serif); }
 }
 </style>
 
