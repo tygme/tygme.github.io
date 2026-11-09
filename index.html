@@ -925,6 +925,13 @@ h3 { letter-spacing: 0; }
 .footer b, .fmark b { font-family: var(--display); letter-spacing: 0.1em; text-transform: uppercase; font-size: 0.9rem; }
 /* v75: role line separators as thin vertical rules (owner's "|") */
 .inscription i { width: 1px; height: 0.95em; border-radius: 0; background: var(--bronze); opacity: 0.7; }
+
+/* v77: headline-led hero — name becomes the eyebrow; tension in two sentences, resolution in bronze italic */
+.intro .hero-name { font: 700 clamp(1.25rem, 2.4vw, 1.6rem)/1.2 var(--display); letter-spacing: 0.01em; color: var(--ink); }
+.intro h1.headline { font: 400 clamp(1.9rem, 4.6vw, 3.25rem)/1.18 var(--display); letter-spacing: -0.01em; max-width: 22ch; color: #f6f1e7; margin-top: 6px; }
+.intro h1.headline em { display: block; margin-top: 0.32em; font-style: italic; color: #e2c08a; }
+.intro .btn.solid { padding: 16px 26px; font-size: 0.84rem; box-shadow: 0 10px 26px rgba(0, 0, 0, 0.35); }
+.section-head .slogan-inline { font: italic 400 1.18rem/1.5 var(--display); color: var(--accent); border-left: 3px solid var(--bronze); padding-left: 16px; }
 </style>
 <div class="progress" aria-hidden="true"><i></i></div>
 <div class="draft"><div class="wrap"><span><b>Preview</b> Not yet public. Every fact is drawn from the master CV.</span></div></div>
@@ -975,12 +982,11 @@ h3 { letter-spacing: 0; }
   <section class="intro dark" aria-labelledby="name">
     <div class="wrap">
       <div class="seal-slot"><img src="img/seal.webp" alt="Seal of Tanvir Y. Goraya, Ph.D.: AI Scientist, Professor, Inventor, Executive Advisor. Mens et Machina, since 1987." width="1200" height="1200"></div>
-      <h1 id="name">Tanvir Y. Goraya, Ph.D.</h1>
+      <p class="hero-name">Tanvir Y. Goraya, Ph.D.</p>
       <div class="inscription"><span>AI Scientist</span><i></i><span>Professor</span><i></i><span>Inventor</span><i></i><span>Executive Advisor</span></div>
-      <p class="promise">Model what your experts can't articulate, before they leave.</p>
-      <p class="slogan">Tacit knowledge: never written down, never learned by AI. Until MindModeler.</p>
+      <h1 id="name" class="headline">Your best experts are leaving. Exit interviews and generative AI can't capture their instinct. <em>We build the models that do.</em></h1>
       <p class="lede">Machine learning, AI and robotics since 1985, on inventions of his own. Production AI for the U.S. Air Force, NASA and the Fortune 500 since 1987. Now building tacit knowledge assistants: AI that captures, and grows with, the judgment your best people cannot put into words.</p>
-      <div class="actions"><a class="btn solid" href="executive-brief.html">Watch the 2-minute brief</a><a class="btn" href="sprint.html">See the four-week sprint</a></div>
+      <div class="actions"><a class="btn solid" href="#contact">Book a 30-minute scoping call</a><a class="btn" href="executive-brief.html">Watch the 2-minute brief</a></div>
     </div>
   </section>
 
@@ -1011,6 +1017,7 @@ h3 { letter-spacing: 0; }
         <p class="label">The leak</p>
         <h2 id="leak-h">Why today's AI cannot plug the hole</h2>
         <p>Every mainstream AI approach learns from a record: documents, tickets, transcripts, past data. Your best people's judgment is exactly what the record leaves out, so it keeps leaking out through retirements while the AI spend goes up.</p>
+        <p class="slogan-inline">Tacit knowledge: never written down, never learned by AI. Until MindModeler.</p>
       </div>
       <div class="vsx" role="table" aria-label="Today's AI compared with MindModeler">
         <div class="vsx-head" role="row"><span role="columnheader"></span><span role="columnheader" class="them">Today’s AI</span><span role="columnheader" class="us">MindModeler</span></div>
