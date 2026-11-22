@@ -936,6 +936,11 @@ h3 { letter-spacing: 0; }
 /* v79: footer patent link */
 .fbar a { color: inherit; text-decoration: underline; text-decoration-color: rgba(255,255,255,0.3); text-underline-offset: 3px; }
 .fbar a:hover { color: #e2c08a; text-decoration-color: #e2c08a; }
+
+/* v80: executive-relationships grid (reuses .practice/.practices, denser text) */
+.exec-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px 40px; }
+.exec-grid h3 { font-size: 1.05rem; line-height: 1.3; }
+@media (max-width: 600px) { .exec-grid { grid-template-columns: 1fr; } }
 </style>
 <div class="progress" aria-hidden="true"><i></i></div>
 <div class="draft"><div class="wrap"><span><b>Preview</b> Not yet public. Every fact is drawn from the master CV.</span></div></div>
@@ -1144,6 +1149,26 @@ h3 { letter-spacing: 0; }
     </div>
   </section>
 
+  <section class="section" id="executives" aria-labelledby="executives-h">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="label">Commissioned at the top</p>
+        <h2 id="executives-h">The call came from the corner office, not the IT department</h2>
+        <p>These engagements were set by the people who run the organization, working directly with Dr. Goraya, not routed through a technical department.</p>
+      </div>
+      <div class="practices exec-grid">
+        <div class="practice"><small>B.F. Goodrich</small><h3>John Lauer, CEO</h3><p>Commissioned the capture of tacit judgment behind landing-gear design and specialty-tire formulation, after seeing his presentation and prototypes.</p></div>
+        <div class="practice"><small>Computer Associates</small><h3>Charles Wang, Chairman &amp; CEO</h3><p>Negotiated and completed the acquisition of AI WARE. Years later, by Dr. Goraya's account, Wang turned to him personally, as a trusted friend, when the company ran into trouble.</p></div>
+        <div class="practice"><small>Cinergy</small><h3>Office of the CEO</h3><p>Presentation and negotiation directly with the chief executive on expert knowledge capture for plant operations.</p></div>
+        <div class="practice"><small>Boeing</small><h3>Board &amp; CEO</h3><p>Began as an enterprise information system for Boeing's senior executives, as the company moved to meet Airbus's growing global competitive pressure, and reached board-level meetings.</p></div>
+        <div class="practice"><small>Credit Suisse</small><h3>Senior executives</h3><p>Advised senior Credit Suisse executives, in the period when U.S. authorities were pressing Swiss banks to disclose American accountholders' records.</p></div>
+        <div class="practice"><small>Ernst &amp; Young</small><h3>Senior &amp; managing partners; Chief Knowledge Officer</h3><p>EY's Chief Knowledge Officer brought him directly to the senior executives of EY's own clients for knowledge-capture work.</p></div>
+        <div class="practice"><small>Enterprise</small><h3>Office of the President</h3><p>Modeled fleet strategy: when to sell cars kept new for renting, and how to negotiate new terms with the manufacturers.</p></div>
+        <div class="practice"><small>Tucker Ellis, LLP (formerly Arter &amp; Hadden, LLP)</small><h3>Robert C. Tucker &amp; Stephen C. Ellis</h3><p>The firm's own managing partners, not its technologists, personally brought him into clients' CEO offices for its most difficult cases.</p></div>
+      </div>
+    </div>
+  </section>
+
   <section class="section" id="words" aria-labelledby="words-h">
     <div class="wrap">
       <div class="section-head">
@@ -1173,10 +1198,10 @@ h3 { letter-spacing: 0; }
         <div><h3>Chemicals</h3><p>3M · Procter &amp; Gamble · Unilever · S.C. Johnson · Mitsubishi Chemical · Hitachi Chemical · Asahi Chemical · W.R. Grace · Nalco · Clorox · Gillette</p></div>
         <div><h3>Plastics &amp; rubber</h3><p>Dow Chemical · BASF · Monsanto · B.F. Goodrich · Goodyear · Bridgestone/Firestone · Yokohama Rubber · Sumitomo Rubber · Nike</p></div>
         <div><h3>Paint, coatings &amp; adhesives</h3><p>Glidden (ICI) · DuPont · Sherwin-Williams · Xerox · Lord Corporation · Dow Corning · Avery Dennison · H.B. Fuller · Loctite</p></div>
-        <div><h3>Petroleum &amp; energy</h3><p>Exxon · Amoco · BP Chemical · Lubrizol · Castrol · Ashland Oil · UOP · Ohio Edison · Salt River Project</p></div>
-        <div><h3>Manufacturing &amp; process</h3><p>Ford Motor · Kobe Steel · LTV Steel · Allied Signal · Libbey-Owens-Ford · PPG · Boise Cascade · Bailey Controls · Motorola</p></div>
+        <div><h3>Petroleum &amp; energy</h3><p>Cinergy · Exxon · Amoco · BP Chemical · Lubrizol · Castrol · Ashland Oil · UOP · Ohio Edison · Salt River Project</p></div>
+        <div><h3>Manufacturing &amp; process</h3><p>Boeing · Ford Motor · Kobe Steel · LTV Steel · Allied Signal · Libbey-Owens-Ford · PPG · Boise Cascade · Bailey Controls · Motorola</p></div>
         <div><h3>Government &amp; research</h3><p>NASA Lewis Research Center · U.S. Air Force Wright Laboratory · USDA · Harvard · Case Western Reserve</p></div>
-        <div><h3>Finance, law &amp; food</h3><p>Credit Suisse · Arter &amp; Hadden · Archer Daniels Midland · Kraft General Foods · Warner-Lambert</p></div>
+        <div><h3>Finance, law &amp; services</h3><p>Credit Suisse · Tucker Ellis, LLP (formerly Arter &amp; Hadden, LLP) · Enterprise · Archer Daniels Midland · Kraft General Foods · Warner-Lambert</p></div>
       </div>
     </div>
   </section>

@@ -936,6 +936,11 @@ h3 { letter-spacing: 0; }
 /* v79: footer patent link */
 .fbar a { color: inherit; text-decoration: underline; text-decoration-color: rgba(255,255,255,0.3); text-underline-offset: 3px; }
 .fbar a:hover { color: #e2c08a; text-decoration-color: #e2c08a; }
+
+/* v80: executive-relationships grid (reuses .practice/.practices, denser text) */
+.exec-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px 40px; }
+.exec-grid h3 { font-size: 1.05rem; line-height: 1.3; }
+@media (max-width: 600px) { .exec-grid { grid-template-columns: 1fr; } }
 </style>
 <div class="progress" aria-hidden="true"><i></i></div>
 <div class="draft"><div class="wrap"><span><b>Preview</b> Not yet public. Every fact is drawn from the master CV.</span></div></div>
@@ -1004,7 +1009,7 @@ h3 { letter-spacing: 0; }
         <li><div><span class="case">Rapid Foundry Tooling System</span><span class="cite"><a href="#airforce">the full story</a> · U.S. Air Force Wright Laboratory · Principal Investigator · <a href="docs/usaf-rfts-success-story.pdf">Success Story, 1995</a> · <a href="https://ngstage.aviationweek.com/sand-dollars">Aviation Week, 1995</a></span></div>
           <p>Automated the design of sand-casting patterns for aircraft, missile and spacecraft parts, cutting the time from two weeks to under two days, a reduction of up to <span class="num">80%</span>. In use at the San Antonio Air Logistics Center.</p></li>
         <li><div><span class="case">AI WARE, Inc.</span><span class="cite">Founding member; Director, CIO &amp; CTO · <a href="https://www.01net.it/?p=1170">Acquired by Computer Associates, 1997</a></span></div>
-          <p>A founding member alongside Prof. Yoh-Han Pao, he built on his own TG-Engine, his collection of AI tools and software. Its products reached <span class="num">500+</span> customer installations, including Eli Lilly, Merck, Pfizer, 3M, Dow, DuPont and Procter &amp; Gamble, and won R&amp;D Magazine's 1994 R&amp;D Elite Award. CA, which called itself “the world’s leading business software company,” relaunched the technology as CA Neugents.</p></li>
+          <p>A founding member alongside Prof. Yoh-Han Pao, he built on his own TG-Engine, his collection of AI tools and software. Its products reached <span class="num">500+</span> customer installations, including Eli Lilly, Merck, Pfizer, 3M, Dow, DuPont and Procter &amp; Gamble, and won R&amp;D Magazine's 1994 R&amp;D Elite Award. CA, which called itself “the world’s leading business software company,” relaunched the technology as CA Neugents. CA's Chairman and CEO, Charles Wang, negotiated the acquisition personally; by Dr. Goraya's account, Wang also arranged a seat on the New York Stock Exchange under his control, at a time when only NASDAQ was computerized and the NYSE still ran largely on floor-trader intuition. The two stayed in touch afterward: years later, when CA ran into trouble, Wang turned to him personally, as a trusted friend, for his own models and counsel.</p></li>
         <li><div><span class="case">NeuSight and Pegasus Technologies</span><span class="cite">Combustion optimization for coal-fired power plants · spun off from AI WARE</span></div>
           <p>He named NeuSight and spun off Pegasus Technologies to take it to the power industry, cutting NO<sub>x</sub> and CO emissions. Shares were sold: KFx Inc. took a controlling interest in 1998, and Computer Associates later acquired AI WARE's holding.</p></li>
         <li><div><span class="case">CAD/Chem formulation system</span><span class="cite">AI WARE flagship · application notes, 1998 · cover story, Scientific Computing &amp; Automation, 1992</span></div>
